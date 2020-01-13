@@ -1,0 +1,1758 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/itg.css">
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>
+        <script type="text/javascript">
+            //<![CDATA[
+                window.onload=function(){
+                    $("#keyword").keyup(function() {
+                        var k = $(this).val();
+                        $(".table-list > tbody > tr").hide();
+                        var temp = $(".table-list > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                        $(temp).parent().show();
+                    })
+                }
+            //]]>
+        </script>
+        <style>
+            .css-namesarch {border:2px solid #ccc;padding:15px;text-align:center;}
+        </style>
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+            <p class="text">
+본 페이지의 마크업은 itg.css 및 reset.css 를 사용할때 정상적으로 출력이 됩니다.
+             </p>
+
+					<h2 id="button-sect">버튼</h2>
+						<p class="text">
+                                미니 버튼
+                                <button type="button" class="btn mini-btn-blue">버튼</button>
+                                <button type="button" class="btn mini-btn-orange">버튼</button><br><br>
+
+                                작은사이즈 버튼
+                                <button type="button" class="btn small-btn-blue">버튼</button>
+                                <button type="button" class="btn small-btn-orange">버튼</button><br><br>
+
+                                기본사이즈 버튼
+                                <button type="button" class="btn">버튼</button>
+                                <button type="button" class="btn btn-blue">버튼</button>
+                                <button type="button" class="btn btn-orange">버튼</button><br><br>
+                                큰 사이즈 버튼
+                                <button type="button" class="btn larger-btn-blue">버튼</button>
+                                <button type="button" class="btn larger-btn-orange">버튼</button>
+						</p>
+						<pre class="brush:xml;">
+                            미니 버튼
+                            <button type="button" class="btn">버튼</button>
+                            <button type="button" class="btn mini-btn-blue">버튼</button>
+                            <button type="button" class="btn mini-btn-orange">버튼</button>
+
+                            작은사이즈 버튼
+                            <button type="button" class="btn">버튼</button>
+                            <button type="button" class="btn small-btn-blue">버튼</button>
+                            <button type="button" class="btn small-btn-orange">버튼</button>
+
+                            기본사이즈 버튼
+                            <button type="button" class="btn">버튼</button>
+                            <button type="button" class="btn btn-blue">버튼</button>
+                            <button type="button" class="btn btn-orange">버튼</button>
+
+                            큰 사이즈 버튼
+                            <button type="button" class="btn larger-btn-blue">버튼</button>
+                            <button type="button" class="btn larger-btn-orange">버튼</button>
+						</pre>
+
+                    <h2 id="table-sect">table</h2>
+						<div class="text">
+                            <table class="table table-list">
+                                <caption><span class="ir-text">번호,제목,항목1,항목2,비고로 구성된 리스트 테이블</span></caption>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="30%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">번호</th>
+                                        <th scope="col">제목</th>
+                                        <th scope="col">항목1</th>
+                                        <th scope="col">항목2</th>
+                                        <th scope="col">비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>관련제목입니다.</td>
+                                        <td>항목1</td>
+                                        <td>항목1</td>
+                                        <td>비고내용입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>관련제목입니다.</td>
+                                        <td>항목1</td>
+                                        <td>항목1</td>
+                                        <td>비고내용입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>
+						<pre class="brush:xml;">
+                            <table class="table table-list">
+                                <caption><span class="ir-text">번호,제목,항목1,항목2,비고로 구성된 리스트 테이블</span></caption>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="30%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">번호</th>
+                                        <th scope="col">제목</th>
+                                        <th scope="col">항목1</th>
+                                        <th scope="col">항목2</th>
+                                        <th scope="col">비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>관련제목입니다.</td>
+                                        <td>항목1</td>
+                                        <td>항목1</td>
+                                        <td>비고내용입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>관련제목입니다.</td>
+                                        <td>항목1</td>
+                                        <td>항목1</td>
+                                        <td>비고내용입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</pre>
+
+						<div class="text">
+                            <table class="table table-body-only">
+                                <caption><span class="ir-text">항목과 비고로 구성된 표</span></caption>
+                                <colgroup>
+                                    <col width="15%">
+                                    <col width="">
+                                 </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">항목1</th>
+                                        <td>관련제목입니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th>항목2</th>
+                                        <td>관련제목입니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>
+
+
+					<h2 id="form-sect">폼요소</h2>
+						<div class="text">
+                            
+                                <div class="input-wrap">
+                                  <label for="exaple"  class="ir-text">이름</label>
+                                  <input type="text" class="input-text" id="exaple" placeholder="이름을 입력하세요">
+                                </div>
+                            
+						</div>
+						<pre class="brush:xml;">
+                            <form>
+                                <div class="input-wrap">
+                                  <label for="exaple" class="ir-text">이름</label>
+                                  <input type="text" class="input-text" id="exaple" placeholder="이름을 입력하세요">
+                                </div>
+                            </form>
+                        </pre>
+                        
+						<div class="text">
+                            
+                            <div class="input-wrap">
+                                <label for="exaple"  class="ir-text">이름</label>
+                                <input type="text" class="input-text" id="exaple" placeholder="이름을 입력하세요">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="exaple2"  class="ir-text">비밀번호</label>
+                                <input type="text" class="input-text" id="exaple2" placeholder="비밀번호를 입력하세요">
+                            </div>                            
+                        
+                    </div>
+                    <pre class="brush:xml;">
+                        <form>
+                            <div class="input-wrap">
+                                <label for="exaple"  class="ir-text">이름</label>
+                                <input type="text" class="input-text" id="exaple" placeholder="이름을 입력하세요">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="exaple2"  class="ir-text">비밀번호</label>
+                                <input type="text" class="input-text" id="exaple2" placeholder="비밀번호를 입력하세요">
+                            </div>   
+                        </form>
+                    </pre>                        
+						<div class="text">
+                            
+                            <div class="select-wrap">
+                                <label for="exaple"  class="ir-text">선택</label>
+                                <select title="선택하세요" class="input-select" id="exaple">
+                                    <option>항목1</option>
+                                    <option>항목2</option>
+                                    <option>항목3</option>
+                                </select>                              
+                            </div>
+                        
+                    </div>
+                    <pre class="brush:xml;">
+                        <form>
+                            <div class="select-wrap">
+                                <label for="exaple"  class="ir-text">선택</label>
+                                <select title="선택하세요" class="input-select" id="exaple">
+                                    <option>항목1</option>
+                                    <option>항목2</option>
+                                    <option>항목3</option>
+                                </select>                              
+                            </div>
+                        </form>
+                    </pre>
+					<!-- <h2 id="list-sect">리스트</h2>
+						<p class="text">
+
+						</p>
+						<pre class="brush:xml;">
+
+						</pre> -->
+
+
+					<h2 id="paging-sect">페이지게이션</h2>
+						<p class="text">
+                            타입1 <br>
+                            <div class="paging">
+                                <a class="page btn prev_all" href="#"><span class="ir-text">처음페이지</span></a>
+                                <a class="page btn prev" href="#"><span class="ir-text">이전페이지</span></a>
+                                <strong class="page on">1</strong>
+                                <a class="page" href="#">2</a>
+                                <a class="page" href="#">3</a>
+                                <a class="page btn next" href="#"><span class="ir-text">다음페이지</span></a>
+                                <a class="page btn next_all" href="#"><span class="ir-text">마지막페이지</span></a>
+                            </div>
+						</p>					
+						<pre class="brush:xml;">
+                            <div class="paging">
+                                <a class="page btn prev_all" href="#"><span class="ir-text">처음페이지</span></a>
+                                <a class="page btn prev" href="#"><span class="ir-text">이전페이지</span></a>
+                                <strong class="page on">1</strong>
+                                <a class="page" href="#">2</a>
+                                <a class="page" href="#">3</a>
+                                <a class="page btn next" href="#"><span class="ir-text">다음페이지</span></a>
+                                <a class="page btn next_all" href="#"><span class="ir-text">마지막페이지</span></a>
+                            </div>
+                        </pre>
+						<p class="text">
+                            타입2 <br>
+                            <div class="paginate">
+                                <a href="#" class="sp sp_start" aria-label="맨 처음 페이지로"></a>
+                                <a href="#" class="sp sp_prev" aria-label="이전 페이지로"></a>
+                                <div class="paginate_input_wrap">
+                                    <input type="text" class="paginate_input" aria-label="현재 페이지" value="1">
+                                    <span>/</span>
+                                    <span class="ir-text">총 페이지</span>
+                                    <span class="total_num">300</span>
+                                    <a href="#" class="btn_page_go">이동</a>
+                                </div>
+                                <a href="#" class="sp sp_next" aria-label="다음 페이지로"></a>
+                                <a href="#" class="sp sp_finish" aria-label="맨 마지막 페이지로"></a>
+                            </div>
+						</p>					
+						<pre class="brush:xml;">
+                            <div class="paginate">
+                                <a href="#" class="sp sp_start" aria-label="맨 처음 페이지로"></a>
+                                <a href="#" class="sp sp_prev" aria-label="이전 페이지로"></a>
+                                <div class="paginate_input_wrap">
+                                    <input type="text" class="paginate_input" aria-label="현재 페이지" value="1">
+                                    <span>/</span>
+                                    <span class="ir-text">총 페이지</span>
+                                    <span class="total_num">300</span>
+                                    <a href="#" class="btn_page_go">이동</a>
+                                </div>
+                                <a href="#" class="sp sp_next" aria-label="다음 페이지로"></a>
+                                <a href="#" class="sp sp_finish" aria-label="맨 마지막 페이지로"></a>
+                            </div>
+						</pre>                        
+
+                    <h2 id="board-sect">유형별 게시판</h2>
+                        *게시판 상단 검색*
+                        <div class="text">
+                            <div class="board_top">
+                                <div class="top_info"></div>
+                                <form name="listForm" method="post" onsubmit="fn_search(); return false;">
+                                    <fieldset>
+                                        <legend>게시판 검색폼</legend>
+                                        <div class="inner">
+                            <label for="schFld" class="blind">검색조건</label>
+                                            <select name="schFld" id="schFld" class="select_box" title="검색어 조건선택">
+                                                <option value="0">전체</option>
+                                                <option value="1">제목</option>
+                                                <option value="2">작성자</option>
+                                                <option value="3">내용</option>
+                                            </select>                            
+                                            <label for="schStr" class="blind">검색어</label> 
+                                            <input type="text" name="schStr" id="schStr" class="search_txt" value="" title="검색어 입력" placeholder="검색어를 입력해주세요">
+                                            <button type="submit" class="search">검색</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <pre class="brush:xml;">
+                            <div class="board_top">
+                                <div class="top_info"></div>
+                                <form name="listForm" method="post" onsubmit="fn_search(); return false;">
+                                    <fieldset>
+                                        <legend>게시판 검색폼</legend>
+                                        <div class="inner">
+                            <label for="schFld" class="blind">검색조건</label>
+                                            <select name="schFld" id="schFld" class="select_box" title="검색어 조건선택">
+                                                <option value="0">전체</option>
+                                                <option value="1">제목</option>
+                                                <option value="2">작성자</option>
+                                                <option value="3">내용</option>
+                                            </select>                            
+                                            <label for="schStr" class="blind">검색어</label> 
+                                            <input type="text" name="schStr" id="schStr" class="search_txt" value="" title="검색어 입력" placeholder="검색어를 입력해주세요">
+                                            <button type="submit" class="search">검색</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </pre>
+                        1) 리스트 유형1
+						<div class="text">
+                            <table class="board-list ">
+                                <caption>                                    
+                                    <p class="ir-text">번호,제목,등록일,조회수로 구성된 공지사항 리스트</p>
+                                </caption>                                    
+                                    <!--[if lt IE 9]>
+                                        <colgroup>
+                                                <col style="width:7%"  class="num">
+                                                <col style="width:auto"  class="subject">
+                                                <col style="width:11%" class="data">
+                                                <col style="width:11%"  class="hit">
+                                        </colgroup>
+                                    <![endif]-->
+                                <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">조회수</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="notice">
+                                    <td class="num"><img src="../images/images_2019/common/icon_notice.jpg" class="vertical-m" alt="공지"></td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr class="notice">
+                                    <td class="num"><img src="../images/images_2019/common/icon_notice.jpg" class="vertical-m" alt="공지"></td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">8</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">7</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">6</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">5</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">3</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">2</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>
+						<pre class="brush:xml;">
+                            <table class="board-list ">
+                                <caption>
+                                    <p class="ir-text">번호,제목,등록일,조회수로 구성된 공지사항 리스트</p>
+                                </caption>
+                                    <!--[if lt IE 9]>
+                                        <colgroup>
+                                                <col style="width:7%"  class="num">
+                                                <col style="width:auto"  class="subject">
+                                                <col style="width:11%" class="data">
+                                                <col style="width:11%"  class="hit">
+                                        </colgroup>
+                                    <![endif]-->
+                                <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">조회수</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="notice">
+                                    <td class="num"><img src="../images/images_2019/common/icon_notice.jpg" class="vertical-m" alt="공지"></td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr class="notice">
+                                    <td class="num"><img src="../images/images_2019/common/icon_notice.jpg" class="vertical-m" alt="공지"></td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">8</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">7</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">6</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">5</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">3</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">2</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1</td>
+                                    <td class="subject"><a href="#">공지사항 유형 반응형 테스트 </a></td>
+                                    <td class="data">2019-01-04</td>
+                                    <td class="hit">1000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            		
+						</pre>
+
+                        1) 리스트 유형2
+                        <div class="text">
+                            <div class="board-common">
+                                <ul class="board-list">
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none"> 자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 3</span>
+                                        </div>
+                                    </li>
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 5</span>
+                                        </div>
+                                    </li>
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none" >자동차안전연구원 홈페이지 시험 운영</a>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </li>
+                                    <!-- 게시글 출력 -->
+                                    <li>
+                                        <span class="num">6</span>
+                                        <strong class="title" >
+                                            <a href="#none">자동차안전연구원 홈페이지 시험 운영</a>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">5</span>
+                                        <strong class="title" >
+                                            <a href="#none">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 5</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">4</span>
+                                        <strong class="title" >
+                                            <a href="#none">한국교통안전공단과 함께하는 "자율주행Day" 시행 알림</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 2</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">3</span>
+                                        <strong class="title" >
+                                            <a href="#none"> 자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 3</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">2</span>
+                                        <strong class="title" >
+                                            <a href="#none">자동차안전・하자심의위원회 고시(고시4호)</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 4</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">1</span>
+                                        <strong class="title" >
+                                            <a href="#none">자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 0</span>
+                                        </div>
+                                    </li>
+                                    <!-- 게시글 출력 end -->
+                                </ul>
+                            </div>      
+                        </div>
+                        <pre class="brush:xml;">
+                            <div class="board-common">
+                                <ul class="board-list">
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none"> 자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 3</span>
+                                        </div>
+                                    </li>
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 5</span>
+                                        </div>
+                                    </li>
+                                    <li class="top-notice">
+                                        <strong class="ico-notice">공지</strong>
+                                        <strong class="title" >
+                                            <a href="#none" >자동차안전연구원 홈페이지 시험 운영</a>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </li>
+                                    <!-- 게시글 출력 -->
+                                    <li>
+                                        <span class="num">6</span>
+                                        <strong class="title" >
+                                            <a href="#none">자동차안전연구원 홈페이지 시험 운영</a>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">5</span>
+                                        <strong class="title" >
+                                            <a href="#none">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 5</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">4</span>
+                                        <strong class="title" >
+                                            <a href="#none">한국교통안전공단과 함께하는 "자율주행Day" 시행 알림</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 2</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">3</span>
+                                        <strong class="title" >
+                                            <a href="#none"> 자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 3</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">2</span>
+                                        <strong class="title" >
+                                            <a href="#none">자동차안전・하자심의위원회 고시(고시4호)</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 4</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="num">1</span>
+                                        <strong class="title" >
+                                            <a href="#none">자율주행실험도시(K-City) 무상사용 안내</a>
+                                                <span class="ico-file">
+                                                    <img src="/resource/templete/katri/img/common/ico-file.png" alt="첨부된 파일이 있습니다.">
+                                                </span>
+                                                </strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-24</span>
+                                            <span>조회 0</span>
+                                        </div>
+                                    </li>
+                                    <!-- 게시글 출력 end -->
+                                </ul>
+                            </div>                        
+                        </pre>
+
+                        2) 상세화면 유형1
+                        <div class="text">
+                            <div class="board-wrap">
+                                <div class="board-view">
+                                    <div class="view-info">
+                                        <strong class="title">
+                                            자동차안전연구원 홈페이지 시험 운영</strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26 08:21:43</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </div><!--// view-info-->
+                                    <div class="view-content">
+                                        <p>자동차안전연구원 홈페이지가 새롭게 구축되어, 현재 시험운영 중입니다.</p><p><br>
+                                        </p><p>- 시험운영기간 : 2019/12/26-2019/12/31</p><p><br></p><p>홈페이지 운영에 대한 의견이나 콘텐츠 오류가 있을 시, 연락바랍니다.</p><p><br>
+                                        </p><p>- 연구기획팀 : tel. 031-361-0219</p>
+                                    </div><!--// view-content-->
+                                    <div class="board-bottom">
+                                        <div class="btn-box">
+                                            <a href="#none"  class="btn bg-blue btn-list">목록</a>
+                                        </div><!--// btn-box-->
+                                        <ul class="prev-next-wrap">
+                                            <li>
+                                                <strong>이전글</strong>
+                                                <a href="#none" style="cursor: text; text-decoration: none;">이전글이 없습니다.</a>
+                                                    </li>
+                                            <li>
+                                                <strong>다음글</strong>
+                                                <a href="#none" onclick="fn_goView(133); return false;">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                            </li>
+                                        </ul><!--// prev-next-wrap-->
+                                    </div><!--// board-bottom-->                                
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="brush:xml;">
+                            <div class="board-wrap">
+                                <div class="board-view">
+                                    <div class="view-info">
+                                        <strong class="title">
+                                            자동차안전연구원 홈페이지 시험 운영</strong>
+                                        <div class="other-info">
+                                            <span>총괄관리</span>
+                                            <span>2019-12-26 08:21:43</span>
+                                            <span>조회 8</span>
+                                        </div>
+                                    </div><!--// view-info-->
+                                    <div class="view-content">
+                                        <p>자동차안전연구원 홈페이지가 새롭게 구축되어, 현재 시험운영 중입니다.</p><p><br>
+                                        </p><p>- 시험운영기간 : 2019/12/26-2019/12/31</p><p><br></p><p>홈페이지 운영에 대한 의견이나 콘텐츠 오류가 있을 시, 연락바랍니다.</p><p><br>
+                                        </p><p>- 연구기획팀 : tel. 031-361-0219</p>
+                                    </div><!--// view-content-->
+                                    <div class="board-bottom">
+                                        <div class="btn-box">
+                                            <a href="#none"  class="btn bg-blue btn-list">목록</a>
+                                        </div><!--// btn-box-->
+                                        <ul class="prev-next-wrap">
+                                            <li>
+                                                <strong>이전글</strong>
+                                                <a href="#none" style="cursor: text; text-decoration: none;">이전글이 없습니다.</a>
+                                                    </li>
+                                            <li>
+                                                <strong>다음글</strong>
+                                                <a href="#none" onclick="fn_goView(133); return false;">[수소버스 안전성 평가기술 및 장비개발 기획] 기술수요조사 공지</a>
+                                            </li>
+                                        </ul><!--// prev-next-wrap-->
+                                    </div><!--// board-bottom-->                                
+                                </div>
+                            </div>
+                        </pre>
+
+                        3) 갤러리 타입
+                        <div class="text">
+                            <div class="board_box">
+                                <ul class="gallery_type">
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=iTlL8S1H%2FVIrzAKk8%2BPEvgRtsgnkYbBbqg0dKEhIQa27Yp8oK9l63wrFbXOT0rJcmEXGXCxVeeoS%0D%0A2DZ1VD3cqA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화방안, 다섯!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=SEqZKY%2BV04YpAD5cvmaQ4kJ2aIEMpoYN4O26%2Bxt6gyFgWjFBPTQIqdZMDbilt%2FzvWA5WfB53XDs%2F%0D%0AM7s0vdVdyA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 넷!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=eWIzpECo2RaZb0tq3IB1vuZL9GXOCG%2F9Hf65Sf4IdqeVE7cJMFBD3OEq0OF43IRrTSUa1CXVnKXA%0D%0AN2zt2eo5aA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안 , 셋!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=fXIVvb17tnWdwi%2FmySllNdP0rOEWOI9Hf94FBJogvzjPPz9Icmtmm9hEYYAgXZgipDbsnPiOkuVJ%0D%0AG73mDr8wWA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 둘!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=0h1XGpgqfC0erPQuQcr1biYLHxZJQb7nGQV03lTKgeMkau6K%2BA9ZByD1%2FKWonhwTu33RngA0LiPU%0D%0AQhwZRKZz0w%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 하나!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=2w6dp9oWpHGouF7DRHzwu%2B8Gc1Cxh9Bw2uXJYjoe%2ByvMD5W%2BeuTSt73acaUGwjZKOMqUMbavXcBV%0D%0AA6M9bx5pMQ%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>미세먼지 결석처리 기준은 학교마다 다르지 않으며, 매번 의사의 진단서를 제출해야 질병결석 처리되는 것은 아닙니다.</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=l2h8Cb%2Feu2O0KYesaIF04zOUmrWtdtdguoWPF5C0pfgXgUZwuulgvCEl3QmvZ01Tt7GKM039G5Qu%0D%0A2IQR823Adg%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>학생부 간소화를 위한 '학교생활기록 작성 및 관리지침' 일부개정안 행정예고 및 신뢰, 공정성 제고 방안</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=1xyW3VMEzMRLcf8KcmBbiNFhRw7ab%2FnoB3jGK1F72ETJR6TIdH1xN43RPVCuTngJ3s6Js7agM18R%0D%0A3wgkGNwulg%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>2019 학교생활기록부 개선사항 안내 홍보 리플릿</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <pre class="brush:xml;">
+                            <div class="board_box">
+                                <ul class="gallery_type">
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=iTlL8S1H%2FVIrzAKk8%2BPEvgRtsgnkYbBbqg0dKEhIQa27Yp8oK9l63wrFbXOT0rJcmEXGXCxVeeoS%0D%0A2DZ1VD3cqA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화방안, 다섯!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=SEqZKY%2BV04YpAD5cvmaQ4kJ2aIEMpoYN4O26%2Bxt6gyFgWjFBPTQIqdZMDbilt%2FzvWA5WfB53XDs%2F%0D%0AM7s0vdVdyA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 넷!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=eWIzpECo2RaZb0tq3IB1vuZL9GXOCG%2F9Hf65Sf4IdqeVE7cJMFBD3OEq0OF43IRrTSUa1CXVnKXA%0D%0AN2zt2eo5aA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안 , 셋!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=fXIVvb17tnWdwi%2FmySllNdP0rOEWOI9Hf94FBJogvzjPPz9Icmtmm9hEYYAgXZgipDbsnPiOkuVJ%0D%0AG73mDr8wWA%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 둘!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=0h1XGpgqfC0erPQuQcr1biYLHxZJQb7nGQV03lTKgeMkau6K%2BA9ZByD1%2FKWonhwTu33RngA0LiPU%0D%0AQhwZRKZz0w%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>대입제도 공정성 강화 방안, 하나!</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=2w6dp9oWpHGouF7DRHzwu%2B8Gc1Cxh9Bw2uXJYjoe%2ByvMD5W%2BeuTSt73acaUGwjZKOMqUMbavXcBV%0D%0AA6M9bx5pMQ%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>미세먼지 결석처리 기준은 학교마다 다르지 않으며, 매번 의사의 진단서를 제출해야 질병결석 처리되는 것은 아닙니다.</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=l2h8Cb%2Feu2O0KYesaIF04zOUmrWtdtdguoWPF5C0pfgXgUZwuulgvCEl3QmvZ01Tt7GKM039G5Qu%0D%0A2IQR823Adg%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>학생부 간소화를 위한 '학교생활기록 작성 및 관리지침' 일부개정안 행정예고 및 신뢰, 공정성 제고 방안</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="#none">
+                                            <p class="thumb">
+                                            <img src="/comm/download.do?f=1xyW3VMEzMRLcf8KcmBbiNFhRw7ab%2FnoB3jGK1F72ETJR6TIdH1xN43RPVCuTngJ3s6Js7agM18R%0D%0A3wgkGNwulg%3D%3D" alt=""></p>
+                                        <p class="subj"><strong>2019 학교생활기록부 개선사항 안내 홍보 리플릿</strong></p>
+                                            <div class="infor">
+                                                <p>2019-12-18</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </pre>
+
+
+                        4) 웹진 타입
+                        <div class="clear">
+                            <div class="photo_list_wrap">
+                                <ul class="photo_list">
+                                    <li class="photo_item">
+                                        <a href="#">
+                                            <div role="text">
+                                                <div class="thumb">
+                                                    <span class="img">
+                                                        <img src="../src/img/temp/img1.jpg" alt="">
+                                                    </span>
+                                                </div>
+                                                <div class="cont">
+                                                    <div class="bx">
+                                                        <div class="title_inner">
+                                                            <strong class="title">
+                                                                웹진형 게시판 예시글이 들어가는 부분 올해설여뉴는 언제부터, 오늘 10일부터 고(故)
+                                                                웹진형 게시판 예시글이 들어가는 부분 올해설여뉴는 언제부터
+                                                            </strong>
+                                                            <p class="txt">
+                                                                올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지 디지털도서관 지하3층 대회의실에서 1일 6시간씩
+                                                                (오전10시부터 오후 17시) 이부일 대표이사(인사이트마이팅)를 초청하여 논문작성을 위한 R통계 분석
+                                                                교육 프올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지
+                                                            </p>
+                                                        </div>
+                                                        <div class="info_inner">
+                                                            <span class="date">2019.08.05</span>
+                                                            <span class="hits">조회 <span class="num">8,888,888</span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="photo_item">
+                                        <a href="#">
+                                            <div role="text">
+                                                <div class="thumb">
+                                                    <span class="img">
+                                                        <img src="../src/img/temp/img1.jpg" alt="">
+                                                    </span>
+                                                </div>
+                                                <div class="cont">
+                                                    <div class="bx">
+                                                        <div class="title_inner">
+                                                            <strong class="title">
+                                                                웹진형 게시판 예시글이 들어가는 부분 
+                                                            </strong>
+                                                            <p class="txt">
+                                                                올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지 디지털도서관 지하3층 대회의실에서
+                                                            </p>
+                                                        </div>
+                                                        <div class="info_inner">
+                                                            <span class="date">2019.08.05</span>
+                                                            <span class="hits">조회 <span class="num">8,888,888</span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- [D] 조회 결과 및 등록된 게시물이 없을 경우 -->
+                                    <li class="ucpho1_item no_cont">
+                                        <p class="txt">검색된 결과가 없습니다.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+						</div>
+
+					  <pre class="brush:xml;">
+                        <div class="photo_list_wrap">
+                            <ul class="photo_list">
+                                <li class="photo_item">
+                                    <a href="#">
+                                        <div role="text">
+                                            <div class="thumb">
+                                                <span class="img">
+                                                    <img src="../src/img/temp/img1.jpg" alt="">
+                                                </span>
+                                            </div>
+                                            <div class="cont">
+                                                <div class="bx">
+                                                    <div class="title_inner">
+                                                        <strong class="title">
+                                                            웹진형 게시판 예시글이 들어가는 부분 올해설여뉴는 언제부터, 오늘 10일부터 고(故)
+                                                            웹진형 게시판 예시글이 들어가는 부분 올해설여뉴는 언제부터
+                                                        </strong>
+                                                        <p class="txt">
+                                                            올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지 디지털도서관 지하3층 대회의실에서 1일 6시간씩
+                                                            (오전10시부터 오후 17시) 이부일 대표이사(인사이트마이팅)를 초청하여 논문작성을 위한 R통계 분석
+                                                            교육 프올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지
+                                                        </p>
+                                                    </div>
+                                                    <div class="info_inner">
+                                                        <span class="date">2019.08.05</span>
+                                                        <span class="hits">조회 <span class="num">8,888,888</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="photo_item">
+                                    <a href="#">
+                                        <div role="text">
+                                            <div class="thumb">
+                                                <span class="img">
+                                                    <img src="../src/img/temp/img1.jpg" alt="">
+                                                </span>
+                                            </div>
+                                            <div class="cont">
+                                                <div class="bx">
+                                                    <div class="title_inner">
+                                                        <strong class="title">
+                                                            웹진형 게시판 예시글이 들어가는 부분 
+                                                        </strong>
+                                                        <p class="txt">
+                                                            올해설여뉴는 언제부터은 29일(월)부터 31일(수)까지 디지털도서관 지하3층 대회의실에서
+                                                        </p>
+                                                    </div>
+                                                    <div class="info_inner">
+                                                        <span class="date">2019.08.05</span>
+                                                        <span class="hits">조회 <span class="num">8,888,888</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- [D] 조회 결과 및 등록된 게시물이 없을 경우 -->
+                                <li class="ucpho1_item no_cont">
+                                    <p class="txt">검색된 결과가 없습니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+					  </pre>
+
+                      5) 달력
+                      <div >
+                        <div class="calendar_wrap">
+                            <div class="calendar">
+                                <!-- calendar Header -->
+                                <div class="calendar_head">
+                                    <strong class="date">
+                                        <!-- [D] 현재 년/월 표시 영역 -->
+                                        <span class="title_year">2019년</span>
+                                        <span class="title_month">10월</span>
+                                    </strong>
+
+                                    <span class="btn_month_wrap btn_prev_wrap">
+                                        <!-- [D] 버튼 클릭 시 이전 달 달력 노출 -->
+                                        <button class="prev_month btn_month" type="button" title="이전달">
+                                            <span class="ir-text">이전달</span>
+                                        </button>
+                                    </span>
+
+                                    <span class="btn_month_wrap btn_next_wrap">
+                                        <!-- [D] 버튼 클릭 시 다음 달 달력 노출 -->
+                                        <button class="next_month btn_month" type="button" title="다음달">
+                                            <span class="ir-text">다음달</span>
+                                        </button>
+                                    </span>
+                                </div><!-- //calendar Header -->
+                                
+                                <!-- calendar Body -->
+                                <div class="calendar_body">
+                                    <table class="tbl_calendar">
+                                        <caption class="ir-text">예식장 대관일 선택 - 예식장 대관일을 선택할 수 있는 표입니다.</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="sun"><span>일</span></th>
+                                                <th scope="col"><span>월</span></th>
+                                                <th scope="col"><span>화</span></th>
+                                                <th scope="col"><span>수</span></th>
+                                                <th scope="col"><span>목</span></th>
+                                                <th scope="col"><span>금</span></th>
+                                                <th scope="col" class="sat"><span>토</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- [D] 각 tr의 맨 처음 th 및 td에는 sun 클래스가, 맨 마지막 th, td에는 sat 클래스가 들어감 -->
+                                            <!-- [D] td아래 span에 평일은 status status02, 주말은 status status01 클래스가 들어감 -->
+                                            <!-- [D] default 날짜 선택 값은 없음, 예약신청 버튼 클릭 시 td에 is_selected 클래스 추가되며, 이 날짜가 하단 예약신청 선택일자 영역에 표출됨. -->
+                                            <!-- [D] 빈 날짜 영역(저번달, 이전달)은 td에 not_month 클래스 추가 -->
+                                            <!-- [D] 주말엔 .btn_wedding_rent 버튼이 추가됨.
+                                            -신청불가 및 예약 마감의 경우는 버튼 대신 span으로 대체되며 disable 클래스 추가
+                                            -기존에 내가 신청한 내역이 있는 경우 해당 날짜의 버튼에 is_canceled 클래스 추가/신청취소 버튼으로 변경 -->
+                                            <tr>
+                                                <td class="sun not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td class="not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">1</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">2</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">3</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">4</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">5</strong>
+                                                        <span class="btn_wedding_rent disable">예약<br>마감</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">6</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">7</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">8</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">9</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">10</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">11</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">12</strong>
+                                                        <span class="btn_wedding_rent disable">예약<br>마감</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">13</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">14</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">15</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">16</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">17</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">18</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">19</strong>
+                                                        <button type="button" class="btn_wedding_rent is_canceled">신청<br>취소</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun is_selected">
+                                                    <span class="status status01">
+                                                        <strong class="day">20</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">21</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">22</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">23</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">24</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">25</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">26</strong>
+                                                        <span class="btn_wedding_rent disable">신청<br>불가</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">27</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">28</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">29</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">30</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">31</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td class="sat not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- //calendar Body -->
+                            </div> <!-- //calendar -->
+                        </div>
+                      </div>
+                      <pre class="brush:xml;">
+                        <div class="calendar_wrap">
+                            <div class="calendar">
+                                <!-- calendar Header -->
+                                <div class="calendar_head">
+                                    <strong class="date">
+                                        <!-- [D] 현재 년/월 표시 영역 -->
+                                        <span class="title_year">2019년</span>
+                                        <span class="title_month">10월</span>
+                                    </strong>
+
+                                    <span class="btn_month_wrap btn_prev_wrap">
+                                        <!-- [D] 버튼 클릭 시 이전 달 달력 노출 -->
+                                        <button class="prev_month btn_month" type="button" title="이전달">
+                                            <span class="ir-text">이전달</span>
+                                        </button>
+                                    </span>
+
+                                    <span class="btn_month_wrap btn_next_wrap">
+                                        <!-- [D] 버튼 클릭 시 다음 달 달력 노출 -->
+                                        <button class="next_month btn_month" type="button" title="다음달">
+                                            <span class="ir-text">다음달</span>
+                                        </button>
+                                    </span>
+                                </div><!-- //calendar Header -->
+                                
+                                <!-- calendar Body -->
+                                <div class="calendar_body">
+                                    <table class="tbl_calendar">
+                                        <caption class="ir-text">예식장 대관일 선택 - 예식장 대관일을 선택할 수 있는 표입니다.</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="sun"><span>일</span></th>
+                                                <th scope="col"><span>월</span></th>
+                                                <th scope="col"><span>화</span></th>
+                                                <th scope="col"><span>수</span></th>
+                                                <th scope="col"><span>목</span></th>
+                                                <th scope="col"><span>금</span></th>
+                                                <th scope="col" class="sat"><span>토</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- [D] 각 tr의 맨 처음 th 및 td에는 sun 클래스가, 맨 마지막 th, td에는 sat 클래스가 들어감 -->
+                                            <!-- [D] td아래 span에 평일은 status status02, 주말은 status status01 클래스가 들어감 -->
+                                            <!-- [D] default 날짜 선택 값은 없음, 예약신청 버튼 클릭 시 td에 is_selected 클래스 추가되며, 이 날짜가 하단 예약신청 선택일자 영역에 표출됨. -->
+                                            <!-- [D] 빈 날짜 영역(저번달, 이전달)은 td에 not_month 클래스 추가 -->
+                                            <!-- [D] 주말엔 .btn_wedding_rent 버튼이 추가됨.
+                                            -신청불가 및 예약 마감의 경우는 버튼 대신 span으로 대체되며 disable 클래스 추가
+                                            -기존에 내가 신청한 내역이 있는 경우 해당 날짜의 버튼에 is_canceled 클래스 추가/신청취소 버튼으로 변경 -->
+                                            <tr>
+                                                <td class="sun not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td class="not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">1</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">2</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">3</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">4</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">5</strong>
+                                                        <span class="btn_wedding_rent disable">예약<br>마감</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">6</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">7</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">8</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">9</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">10</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">11</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">12</strong>
+                                                        <span class="btn_wedding_rent disable">예약<br>마감</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">13</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">14</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">15</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">16</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">17</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">18</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">19</strong>
+                                                        <button type="button" class="btn_wedding_rent is_canceled">신청<br>취소</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun is_selected">
+                                                    <span class="status status01">
+                                                        <strong class="day">20</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">21</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">22</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">23</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">24</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">25</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="sat">
+                                                    <span class="status status01">
+                                                        <strong class="day">26</strong>
+                                                        <span class="btn_wedding_rent disable">신청<br>불가</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="sun">
+                                                    <span class="status status01">
+                                                        <strong class="day">27</strong>
+                                                        <button type="button" class="btn_wedding_rent">예약<br>신청</button>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">28</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">29</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">30</strong>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="status status02">
+                                                        <strong class="day">31</strong>
+                                                    </span>
+                                                </td>
+                                                <td class="not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                                <td class="sat not_month">
+                                                    <span>
+                                                        &nbsp;
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- //calendar Body -->
+                            </div> <!-- //calendar -->
+                        </div>
+                    
+                      </pre>
+
+                        
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+		<script src="js/jquery.1.11.0.min.js"></script>        
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>		
+        <script src="js/asidebar.jquery.js"></script>              	
+        <link rel="stylesheet" href="css/layout.css">  
+		 <script src="js/asidebar.jquery.js"></script>
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">        
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">        
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+        
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+ 
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+            
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>     
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>        
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+        <h2>퍼블리싱 체크리스트</h2>
+        <table  class="table_style" width="100%">
+                <colgroup>
+                <col width="14%">
+                <col width="*">
+                <col width="6%">
+                <col width="4%">
+            
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th rowspan="9">인식의 용이성</th>
+                    <td>의미 있는 이미지에 적절한 대체텍스트를 제공하고 있는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>의미가 있는 배경이미지를 사용한 경우 대체콘텐츠를 제공하였는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>이미지맵을 사용한경우 &lt;area&gt; 요소에 alt 값을 제공하였는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>텍스트가 없지만 의미가 있는 이미지(사진, 아이콘, 버튼)의 경우 대체텍스트를 제공하는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>장식 목적의 블릿(•)처럼 의미 없는 이미지에 alt 값을 제공하고 있지 않은가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>차트, 다이어그램 이미지를 대체할 수 있는 콘텐츠(요약, 표)를 제공하는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>약도 이미지에 찾아가는 방법을 설명하는 대체텍스트나 부연설명을 제공하는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>이미지가 없고 스타일이 적용되지 않은 상태에서도 내용을 이해하는데 문제가 없는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>약어, 숫자, 기호 등 텍스트만으로는 의미파악이 어려운 경우 이해를 도울 수 있는 title 값을 제공하는가?</td>
+                    <td><a href="#section1_1">1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            
+                <tr>
+                    <th rowspan="12">운용의 용이성</th>
+                    <td>페이지의 맨 앞에 반복되는 내용을 건너뛸 수 있는 링크를 제공하고 있으며 키보드로 접근이 가능한가?</td>
+                    <td><a href="#section2_4_1">2-4-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>키보드만으로 모든 내용과 컨트롤의 이용이 가능한가?</td>
+                    <td><a href="#section2_1_1">2-1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>키보드 탭 이동시 초점이 사라지거나 초점을 이동할수 없는 컨트롤이 있지 않은가?</td>
+                    <td><a href="#section2_1_1">2-1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>마우스로 동작하는 기능에 키보드로 동작하는 기능을 함께 제공하는가?</td>
+                    <td><a href="#section2_1_1">2-1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>내부에 스크롤바가 있는 내용에 키보드로 초점을 이동할 수 있고 위,아래 방향키로 내용을 확인할 수 있는가? (tabindex="0" 속성을 지정하거나 &lt;textarea&gt; 태그를 사용)</td>
+                    <td><a href="#section2_1_1">2-1-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>키보드의 초점이 논리적인 순서로 이동하는가?<br>(좌→우, 상→하, 아이디→비밀번호→로그인버튼, 탭1→내용1→탭2→내용2)</td>
+                    <td><a href="#section2_1_2">2-1-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>키보드로 레이어 열기 후 초점이 레이어 내용으로 바로 이동할 수 있고 레이어 닫기를 하면 열기 버튼을 눌렀던 자리로 초점이 되돌아 가는가?</td>
+                    <td><a href="#section2_1_2">2-1-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>링크나 버튼에 충분한 크기의 클릭 영역을 제공하는가? (최소 10×10 px)</td>
+                    <td><a href="#section2_1_2">2-1-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>자동으로 갱신되는 콘텐츠에 정지시키는 기능을 제공하는가? (필수: 마우스오버 또는 키보드 포커스가 되면 정지 | 선택: 정지버튼 제공)</td>
+                    <td><a href="#section2_2_2">2-2-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>페이지 고유의 제목을 &lt;title&gt; 로 제공 하였는가?</td>
+                    <td><a href="#section2_4_2">2-4-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>주요 내용의 제목을 &lt;h1&gt;~&lt;h6&gt;으로 마크업 하였는가?</td>
+                    <td><a href="#section2_4_2">2-4-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>내용을 불러오는 &lt;iframe&gt;에 해당 내용을 의미하는 title 값을 지정하였는가?</td>
+                    <td><a href="#section2_4_2">2-4-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            
+                <tr>
+                    <th rowspan="8">이해의 용이성</th>
+                    <td>링크가 스크립트를 통해 새창 또는 팝업창으로 열리는 경우 title="새창으로 열림" 값을 제공하는가? (target="_blank" 를 제공하는 경우 생략 가능)</td>
+                    <td><a href="#section3_2">3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;에 &lt;caption&gt; 으로 제목을 제공하고 있는가? (&lt;table&gt; 앞에 명확한 제목요소가 있는 경우는 &lt;caption&gt; 생략 가능)</td>
+                    <td><a href="#section3_3_2">3-3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;에 summary 속성으로 표의 전체적인 내용을 파악할 수 있는 요약을 제공하는가?</td>
+                    <td><a href="#section3_3_2">3-3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>가로헤더, 세로헤더가 있는 2차원 표에 &lt;th&gt;에 scope 값을 제공하는가?</td>
+                    <td><a href="#section3_3_2">3-3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>제목셀이 병합된 경우 scope="colgroup" 값을 제공하는가?</td>
+                    <td><a href="#section3_3_2">3-3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>내용셀이 병합된 경우 headers 속성으로 해당 셀의 제목들을 제공하는가?</td>
+                    <td><a href="#section3_3_2">3-3-2</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>콘텐츠가 논리적인 순서로 되어있는가? (탭 기능, 더보기 버튼)</td>
+                    <td><a href="#section3_3_1">3-3-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>HTML 코드에 lang 속성이 선언되어 있는가?</td>
+                    <td><a href="#section3_1">3-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            
+                <tr>
+                    <th rowspan="4">견고성</th>
+                    <td>HTML 문법에 오류가 없는가? (태그의 열고 닫음, 태그의 중첩, 중복 선언된 속성, 특정 태그에 넣을 수 없는 태그)</td>
+                    <td><a href="#section4_1">4-1</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>의미에 맞지 않는 마크업을 사용하고 있지 않은가?</td>
+                    <td><a href="#section4">4</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>낮은 버전의 브라우저에서도 기본적인 내용을 동일하게 제공하는가?</td>
+                    <td><a href="#section4">4</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>화면확대, 고대비 모드에서 내용을 정상적으로 확인이 가능한가?</td>
+                    <td><a href="#section4">4</a></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            
+        </tbody>  
+    </table>             
+	</div>
+</div>
+</body>
+</html>

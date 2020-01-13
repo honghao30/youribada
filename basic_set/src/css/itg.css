@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* 글로벌 변수 설정 */
+/* 공통요소 */
+.text-ellips { width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.multiline-ellips { line-clamp: 3; width: 80%; height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.box { border-radius: 10px; }
+
+/* 버튼 */
+.btn { padding: 8px 18px; color: #666; background: #fff; display: inline-block; font-size: 16px; text-align: center; vertical-align: middle; border: 1px solid #ccc; }
+.mini-btn-blue { padding: 3px 5px; color: #fff; background: #095084; font-size: 13px; }
+.mini-btn-orange { padding: 3px 5px; color: #fff; background: #d57504; font-size: 13px; }
+.small-btn-blue { padding: 5px 13px; color: #fff; background: #095084; }
+.small-btn-orange { padding: 5px 13px; color: #fff; background: #d57504; }
+.btn-blue { padding: 8px 18px; color: #fff; background: #095084; }
+.btn-orange { padding: 8px 18px; color: #fff; background: #d57504; }
+.larger-btn-blue { padding: 15px 25px; color: #fff; background: #095084; }
+.larger-btn-orange { padding: 15px 25px; color: #fff; background: #d57504; }
+
+/* //버튼 */
+/* 테이블 */
+.table { width: 100%; border-spacing: 0; border-collapse: collapse; }
+.table thead th { height: 45px; text-align: center; vertical-align: middle; }
+.table tbody td { text-align: center; vertical-align: middle; }
+
+.table-list { border-top: 2px solid #2b2b2b; }
+.table-list thead th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+.table-list tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+.table-body-only { border-top: 2px solid #2b2b2b; }
+.table-body-only tbody th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+.table-body-only tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+
+/* 폼 */
+.form-wrap { display: inline-block; }
+.input-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
+.input-wrap .input-text { width: 100%; height: 100%; text-indent: 10px; }
+.select-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
+.select-wrap .input-select { width: 100%; height: 100%; text-indent: 10px; background: url(); }
+
+/* 페이징1 */
+.paging { margin-top: 40px; text-align: center; }
+.paging > .page { display: inline-block; width: 36px; height: 36px; border: 1px solid #cdcdcd; font-size: 15px; color: #4d4d4d; line-height: 34px; text-align: center; vertical-align: middle; }
+.paging > .page:hover, .paging > .page:focus, .paging > .page.on { background: #18a2dc; border-color: #18a2dc; font-weight: normal; color: #fff; }
+.paging > .page:first-child { margin-left: 0; }
+.paging > .btn { position: relative; }
+.paging > .btn:after { display: block; position: absolute; top: 50%; left: 50%; width: 14px; height: 16px; background: url(../img/common/sp_ico.png) no-repeat 0 0; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); content: ""; }
+.paging > .prev_all:after { width: 21px; background-position: 2px -70px; }
+.paging > .prev:after { background-position: -20px -70px; }
+.paging > .next_all:after { width: 20px; background-position: -46px -70px; }
+.paging > .next:after { background-position: -32px -70px; }
+
+@media screen and (max-width: 1239px) { .paging > .page { width: 42px; height: 42px; font-size: 2.2rem; line-height: 40px; }
+  .paging > .btn:after { width: 12px; height: 18px; }
+  .paging > .prev_all:after { width: 20px; }
+  .paging > .next_all:after { width: 20px; } }
+
+@media screen and (max-width: 767px) { .paging { margin-top: 20px; font-size: 0; text-align: center; }
+  .paging > .page { width: 26px; height: 26px; margin-left: 4px; font-size: 1.6rem; line-height: 24px; }
+  .paging > .btn:after { width: 8px; height: 9px; background: url(../img/common/sp_ico_res.png) no-repeat 0 0; background-size: 150px auto; }
+  .paging > .prev_all:after { width: 10px; background-position: -52px -42px; }
+  .paging > .prev:after { background-position: -62px -42px; }
+  .paging > .next_all:after { width: 10px; background-position: -58px -52px; }
+  .paging > .next:after { background-position: -50px -52px; } }
+
+/* 페이징2 */
+.paginate { margin-top: 25px; font-size: 0; text-align: center; }
+.paginate a { display: inline-block; width: 36px; height: 36px; margin: 0 2px; border: 1px solid #ccc; vertical-align: middle; }
+.paginate a span { width: 36px; height: 36px; vertical-align: middle; }
+.paginate .sp_start { background-position: -22px -306px; }
+.paginate .sp_finish { background-position: -136px -306px; }
+.paginate .sp_prev { background-position: -60px -306px; }
+.paginate .sp_next { background-position: -98px -306px; }
+.paginate .paginate_input_wrap { display: inline-block; margin: 0 6px 0 14px; font-size: 18px; font-weight: 700; color: #575757; vertical-align: middle; }
+.paginate .paginate_input { display: inline-block; width: 27px; height: 34px; margin-right: 6px; border: 1px solid #ccc; font-size: 18px; font-weight: 700; color: #575757; text-align: center; }
+.paginate .total_num { margin-right: 14px; }
+.paginate .btn_page_go { width: 57px; height: 36px; background: #3980b2; font-weight: 500; color: #fff; line-height: 36px; }
+
+@media screen and (max-width: 767px) { .paginate { margin-top: 13px; }
+  .paginate a { width: 28px; height: 28px; border: 1px solid #ccc; vertical-align: middle; }
+  .paginate a span { width: 28px; height: 28px; vertical-align: middle; }
+  .paginate .sp_start { background-position: -120px -256px; }
+  .paginate .sp_prev { background-position: -87px -275px; }
+  .paginate .sp_next { background-position: -87px -305px; }
+  .paginate .sp_finish { background-position: -150px -256px; }
+  .paginate .paginate_input_wrap { margin: 0; font-size: 1.7rem; vertical-align: middle; }
+  .paginate .paginate_input { height: 28px; }
+  .paginate .btn_page_go { height: 28px; font-size: 1.7rem; line-height: 28px; } }
+
+/* 리스트 */
+/* //리스트 */

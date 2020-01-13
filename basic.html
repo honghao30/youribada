@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/asidebar.jquery.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+
+            <h2>목적</h2>
+            <p class="text">본 가이드는 ITGOOD 퍼블리싱 가이드문서이며 이하 ITG가이드라 한다.  
+                    고객사 및 개발팀의 요청사항을 제외한 모든 퍼블리싱 작업은 이 문서의 기준으로 진행한다.<br>
+                외주 인력을 투입시에  본 문서를 기준으로 한다.
+            </p>
+             <h2>품질관리</h2>
+            <p class="text">
+                모든 프로젝트의 퍼블리싱 작업의 완성도는 웹표준은 가장 기본이며 이하 기준에 맞추어야 한다. <br>
+                1) 웹접근성 준수 시 Watch 2.0 기준으로 95점이상 준수<br>
+                2) 웹접근성 인증마크 취득시 Wath 2.0 기준 100% 준수 및 웹접근성 자체 체크 문서 참조
+            </p>
+            <p class="text">
+                모든 프로젝트는 validator 필수체크 http://validator.w3.org 해야 한다.<br>
+                최소 기준은 크롬브라우저에서 콘솔오류는 뜨지 말아야 한다.
+            </p>
+            <p class="text">
+                모든 프로젝트는 퍼블리싱 작업 종료이후 사용된 플러그인 및 스크립트, 레이아웃등 본 가이드에 지정되지 않은 내용은 별도 정리하고 스크립트는 운영서버 기준으로 재 정리를 한다.<br>
+                퍼블리싱 결과물의 버전관리는 1차개발이 완료시까지이며 이후의 작업은 이클립스에서 진행한다.
+            </p>    
+            <p class="text">
+                사용된 외부 jquery 플러그인은 원본 이름 그대로 사용한다.<br>
+				부득이하게 이름을 변경할 경우 최상단에 주석으로 다운받은 주소등을 표시한다.
+            </p>       			
+            <h2>해상도 및 크로스브라우징</h2>                   
+            <p class="text">
+                    <strong>해상도</strong>
+                    <br><br>
+                    
+                    <strong>크로스브라우징</strong>
+                    ie9~, Chrome, Firefox 크로스브라우징, 사파리 화면유지
+            </p>  
+             <h2>유용한 사이트</h2>                   
+            <p class="text">
+                크로스브라우징 (<a href="https://caniuse.com/" target="_blank">https://caniuse.com/#tables</a>)<br><br>
+                Markup validity (<a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a>)
+            </p>  
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>        
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>		
+              	
+        <link rel="stylesheet" href="css/layout.css">        
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">        
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">        
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+        
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+ 
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+            
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script> 
+		
+
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+	<p class="text">
+			1.코드의 재사용성을 높이자<br>
+		2. 쉽게 유지보수 하자<br>
+		3. 확장 가능하게 하자<br>
+		4. 클래스명 만으로도 무슨 의미인지 예측 가능하도록 하자<br>
+		5. ID사용은 자제하며 프로그램상으로 컨트롤해야 하는 영역외에는 ID사용을 자제한다.<br>
+		6. 개발, 디버깅, 유지보수를 위하여 CSS 선택자의 이름을 가능한 한 명확하게 만드는 것이 목표이다.<br>
+		7. 내부에 종속되지 않게<br>			
+		</p>
+		<h2>이미지등 네이밍 유의사항</h2>
+		<p class="text">
+		이미지 네이밍의 조합은 '형태_의미_순서_상태'의 순서로 조합한다.<br>
+		같은 이름의 이미지가 두 개 이상 존재하면 숫자로 구분한다.<br>
+		이미지 네이밍은 이미지의 확장자에 관계 없이 순차적으로 적용한다. <br>
+		예) btn_confirm.gif, btn_confirm_02.jpg, btn_confirm_03.png<br>
+		임시이미지에 한하여 @특수문자를 처음으로 사용할 수 있다.<br>
+		이미지 예약어에 숫자, 영문소문자, 언더스코어(_)를 조합하여 사용한다.
+	
+		 </p>	
+        <h2>CSS 구성 </h2>
+		
+		<p class="text">
+			reset.css : 브라우저 reset 파일을 정의하며 글로벌로 영향을 미치는 요소에 정의한다.<br>
+			igt.css : 버튼,테이블,폼등 공통적인 요소에 대해서 정의한 css로 구성한다.<br>
+			layout.css : 레이아웃과 관련된 요소들만 구성<br>
+			기타 css는 프로젝트별 상황에 따라 정한다.
+		</p>	
+
+			<h2>클래스 작명 규칙(Convention) </h2>
+			<p class="text">
+
+		<strong>- 클래스 이름 규칙은 BEM(Block Element Modifier)스타일을 따른다.<br>
+		- block은 문단 전체에 적용된 element 또는 element를 담고 있는 컨테이너를 말한다.</strong>					
+
+			</p>
+			
+
+
+        <h2>블록(Block) & 요소(Element)</h2>
+		<p>
+		<strong>블록(Block)</strong><br>
+		태그, id 선택자를 사용하면 안된다.<br>
+블록은 서로 중첩해서 작성 할 수 있다.<br>
+		블록은 환경에 영향을 받지 않아야 한다. 즉, 여백이나 위치를 설정하면 안된다.<br>		
+재사용 할 수있는 기능적으로 독립적인 페이지 구성 요소. HTML에서 블록은 class 속성으로 표시된다.<br>
+형태(red, big)가 아닌 목적(menu, button)에 맞게 결정해야 한다.
+실제 환경에서 Block은 사이트의 Nav, Header, Footer 등에 해당<br><br>
+
+		<strong>요소(Element)</strong><br>
+블록안에서 특정 기능을 담당하는 부분.<br>
+block__element 형태로 사용 (더블 언더바)<br>
+형태(red, big)가 아닌 목적(item, text, title)에 맞게 결정해야 한다.<br>
+요소는 중첩해서 작성 할 수 있다.<br>
+요소는 블록의 부분으로만 사용 할 수 있고 다른 요소의 부분으로 사용할 수 없다.<br>
+모든 블록에서 요소는 필수가 아닌 선택적으로 사용한다. 즉 블록안에 요소가 없을 수도 있다.<br>
+예) menu__item, header__title …
+
+<br><br>
+
+
+		<strong>수식어(Modifier)</strong><br>
+블록이나 요소의 모양(color, size..), 상태(disabled, checked..)를 정의한다.<br>
+block__element — modifier, block — modifier 형태로 사용(더블 하이픈)<br>
+수식어의 블리언 타입과 키-벨류 타입이 있다.<br>
+블리언 타입 : 수식어가 있으면 값이 true 라고 가정한다. (form__button — disabled)<br>
+키-벨류 타입 : 키, 벨류를 하이픈으로 연결하여 표시한다. (color-red, theme-ocean)<br>
+수식어는 단독으로 사용할 수 없다. 즉 기본 블록과 요소에 추가하여 사용해야 한다. <br>
+( class=”block__element block__element — modifier”)
+		</p>
+
+	<h2>네이밍 규칙 - 구조와 스킨 분리</h2>
+
+<pre class="brush:xml;">
+/* 버튼 */
+.btn {display:inline-block;padding:10px 20px;background:#000;color:#fff;}
+.btn-blue {background:blue,width:120px;height:30px;text-align:center;}
+
+/*table */
+.table {width:100%;}
+</pre>
+
+예제)
+<pre class="brush:xml;">
+.btn {border:3px solid #000;padding:10px 20px;color:#fff;border-radius:10px;}
+   
+.btn-twitter {background:red;}
+.btn-facebook {background:gray;}
+  
+<a href="#" class="btn btn-twitter">Twitter</a>
+<a href="#" class="btn btn-facebook">Facebook</a>
+</pre>
+<p>테이블 등 </p>
+
+<pre class="brush:xml;">
+.login-wrap {width:100%;}
+.menu-wrap {width:100%;}
+</pre>	
+
+<h2>네이밍 규칙 - 상태를 나타내는 스타일 State</h2>
+<p>Hidden, expend, active, hover 등의 상태에서 사용 Class명에 “is-” 사용</p>
+
+<h2>선택자  </h2>
+<p class="text">
+타입 선택자를 사용하지 않습니다. 클래스 선택자를 사용합니다.
+선택자 우선순위(specificity)를 높이는 조합과 중첩을 사용하지 않습니다. 조합과 중첩은 3회를 초과하지 않습니다.
+여러 클래스를 묶을 때 쉼표 후 개행합니다.
+</p>
+<pre class="brush:xml;">
+
+/* Bad example */
+section.tweet > header { ... }
+section.tweet > header.tweet__header { ... }
+.tweet > .tweet__header, .tweet > .tweet__username { ... }
+
+/* Good example */
+.tweet { ... }
+.tweet-header,
+.tweet-username { ... }
+컴포넌트 #
+컴포넌트 별로 코드를 모아서 작성합니다.
+계층 구조의 순서에 따라 작성합니다.
+코드 블럭을 분리할 때 공백(줄 바꿈)을 일관성 있게 사용합니다.
+여러개의 *.scss 파일을 나눌 때, 페이지보다는 컴포넌트 별로 나눕니다.
+/* Modal: modal.scss */
+.modal { ... }
+.modal-header { ... }
+.modal-body { ... }
+.modal-footer { ... }
+.modal-footer-disabled { ... }
+</pre>
+
+
+<h2>미디어 쿼리 위치 </h2>
+<p class="text">
+미디어쿼리는 관련 규칙이 있는 자리에 모아 놓습니다.
+</p>
+<pre class="brush:xml;">
+.element { ... }
+.element-avatar { ... }
+.element-selected { ... }
+@media (min-width: 640px) {
+    .element { ... }
+    .element-avatar { ... }
+    .element-selected { ... }
+}
+
+</pre>
+<h2>주석 </h2>
+<p class="text">
+주석은 간결하게 작성합니다. scss 파일은 한 줄 주석(//) 사용이 가능하지만 CSS 파일에 남지 않기에 반드시 */...내용 ...*/ 을 사용한다.<br>
+주석은 가능한 시작과 끝에 모두 함으로 이동등 재활용의 편의성을 향상 시킨다.
+</p>
+<pre class="brush:xml;">
+/* Bad example */
+/* Modal - Wrapping element for .modal-header, .modal-body, modal-footer  */
+.modal {
+    ...
+}
+
+/* Good example */
+/* Modal */
+.modal {
+    ...
+}
+
+</pre>
+
+
+<p>예제: is-open 등</p>
+        <h2>대표적인 예약자 예제</h2>
+		<table class="table table-list">
+		<caption>분류별 예약어 부가설명</caption>
+		<thead>
+			<tr>
+				<th scope="col">분류</th>
+				<th scope="col">예약어</th>
+				<th scope="col">부가설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>타이틀</td>
+				<td>tit</td>
+				<td>일반적인 타이틀</td>
+			</tr>
+			<tr>
+				<td rowspan="3">영역</td>
+				<td>section</td>
+				<td>제목 태그(Heading Tag)를 지닌 영역 구분 (선택적 사용, 중첩사용 지양)</td>
+			</tr>
+			<tr>
+				<td>wrap</td>
+				<td>일반 영역의 묶음 (선택적 사용, 중첩사용 지양)</td>
+			</tr>
+			<tr>
+				<td>inner</td>
+				<td>부모 wrapper 가 존재하며 자식 묶음이 단독으로 필요한 경우</td>
+			</tr>
+			<tr>
+				<td rowspan="3">내비게이션</td>
+				<td>gnb</td>
+				<td>서비스 전체 내비게이션</td>
+			</tr>
+			<tr>
+				<td>lnb</td>
+				<td>지역 내비게이션(gnb 영역)</td>
+			</tr>
+			<tr>
+				<td>snb</td>
+				<td>사이드 내비게이션(좌측메뉴)</td>
+			</tr>
+			<tr>
+				<td>탭</td>
+				<td>tab</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>테이블</td>
+				<td>table</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>목록</td>
+				<td>list</td>
+				<td>일반 목록(ul, ol, 리스트 형식의 dl)</td>
+			</tr>
+
+			<tr>
+				<td>버튼</td>
+				<td>btn</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>박스</td>
+				<td>box</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>아이콘</td>
+				<td>ico</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="2">선</td>
+				<td>line_방향</td>
+				<td>일반 실선</td>
+			</tr>
+			<tr>
+				<td>line_dot_방향</td>
+				<td>점선</td>
+			</tr>
+			<tr>
+				<td>배경</td>
+				<td>bg</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>섬네일 이미지</td>
+				<td>thumb</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>페이징</td>
+				<td>paging</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>배너</td>
+				<td>bnr/banner</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="5">텍스트</td>
+				<td>txt</td>
+				<td>일반 텍스트</td>
+			</tr>
+			<tr>
+				<td>txt_bar</td>
+				<td>구분선 텍스트</td>
+			</tr>
+			<tr>
+				<td>num</td>
+				<td>ex) num1, num2, ... - 숫자 사용 시 언더바(underscore) 사용 X</td>
+			</tr>
+			<tr>
+				<td>copyright</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>time</td>
+				<td>날짜 및 시간</td>
+			</tr>
+			<tr>
+				<td>강조</td>
+				<td>emph</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="2">링크</td>
+				<td>link</td>
+				<td>일반 링크</td>
+			</tr>
+			<tr>
+				<td>link_more</td>
+				<td>더 보기 링크</td>
+			</tr>
+			<tr>
+				<td>순서</td>
+				<td>fst, mid, lst</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>팝업</td>
+				<td>popup</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>레이어</td>
+				<td>layer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>광고</td>
+				<td>ad</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>스페셜</td>
+				<td>spe</td>
+				<td>검색 스페셜 용도</td>
+			</tr>
+			<tr>
+				<td>위젯</td>
+				<td>widget_소재명</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>상세내용</td>
+				<td>desc</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>댓글</td>
+				<td>cmt</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+</div>
+</body>
+</html>

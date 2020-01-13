@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<title>국립중앙도서관</title>
+	<link rel="stylesheet" href="http://markup.sitegood.co.kr/path/css/path.css">
+	<style>
+		.page__viewer iframe{display:block;width:360px;height:640px}
+		.flag {
+			height: 20px;
+			font-size: 12px;
+			font-weight: normal;
+			color: #fff;
+			padding: 2px 10px;
+			border-radius: 10px;
+			vertical-align: middle
+		}
+		.flag.mod {
+			background-color: red;
+		}
+
+		.flag.add {
+			background-color: blue
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header" class="header">
+			<div class="header__inner">
+				<h1 class="header__title"><a href="index.html">국립중앙도서관</a></h1>
+				<p class="author">사용자(반응형) </p>
+				<!-- <button id="button-open" class="btn btn--open" type="button">상위 메뉴 열기</button> -->
+				<div role="navigation" id="nav" class="header__nav">
+					<h2 class="header__title-sub">레이아웃</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="00_main.html">메인</a>
+							<span class="txt-code">00_main.html</span>
+						</li>
+						<li>
+							<a href="00_sub.html">서브</a>
+							<span class="txt-code">00_sub.html</span>
+						</li>
+						<li>
+							<a href="00_uio.html">uio</a>
+							<span class="txt-code">00_uio.html</span>
+						</li>
+						<li>
+							<a href="00_uc_common.html">use case common</a>
+							<span class="txt-code">00_uc_common.html</span>
+						</li>
+						<li>
+							<a href="00_full_popup.html">전면 팝업</a>
+							<span class="txt-code">00_full_popup.html</span>
+						</li>
+						<li>
+							<a href="00_fullpop_report_error.html">팝업 : 자료 오류신고</a>
+							<span class="txt-code">00_fullpop_report_error.html</span>
+						</li>
+					</ul>
+					
+					<h2 class="header__title-sub">[자료검색]소장자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_01_collection.html">소장자료 목록</a>
+							<span class="txt-code">01_01_collection.html / UC_SRCH_001</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]디지털화 자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_02_digitization_resources.html">디지털화 자료</a>
+							<span class="txt-code">01_02_digitization_resources.html / UC_SRCH_001,UC_SRCH_002</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]신착자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_03_01_new_collections.html">신착자료</a>
+							<span class="txt-code">01_03_01_new_collections.html</span>
+						</li>
+						<li>
+							<a href="01_03_01_new_article.html">신착자료(학술기사)</a>
+							<span class="txt-code">01_03_01_new_article.html</span>
+						</li>
+						<li>
+							<a href="01_03_01_customized_new_collections.html">맞춤형 신착자료</a>
+							<span class="txt-code">01_03_01_customized_new_collections.html</span>
+						</li>
+						<li>
+							<a href="01_03_01_fullpop_post_copy.html">우편복사 신청 팝업</a>
+							<span class="txt-code">01_03_01_fullpop_post_copy.html / (공직자 전용 팝업)</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]Web DB</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_04_01_overseas_db.html">국외 DB</a>
+							<span class="txt-code">01_04_01_overseas_db.html / UC_API_007</span>
+						</li>
+						<li>
+							<a href="01_04_02_domestic_db.html">국내 DB</a>
+							<span class="txt-code">01_04_02_domestic_db.html / UC_API_007</span>
+						</li>
+						<li>
+							<a href="01_04_04_information_use.html">이용안내</a>
+							<span class="txt-code">01_04_04_information_use.html / uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]연계자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_05_01_agency_search.html">기관별 검색</a>
+							<span class="txt-code">01_05_01_agency_search.html / UC_SRCH_006</span>
+						</li>
+						<li>
+							<a href="01_05_02_db_search.html">DB별 검색</a>
+							<span class="txt-code">01_05_02_db_search.html / UC_SRCH_006</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]국가자료종합목록</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_06_kolis_net_list.html">국가자료종합목록</a>
+							<span class="txt-code">01_06_kolis_net_list.html / uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]한국고전적종합목록</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_08_korean_classic_list.html">한국고전적종합목록</a>
+							<span class="txt-code">01_08_korean_classic_list.html / uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[자료검색]근대문학종합목록</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="01_09_01_collection_search.html">자료찾기</a>
+							<span class="txt-code">01_09_01_collection_search.html / ucsrch7</span>
+						</li>
+						<li>
+							<a href="01_09_01_collection_search_result.html">자료찾기 결과(재검색)</a>
+							<span class="txt-code">01_09_01_collection_search_result.html / ucsrch7</span>
+						</li>
+						<li>
+							<a href="01_09_01_collection_search_detail.html">자료찾기 상세보기</a>
+							<span class="txt-code">01_09_01_collection_search_detail.html / ucsrch7</span>
+						</li>
+						<li>
+							<a href="01_09_02_history_of_modern.html">작가/작품정보 > 근대문학연표</a>
+							<span class="txt-code">01_09_02_history_of_modern.html / uccst08</span>
+						</li>
+						<li>
+							<a href="01_09_02_history_of_modern_year.html">작가/작품정보 > 근대문학연표 연도별 상세</a>
+							<span class="txt-code">01_09_02_history_of_modern_year.html / uccst08</span>
+						</li>
+						<li>
+							<a href="01_09_02_authors_info.html">작가/작품정보 > 작가정보 목록</a>
+							<span class="txt-code">01_09_02_authors_info.html / ucapi09</span>
+						</li>
+						<li>
+							<a href="01_09_02_authors_info_detail.html">작가/작품정보 > 작가정보 상세</a>
+							<span class="txt-code">01_09_02_authors_info_detail.html / ucapi09</span>
+						</li>
+						<li>
+							<a href="01_09_02_modern_literature_paperback.html">작가/작품정보 > 근대문학자료해제 > 단행본</a>
+							<span class="txt-code">01_09_02_modern_literature_paperback.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_modern_literature_paperback_detail.html">작가/작품정보 > 근대문학자료해제 > 단행본 상세</a>
+							<span class="txt-code">01_09_02_modern_literature_paperback_detail.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_modern_literature_magazine.html">작가/작품정보 > 근대문학자료해제 > 잡지</a>
+							<span class="txt-code">01_09_02_modern_literature_magazine.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_modern_literature_magazine_detail.html">작가/작품정보 > 근대문학자료해제 > 잡지 상세</a>
+							<span class="txt-code">01_09_02_modern_literature_magazine_detail.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_publication_paperback.html">작가/작품정보 > 발간자료 > 단행본</a>
+							<span class="txt-code">01_09_02_publication_paperback.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_publication_paperback_detail.html">작가/작품정보 > 발간자료 > 단행본 상세</a>
+							<span class="txt-code">01_09_02_publication_paperback_detail.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_publication_magazine.html">작가/작품정보 > 발간자료 > 잡지</a>
+							<span class="txt-code">01_09_02_publication_magazine.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_publication_magazine_detail.html">작가/작품정보 > 발간자료 > 잡지 상세</a>
+							<span class="txt-code">01_09_02_publication_magazine_detail.html / ucapi10</span>
+						</li>
+						<li>
+							<a href="01_09_02_card_news.html">작가/작품정보 > 카드뉴스</a>
+							<span class="txt-code">01_09_02_card_news.html / ucpho4</span>
+						</li>
+						<li>
+							<a href="01_09_02_card_news_detail.html">작가/작품정보 > 카드뉴스 상세</a>
+							<span class="txt-code">01_09_02_card_news_detail.html / ucpho4</span>
+						</li>
+						<li>
+							<a href="01_09_02_month_authors.html">작가/작품정보 > 이달의 작가</a>
+							<span class="txt-code">01_09_02_month_authors.html / ucapi11</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[컬렉션]디지털컬렉션</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="02_01_01_theme_collection.html">주제별컬렉션 목록</a>
+							<span class="txt-code">02_01_01_theme_collection.html / ucapi28</span>
+						</li>
+						<li>
+							<a href="02_01_01_theme_collection_detail.html">주제별컬렉션 상세</a>
+							<span class="txt-code">02_01_01_theme_collection_detail.html / ucapi28</span>
+						</li>
+						<li>
+							<a href="02_01_01_board_detail.html">주제별컬렉션 상세 > 콘텐츠 상세</a>
+							<span class="txt-code">02_01_01_board_detail.html / ucapi28</span>
+						</li>
+						<li>
+							<a href="02_01_02_exhibition_collection.html">전시컬렉션(온라인전시)</a>
+							<span class="txt-code">02_01_02_exhibition_collection.html / ucapi00</span>
+						</li>
+						<li>
+							<a href="02_01_03_global_library.html">세계의 도서관 목록</a>
+							<span class="txt-code">02_01_03_global_library.html / ucapi29</span>
+						</li>
+						<li>
+							<a href="02_01_03_global_library_detail.html">세계의 도서관 상세</a>
+							<span class="txt-code">02_01_03_global_library_detail.html / ucapi28</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[컬렉션]대한민국 신문 아카이브</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="02_02_02_newspaper_search.html">신문검색</a>
+							<span class="txt-code">02_02_02_newspaper_search.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_00_00_fullpop_mods.html">신문검색 상세(MODS보기)</a>
+							<span class="txt-code">02_00_00_fullpop_mods.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_00_00_fullpop_lod.html">신문검색 상세(LOD 보기/다운로드)</a>
+							<span class="txt-code">02_00_00_fullpop_lod.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_03_news_trend.html">신문 트렌드</a>
+							<span class="txt-code">02_02_03_news_trend.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_04_paper_chronicle.html">신문 연대기</a>
+							<span class="txt-code">02_02_04_paper_chronicle.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_05_toopicrelation_list.html">주제관계 서비스</a>
+							<span class="txt-code">02_02_05_toopicrelation_list.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_06_paper_select.html">신문 해제 선택</a>
+							<span class="txt-code">02_02_06_paper_select.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_06_paper_deselect.html">신문 해제 선택 상세</a>
+							<span class="txt-code">02_02_06_paper_deselect.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href="02_02_00_fullpop_news_archive.html">인기기사</a>
+							<span class="txt-code">02_02_00_fullpop_news_archive.html / ucsrch8</span>
+						</li>
+						<li>
+							<a href=".html">오늘자 신문엔 무슨일이? (오류신고)</a>
+							<span class="txt-code">? / ucsrch8</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[컬렉션]관보</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="02_03_01_old_korea.html">구한국관보 목록</a>
+							<span class="txt-code">02_03_01_old_korea.html / ucsrch9</span>
+						</li>
+						<li>
+							<a href="02_03_01_old_korea_detail.html">구한국관보 상세</a>
+							<span class="txt-code">02_03_01_old_korea_detail.html / ucsrch9</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_search_days.html">조선총독부관보 일자별검색(일별)</a>
+							<span class="txt-code">02_03_02_chosun_search_days.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_search_month.html">조선총독부관보 일자별검색(월별)</a>
+							<span class="txt-code">02_03_02_chosun_search_month.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_category.html">조선총독부관보 분류별검색</a>
+							<span class="txt-code">02_03_02_chosun_category.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_personalname.html">조선총독부관보 인명별검색</a>
+							<span class="txt-code">02_03_02_chosun_personalname.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_monthpaper.html">조선총독부관보 오늘의 관보</a>
+							<span class="txt-code">02_03_02_chosun_monthpaper.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_02_chosun_movie.html">조선총독부관보 홍보동영상</a>
+							<span class="txt-code">02_03_02_chosun_movie.html / ucsrch10</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_month.html">미군정청관보 일자별검색(월별)</a>
+							<span class="txt-code">02_03_03_usgov_search_month.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_days.html">미군정청관보 일자별검색(일별)</a>
+							<span class="txt-code">02_03_03_usgov_search_days.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_detail.html">미군정청관보 상세</a>
+							<span class="txt-code">02_03_03_usgov_detail.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_category.html">미군정청관보 분류별검색</a>
+							<span class="txt-code">02_03_03_usgov_search_category.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_personalname.html">미군정청관보 인명별검색(알파벳순)</a>
+							<span class="txt-code">02_03_03_usgov_search_personalname.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_personalname2.html">미군정청관보 인명별검색(가나다순)</a>
+							<span class="txt-code">02_03_03_usgov_search_personalname2.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_keyword.html">미군정청관보 키워드검색</a>
+							<span class="txt-code">02_03_03_usgov_search_keyword.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_search_monthpaper.html">미군정청관보 이달의 관보</a>
+							<span class="txt-code">02_03_03_usgov_search_monthpaper.html / ucsrch11</span>
+						</li>
+						<li>
+							<a href="02_03_03_usgov_statement.html">미군정청관보 통계로보는 미군정청관보</a>
+							<span class="txt-code">02_03_03_usgov_statement.html / ucsrch11</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[컬렉션]해외 한국 관련 기록물</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="02_04_01_information_use.html">이용안내</a>
+							<span class="txt-code">02_04_01_information_use.html / uchtml</span>
+						</li>
+						<li>
+							<a href="02_04_01_fullpop_record_groups.html">문서군 리스트 팝업</a>
+							<span class="txt-code">02_04_01_fullpop_record_groups.html / uchtml</span>
+						</li>
+						<li>
+							<a href="02_04_03_rg_guide.html">문서군 소개 > 문서군 가이드</a>
+							<span class="txt-code">02_04_03_rg_guide.html / ucbrd01</span>
+						</li>
+						<li>
+							<a href="02_04_03_rg_guide_detail.html">문서군 소개 > 문서군 가이드 상세</a>
+							<span class="txt-code">02_04_03_rg_guide_detail.html / ucbrd01</span>
+						</li>
+						<li>
+							<a href="02_04_03_introduce_records.html">문서군 소개 > 문서 소개</a>
+							<span class="txt-code">02_04_03_introduce_records.html / ucbrd01</span>
+						</li>
+						<li>
+							<a href="02_04_03_introduce_records_detail.html">문서군 소개 > 문서 소개 상세</a>
+							<span class="txt-code">02_04_03_introduce_records_detail.html / ucbrd01</span>
+						</li>
+						<li>
+							<a href="02_04_03_take_advantage.html">문서군 소개 > 문서 활용하기</a>
+							<span class="txt-code">02_04_03_take_advantage.html / ucbrd01</span>
+						</li>
+						<li>
+							<a href="02_04_03_take_advantage_detail.html">문서군 소개 > 문서 활용하기 상세</a>
+							<span class="txt-code">02_04_03_take_advantage_detail.html / ucbrd01</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[컬렉션]사서추천도서</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="02_05_01_board.html">사서추천도서</a>
+							<span class="txt-code">02_05_01_board.html / uccst14</span>
+						</li>
+						<li>
+							<a href="02_05_01_board_detail.html">사서추천도서</a>
+							<span class="txt-code">02_05_01_board_detail.html / uccst14</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관 이용]편의시설</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="04_05_05_wedding_hall_rent.html">예식장 대관>예약신청</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent.html</span>
+						</li>
+						<li>
+							<a href="04_05_05_wedding_hall_rent1.html">예식장 대관>예약신청1 개인정보 수집동의</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent1.html</span>
+						</li>
+						<li>
+							<a href="04_05_05_wedding_hall_rent2.html">예식장 대관>예약신청2 날짜 선택</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent2.html</span>
+						</li>
+						<li>
+							<a href="04_05_05_wedding_hall_rent3.html">예식장 대관>예약신청3 신청서류 제출</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent3.html</span>
+						</li>
+						<li>
+							<a href="04_05_05_wedding_hall_rent4.html">예식장 대관>예약신청4 신청자 정보 입력</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent4.html</span>
+						</li>
+						<li>
+							<a href="04_05_05_wedding_hall_rent5.html">예식장 대관>예약신청 완료 확인증 출력</a>
+							<span class="txt-code">04_05_05_wedding_hall_rent5.html</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관 이용]자주하는 질문</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="04_09_01_faq_main_library.html">본관</a>
+							<span class="txt-code">04_09_01_faq_main_library.html / ucfaq1</span>
+						</li>
+						<li>
+							<a href="04_09_02_faq_digital_library.html">디지털도서관</a>
+							<span class="txt-code">04_09_02_faq_digital_library.html / ucfaq1</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[메뉴구조도 없는]근대문학발간자료/근대문학참여기관</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="00_board.html">근대문학발간자료</a>
+							<span class="txt-code">00_board.html / uccst09</span>
+						</li>
+						<li>
+							<a href="00_board_detail.html">근대문학발간자료 상세보기</a>
+							<span class="txt-code">00_board_detail.html / uccst09</span>
+						</li>
+						<li>
+							<a href="00_board2.html">근대문학참여기관</a>
+							<span class="txt-code">00_board2.html / uccst10</span>
+						</li>
+						<li>
+							<a href="00_board2_detail.html">근대문학참여기관 상세보기</a>
+							<span class="txt-code">00_board_detail.html / uccst10</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[신청·참여]견학</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="03_07_01_tour_information.html">견학안내</a>
+							<span class="txt-code">03_07_01_tour_information.html</span>
+						</li>
+						<li>
+							<a href="03_07_02_tour_reservation.html">예약</a>
+							<span class="txt-code">03_07_02_tour_reservation.html / ucreq4</span>
+						</li>
+						<li>
+							<a href="03_07_01_pop_library_tour.html">접수증</a>
+							<span class="txt-code">03_07_01_pop_library_tour.html / 상단유틸 내서재>도서관 견학>접수증과 동일</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[신청·참여]사회봉사</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="03_08_02_library_welfare_apply1.html">도서관사회봉사>봉사신청</a>
+							<span class="txt-code">03_08_02_library_welfare_apply1.html</span>
+						</li>
+						<li>
+							<a href="03_08_02_library_welfare_apply2.html">도서관사회봉사>봉사신청</a>
+							<span class="txt-code">03_08_02_library_welfare_apply2.html</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관이용]설문조사</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="04_10_poll_list.html">설문조사 목록</a>
+							<span class="txt-code">04_10_poll_list.html / ucpoll1</span>
+						</li>
+						<li>
+							<a href="04_10_poll_detail.html">설문조사 상세</a>
+							<span class="txt-code">04_10_poll_detail.html / ucpoll1</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관소개]국립중앙도서관</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_01_01_greetings.html">인사말</a>
+							<span class="txt-code">05_01_01_greetings.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_02_history_main_building1.html">연혁>본관>2000 ~ 현재</a>
+							<span class="txt-code">05_01_02_history_main_building1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_02_history_main_building2.html">연혁>본관>1980 ~ 1999</a>
+							<span class="txt-code">05_01_02_history_main_building2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_02_history_main_building3.html">연혁>본관>1960 ~ 1979</a>
+							<span class="txt-code">05_01_02_history_main_building3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_02_history_main_building4.html">연혁>본관>1940 ~ 1959</a>
+							<span class="txt-code">05_01_02_history_main_building4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_02_history_digital_library.html">연혁>디지털도서관</a>
+							<span class="txt-code">05_01_02_history_digital_library.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_03_group_apparatus_organization_chart.html">조직&middot;기구>조직도</a>
+							<span class="txt-code">05_01_03_group_apparatus_organization_chart.html/ ucapi25</span>
+						</li>
+						<li>
+							<a href="05_01_03_group_apparatus_organization_table.html">조직&middot;기구>조직도 테이블</a>
+							<span class="txt-code">05_01_03_group_apparatus_organization_table.html/ ucapi25</span>
+						</li>
+						<li>
+							<a href="05_01_04_logo_libraryfont1.html">로고&middot;도서관체>로고</a>
+							<span class="txt-code">05_01_04_logo_libraryfont1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_04_logo_libraryfont2.html">로고&middot;도서관체>도서관체</a>
+							<span class="txt-code">05_01_04_logo_libraryfont2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo1.html">도서관 사진>본관</a>
+							<span class="txt-code">05_01_05_library_photo1.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo2.html">도서관 사진>디지털도서관</a>
+							<span class="txt-code">05_01_05_library_photo2.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo3.html">도서관 사진>국립장애인도서관</a>
+							<span class="txt-code">05_01_05_library_photo3.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo4.html">도서관 사진>국립어린이청소년도서관</a>
+							<span class="txt-code">05_01_05_library_photo4.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo5.html">도서관 사진>국립세종도서관</a>
+							<span class="txt-code">05_01_05_library_photo5.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_05_library_photo6.html">도서관 사진>기타</a>
+							<span class="txt-code">05_01_05_library_photo6.html/ ucpho02</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status1.html">시설자료현황>시설현황>본관</a>
+							<span class="txt-code">05_01_06_facility_status1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status2.html">시설자료현황>시설현황>사서연수관</a>
+							<span class="txt-code">05_01_06_facility_status2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status3.html">시설자료현황>시설현황>자료보존관</a>
+							<span class="txt-code">05_01_06_facility_status3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status4.html">시설자료현황>시설현황>디지털도서관</a>
+							<span class="txt-code">05_01_06_facility_status4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status5.html">시설자료현황>시설현황>어린이청소년도서관</a>
+							<span class="txt-code">05_01_06_facility_status5.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_facility_status6.html">시설자료현황>시설현황>세종도서관</a>
+							<span class="txt-code">05_01_06_facility_status6.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_06_material_status1.html">시설자료현황>자료현황>인포그래픽스로 보는 통계</a>
+							<span class="txt-code">05_01_06_material_status1.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_01_06_material_status1_detail.html">시설자료현황>자료현황>인포그래픽스로 보는 통계_상세보기</a>
+							<span class="txt-code">05_01_06_material_status1_detail.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_01_06_material_status2.html">시설자료현황>자료현황>장서현황</a>
+							<span class="txt-code">05_01_06_material_status2.html/ uccst05</span>
+						</li>
+						<li>
+							<a href="05_01_06_material_status3.html">시설자료현황>자료현황>소장 지정문화재</a>
+							<span class="txt-code">05_01_06_material_status3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_collection_guidelines_1.html">도서관 업무>장서개발지침>장서개발지침의 기본방향과 원칙</a>
+							<span class="txt-code">05_01_07_collection_guidelines_1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_collection_guidelines_2.html">도서관 업무>장서개발지침>장서개발 기본지침</a>
+							<span class="txt-code">05_01_07_collection_guidelines_2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_collection_guidelines_3.html">도서관 업무>장서개발지침>장서개발 세부지침</a>
+							<span class="txt-code">05_01_07_collection_guidelines_3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_collection_guidelines_4.html">도서관 업무>장서개발지침>주제별 장서개발 지침</a>
+							<span class="txt-code">05_01_07_collection_guidelines_4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection1.html">도서관 업무>자료수집>납본</a>
+							<span class="txt-code">05_01_07_task_data_collection1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection2.html">도서관 업무>자료수집>구입</a>
+							<span class="txt-code">05_01_07_task_data_collection2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection3.html">도서관 업무>자료수집>기증</a>
+							<span class="txt-code">05_01_07_task_data_collection3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection4.html">도서관 업무>자료수집>국제교환</a>
+							<span class="txt-code">05_01_07_task_data_collection4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection5.html">도서관 업무>자료수집>기타</a>
+							<span class="txt-code">05_01_07_task_data_collection5.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_collection6.html">도서관 업무>자료수집>자료수집현황</a>
+							<span class="txt-code">05_01_07_task_data_collection6.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_data_organization.html">도서관 업무>자료조직</a>
+							<span class="txt-code">05_01_07_task_data_organization.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_bibliographic_publication.html">도서관 업무>서지발간</a>
+							<span class="txt-code">05_01_07_task_bibliographic_publication.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_cooperative_activities1.html">도서관 업무>도서관협력활동>국내협력</a>
+							<span class="txt-code">05_01_07_task_cooperative_activities1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_cooperative_activities2.html">도서관 업무>도서관협력활동>국제협력</a>
+							<span class="txt-code">05_01_07_task_cooperative_activities2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_library_informatization.html">도서관 업무>도서관정보화</a>
+							<span class="txt-code">05_01_07_task_library_informatization.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_librarian_education.html">도서관 업무>사서교육</a>
+							<span class="txt-code">05_01_07_task_librarian_education.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_old_document1.html">도서관 업무>고문헌관리>자료수집현황</a>
+							<span class="txt-code">05_01_07_task_old_document1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_07_task_old_document2.html">도서관 업무>고문헌관리>연구활동</a>
+							<span class="txt-code">05_01_07_task_old_document2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_09_map_map.html">찾아오시는 길>지도</a>
+							<span class="txt-code">05_01_09_map_map.html/ ucapi01</span>
+						</li>
+						<li>
+							<a href="05_01_09_map_building.html">찾아오시는 길>건물 안내도</a>
+							<span class="txt-code">05_01_09_map_building.html/ ucapi01</span>
+						</li>
+						<li>
+							<a href="05_01_09_map_parking.html">찾아오시는 길>주차안내</a>
+							<span class="txt-code">05_01_09_map_parking.html/ ucapi01</span>
+						</li>
+						<li>
+							<a href="05_01_08_digitization_resources_term_use.html">도서관협력망>디지털화 자료 이용협약 > 디지털화 자료 이용협약 개요</a>
+							<span class="txt-code">05_01_08_digitization_resources_term_use.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_digitization_resources_copyright_convention.html">도서관협력망>디지털화 자료 이용협약 > 저작권 협약도서관 현황</a>
+							<span class="txt-code">05_01_08_digitization_resources_copyright_convention.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_digitization_resources_convention_procedure.html">도서관협력망>디지털화 자료 이용협약 > 협약절차 안내</a>
+							<span class="txt-code">05_01_08_digitization_resources_convention_procedure.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_national_information_summary.html">도서관협력망>국가정책정보협의회>국가정책정보협의회 개요</a>
+							<span class="txt-code">05_01_08_national_information_summary.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_national_information_status.html">도서관협력망>국가정책정보협의회>회원기관 현황</a>
+							<span class="txt-code">05_01_08_national_information_status.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_national_information_apply.html">도서관협력망>국가정책정보협의회>가입절차 및 신청</a>
+							<span class="txt-code">05_01_08_national_information_apply.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_ask_librarian_summary.html">도서관협력망>사서에게 물어보세요>개요</a>
+							<span class="txt-code">05_01_08_ask_librarian_summary.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_ask_librarian_background_progress.html">도서관협력망>사서에게 물어보세요>추진배경 및 경과</a>
+							<span class="txt-code">05_01_08_ask_librarian_background_progress.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_ask_librarian_cases.html">도서관협력망>사서에게 물어보세요>국내외 사례</a>
+							<span class="txt-code">05_01_08_ask_librarian_cases.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_ask_librarian_participation_library.html">도서관협력망>사서에게 물어보세요>참여도서관</a>
+							<span class="txt-code">05_01_08_ask_librarian_participation_library.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_ask_librarian_limitation_liability.html">도서관협력망>사서에게 물어보세요>책임의 한계</a>
+							<span class="txt-code">05_01_08_ask_librarian_limitation_liability.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce1.html">도서관협력망>한국고전적보존협의회>협의회 소개>인사말</a>
+							<span class="txt-code">05_01_08_membership_organization_introduce1.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce2.html">도서관협력망>한국고전적보존협의회>협의회 소개>연혁</a>
+							<span class="txt-code">05_01_08_membership_organization_introduce2.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce3.html">도서관협력망>한국고전적보존협의회>협의회 소개>목적</a>
+							<span class="txt-code">05_01_08_membership_organization_introduce3.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce4.html">도서관협력망>한국고전적보존협의회>협의회 소개>회원기관소개</a>
+							<span class="txt-code">05_01_08_membership_organization_introduce4.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce5.html">도서관협력망>한국고전적보존협의회>협의회 소개>조직도</a>
+							<span class="txt-code">05_01_08_membership_organization_introduce5.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_membership_organization_introduce6.html">도서관협력망>한국고전적보존협의회>협의회 소개>회칙</a>
+							<span class="txt-code">6_01_08_membership_organization_introduce6.html/ uccst15</span>
+						</li>
+						<li>
+							<a href="05_01_08_board1.html">도서관협력망>한국고전적보존협의회>자료실</a>
+							<span class="txt-code">05_01_08_board1.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_01_08_board1_detail.html">도서관협력망>한국고전적보존협의회>자료실_상세보기</a>
+							<span class="txt-code">05_01_08_board1_detail.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_01_08_modern_literature_agency_list.html">도서관협력망>근대문학종합 목록>참여기관 목록 - 목록</a>
+							<span class="txt-code">05_01_08_modern_literature_agency_list.html/ uccst10</span>
+						</li>
+						<li>
+							<a href="05_01_08_modern_literature_agency_detail.html">도서관협력망>근대문학종합 목록>참여기관 목록 - 상세</a>
+							<span class="txt-code">05_01_08_modern_literature_agency_detail.html/ uccst10</span>
+						</li>
+						<li>
+							<a href="05_01_08_modern_literature_list_system.html">도서관협력망>근대문학종합 목록>근대문학종합목록시스템</a>
+							<span class="txt-code">05_01_08_modern_literature_list_system.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_01_08_modern_literature_cooperation_network.html">도서관협력망>근대문학종합 목록>근대문학정보협력망</a>
+							<span class="txt-code">05_01_08_modern_literature_cooperation_network.html/ uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[국립어린이청소년도서관]국립어린이청소년도서관</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_02_01_introduce_library.html">도서관소개</a>
+							<span class="txt-code">05_02_01_introduce_library.html/ uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[국립장애인도서관]국립장애인도서관</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_03_01_introduce_library.html">도서관소개</a>
+							<span class="txt-code">05_02_01_introduce_library.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_03_01_information.html">장애인정보누리터</a>
+							<span class="txt-code">05_03_01_information.html/ uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[국립세종도서관]국립세종도서관</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_04_01_introduce_library.html">도서관소개</a>
+							<span class="txt-code">05_02_01_introduce_library.html/ uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관소개]도서관소식</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_05_01_notice_list.html">공지공고_리스트</a>
+							<span class="txt-code">05_05_01_notice_list.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_05_01_notice_detail.html">공지공고_상세보기</a>
+							<span class="txt-code">05_05_01_notice_detail.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_05_06_talent_recruitment_list.html">인재채용_리스트</a>
+							<span class="txt-code">05_05_06_talent_recruitment_list.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_05_06_talent_recruitment_detail.html">인재채용_상세보기</a>
+							<span class="txt-code">05_05_06_talent_recruitment_detail.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_05_07_board.html">보도자료_리스트</a>
+							<span class="txt-code">05_05_07_board.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_05_07_board_detail.html">보도자료_상세보기</a>
+							<span class="txt-code">05_05_07_board_detail.html/ ucbrd03</span>
+						</li>
+						<li>
+							<a href="05_05_08_board.html">포토뉴스</a>
+							<span class="txt-code">05_05_08_board.html/ ucpho1</span>
+						</li>
+						<li>
+							<a href="05_05_08_board_detail.html">포토뉴스_상세보기</a>
+							<span class="txt-code">05_05_08_board_detail.html/ ucpho1</span>
+						</li>
+						<li>
+							<a href="05_05_09_board.html">동영상뉴스</a>
+							<span class="txt-code">05_05_09_board.html/ ucvod01</span>
+						</li>
+						<li>
+							<a href="05_05_09_board_detail.html">동영상뉴스_상세보기</a>
+							<span class="txt-code">05_05_09_board_detail.html/ ucvod01</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관소개]발간자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_06_01_board.html">발간자료>납본주보</a>
+							<span class="txt-code">05_06_01_board.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_02_todays_library.html">발간자료>오늘의 도서관</a>
+							<span class="txt-code">05_06_02_todays_library.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_03_library.html">발간자료>도서관</a>
+							<span class="txt-code">05_06_03_library.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_04_annual_report.html">발간자료>연보</a>
+							<span class="txt-code">05_06_04_annual_report.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_05_national_bibliography.html">발간자료>대한민국 국가서지</a>
+							<span class="txt-code">05_06_05_national_bibliography.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_06_board.html">발간자료>연구자료</a>
+							<span class="txt-code">05_06_06_board.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_07_national_policy.html">발간자료>국가정책정보협의회</a>
+							<span class="txt-code">05_06_07_national_policy.html/ ucfile1</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_resource_list.html">기타자료>자료집 목록</a>
+							<span class="txt-code">05_06_08_other_resource_list.html/ ucfile3</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_resource_detail.html">기타자료>자료집 상세</a>
+							<span class="txt-code">05_06_08_other_resource_detail.html/ ucfile3</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_video_list.html">기타자료>동영상 목록</a>
+							<span class="txt-code">05_06_08_other_video_list.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_video_detail.html">기타자료>동영상 상세</a>
+							<span class="txt-code">05_06_08_other_video_detail.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_other_list.html">기타자료>기타 목록</a>
+							<span class="txt-code">05_06_08_other_other_list.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_06_08_other_other_detail.html">기타자료>기타 상세</a>
+							<span class="txt-code">05_06_08_other_other_detail.html/ ucbrd01</span>
+						</li>
+						<li>
+							<a href="05_06_02_board.html">메뉴구조도에 없는 첨부 기타자료</a>
+							<span class="txt-code">05_06_02_board.html/ ucfile3</span>
+						</li>
+						<li>
+							<a href="05_06_03_board.html">메뉴구조도에 없는 첨부 도서관</a>
+							<span class="txt-code">05_06_03_board.html/ ucfile2</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관소개]정보공개</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_07_01_information_disclosure_system1.html">정보공개>정보공개제도안내>정보공개청구 및 처리절차</a>
+							<span class="txt-code">05_07_01_information_disclosure_system1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system2.html">정보공개>정보공개제도안내>정보공개제도란?</a>
+							<span class="txt-code">05_07_02_information_disclosure_system2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system3.html">정보공개>정보공개제도안내>정보공개의 청구권자</a>
+							<span class="txt-code">05_07_01_information_disclosure_system3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system4.html">정보공개>정보공개제도안내>비공개 되는 정보</a>
+							<span class="txt-code">05_07_01_information_disclosure_system4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system5.html">정보공개>정보공개제도안내>정보공개방법</a>
+							<span class="txt-code">05_07_01_information_disclosure_system5.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system6.html">정보공개>정보공개제도안내>불복구제절차방법</a>
+							<span class="txt-code">05_07_01_information_disclosure_system6.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_01_information_disclosure_system7.html">정보공개>정보공개제도안내>정보공개수수료</a>
+							<span class="txt-code">05_07_01_information_disclosure_system7.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_02_board.html">정보공개>정보공개목록>관장업무 추진비</a>
+							<span class="txt-code">05_07_02_board.html/ ucbrd04</span>
+						</li>
+						<li>
+							<a href="05_07_02_board2.html">정보공개>정보공개목록>계약현황</a>
+							<span class="txt-code">05_07_02_board2.html/ ucbrd04</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication1.html">정보공개>사전정보공표>국민생활</a>
+							<span class="txt-code">05_07_03_prior_information_publication1.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication2.html">정보공개>사전정보공표>국민편의</a>
+							<span class="txt-code">05_07_03_prior_information_publication2.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication3.html">정보공개>사전정보공표>예산사업</a>
+							<span class="txt-code">05_07_03_prior_information_publication3.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication4.html">정보공개>사전정보공표>행정감시</a>
+							<span class="txt-code">05_07_03_prior_information_publication4.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication5.html">정보공개>사전정보공표>현황/통계</a>
+							<span class="txt-code">05_07_03_prior_information_publication5.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_03_prior_information_publication6.html">정보공개>사전정보공표>그 밖의 정보</a>
+							<span class="txt-code">05_07_03_prior_information_publication6.html/ uchtml</span>
+						</li>
+						<li>
+							<a href="05_07_04_public_data_open.html">정보공개>공공데이터개방</a>
+							<span class="txt-code">05_07_04_public_data_open.html/ uchtml</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[도서관소개]관내사이트 안내</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="05_08_01_board.html">관내사이트 안내>일반이용자</a>
+							<span class="txt-code">05_08_01_board.html/ uccst06</span>
+						</li>
+						<li>
+							<a href="05_08_02_publisher.html">관내사이트 안내>출판사</a>
+							<span class="txt-code">05_08_02_publisher.html/ uccst06</span>
+						</li>
+						<li>
+							<a href="05_08_03_librarian.html">관내사이트 안내>사서</a>
+							<span class="txt-code">05_08_03_librarian.html/ uccst06</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]신청내역</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_01_01_on_today_apply_board.html">자료열람 > 자료당일신청 게시판</a>
+							<span class="txt-code">07_01_01_on_today_apply_board.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_night_apply_board.html">자료열람 > 야간도서관신청 게시판</a>
+							<span class="txt-code">07_01_01_night_apply_board.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_weekend_apply_board.html">자료열람 > 보존용 자료 (주말예약) 게시판</a>
+							<span class="txt-code">07_01_01_weekend_apply_board.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_ancient_apply_board.html">자료열람 > 고문헌실 신청 (보존예약-3일 후 평일이용) 게시판</a>
+							<span class="txt-code">07_01_01_ancient_apply_board.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_postcopy_apply_board.html">자료열람 > 우편복사신청 게시판</a>
+							<span class="txt-code">07_01_01_postcopy_apply_board.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_postcopy_apply_detail.html">자료열람 > 우편복사신청 상세</a>
+							<span class="txt-code">07_01_01_postcopy_apply_detail.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_01_postcopy_apply_modify.html">자료열람 > 우편복사신청 수정</a>
+							<span class="txt-code">07_01_01_postcopy_apply_modify.html / UC_MY_008</span>
+						</li>
+						<li>
+							<a href="07_01_02_furnish_data_board.html">비치희망도서 게시판</a>
+							<span class="txt-code">07_01_02_furnish_data_board.html / UC_MY_009</span>
+						</li>
+						<li>
+							<a href="07_01_02_furnish_data_detail.html">비치희망도서 상세</a>
+							<span class="txt-code">07_01_02_furnish_data_detail.html / UC_MY_009</span>
+						</li>
+						<li>
+							<a href="07_01_02_furnish_data_modify.html">비치희망도서 수정</a>
+							<span class="txt-code">07_01_02_furnish_data_modify.html / UC_MY_009</span>
+						</li>
+						<li>
+							<a href="07_01_03_global_book_apply_board.html">외국도서 구입추천 게시판</a>
+							<span class="txt-code">07_01_03_global_book_apply_board.html / UC_MY_010</span>
+						</li>
+						<li>
+							<a href="07_01_03_global_book_apply_detail.html">외국도서 구입추천 상세</a>
+							<span class="txt-code">07_01_03_global_book_apply_detail.html / UC_MY_010</span>
+						</li>
+						<li>
+							<a href="07_01_04_my_libray_welfare.html">사회봉사 게시판</a>
+							<span class="txt-code">07_01_04_my_libray_welfare.html / UC_MY_001</span>
+						</li>
+						<li>
+							<a href="07_01_04_my_libray_welfare_detail.html">사회봉사 상세보기</a>
+							<span class="txt-code">07_01_04_my_libray_welfare_detail.html / UC_MY_001</span>
+						</li>
+						<li>
+							<a href="07_01_04_my_libray_welfare_modify.html">사회봉사 상세 수정</a>
+							<span class="txt-code">07_01_04_my_libray_welfare_modify.html / UC_MY_001</span>
+						</li>
+						<li>
+							<a href="07_01_05_library_tour_board.html">도서관 견학 게시판</a>
+							<span class="txt-code">07_01_05_library_tour_board.html / UC_MY_002</span>
+						</li>
+						<li>
+							<a href="07_01_05_library_tour_detail.html">도서관 견학 상세</a>
+							<span class="txt-code">07_01_05_library_tour_detail.html / UC_MY_002</span>
+						</li>
+						<li>
+							<a href="07_01_05_pop_library_tour.html">도서관 견학 접수증</a>
+							<span class="txt-code">07_01_05_pop_library_tour.html / UC_MY_002</span>
+						</li>
+						<li>
+							<a href="07_01_06_education_info_use_board.html">정보활용능력교육 게시판</a>
+							<span class="txt-code">07_01_06_education_info_use_board.html / UC_MY_003</span>
+						</li>
+						<li>
+							<a href="07_01_07_mailing_service_board.html">메일링서비스 게시판</a>
+							<span class="txt-code">07_01_07_mailing_service_board.html / UC_MY_004</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]질문내역</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_02_identification.html">본인확인</a>
+							<span class="txt-code">07_02_identification.html</span>
+						</li>
+						<li>
+							<a href="07_02_board.html">질문내역 게시판</a>
+							<span class="txt-code">07_02_board.html / UC_MY_007</span>
+						</li>
+						<li>
+							<a href="07_02_board_detail_question.html">질문내역 상세(미답변)</a>
+							<span class="txt-code">07_02_board_detail_question.html / UC_MY_007</span>
+						</li>
+						<li>
+							<a href="07_02_board_detail_reply.html">질문내역 상세(답변)</a>
+							<span class="txt-code">07_02_board_detail_reply.html / UC_MY_007</span>
+						</li>
+						<li>
+							<a href="07_02_board_detail_re-question.html">질문내역 상세(추가질문)</a>
+							<span class="txt-code">07_02_board_detail_re-question.html / UC_MY_007</span>
+						</li>
+						<li>
+							<a href="07_02_board_detail_re-reply.html">질문내역 상세(추가답변)</a>
+							<span class="txt-code">07_02_board_detail_re-reply.html / UC_MY_007</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]바구니</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_03_cart.html">바구니/국립중앙도서관</a>
+							<span class="txt-code">07_03_cart.html</span>
+						</li>
+						<li>
+							<a href="07_03_cart2.html">바구니/디지털도서관</a>
+							<span class="txt-code">07_03_cart2.html</span>
+						</li>
+						<li>
+							<a href="07_03_cart3.html">바구니/기타</a>
+							<span class="txt-code">07_03_cart3.html</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]내가 이용한 자료</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_04_mydata.html">내가 이용한 자료 / 본관</a>
+							<span class="txt-code">07_04_mydata.html</span>
+						</li>
+						<li>
+							<a href="07_04_mydata2.html">내가 이용한 자료 / 디지털도서관</a>
+							<span class="txt-code">07_04_mydata2.html</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]스크랩</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_05_scrap_board.html">스크랩</a>
+							<span class="txt-code">07_05_scrap_board.html / ucmy5</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]학술지목차메일링서비스</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_07_01_information_use.html">서비스 소개</a>
+							<span class="txt-code">07_07_01_information_use.html</span>
+						</li>
+						<li>
+							<a href="07_07_02_brm_search.html">정부기능분류별 학술지 검색</a>
+							<span class="txt-code">07_07_02_brm_search.html / ucmy6</span>
+						</li>
+						<li>
+							<a href="07_07_03_condition_search.html">조건별 학술지 검색</a>
+							<span class="txt-code">07_07_03_condition_search.html / ucmy6</span>
+						</li>
+					</ul>
+					<h2 class="header__title-sub">[상단util>내서재]우리집 e서재</h2>
+					<ul class="header__nav__list">
+						<li>
+							<a href="07_08_08_user_guide.html">이용안내</a>
+							<span class="txt-code">07_08_08_user_guide.html</span>
+						</li>
+						<li>
+							<a href="07_08_08_estudyroom_list.html">도서등록 검색등록</a>
+							<span class="txt-code">07_08_08_estudyroom_list.html</span>
+						</li>
+						<li>
+							<a href="07_08_08_estudyroom_add.html">도서등록 직접등록</a>
+							<span class="txt-code">07_08_08_estudyroom_add.html</span>
+						</li>
+						<li>
+							<a href="07_08_09_estudyroom_list.html">e서재 목록</a>
+							<span class="txt-code">07_08_09_estudyroom_list.html</span>
+						</li>
+						<li>
+							<a href="07_08_09_estudyroom_view.html">e서재 상세</a>
+							<span class="txt-code">07_08_09_estudyroom_view.html</span>
+						</li>
+						<li>
+							<a href="07_08_09_estudyroom_lypop.html">서평쓰기 팝업</a>
+							<span class="txt-code">07_08_09_estudyroom_lypop.html</span>
+						</li>
+	
+						<li>
+							<a href="07_08_08_estudyroom_modify.html">e서재 수정</a>
+							<span class="txt-code">07_08_08_estudyroom_modify.html</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- <div class="header__nav header__nav--upper">
+			<h2 class="header__title"><a href="../../path/path.html">마크업가이드</a></h2>
+			<button id="button-close" class="btn btn--close" type="button">상위 메뉴 닫기</button>
+			<ul id="nav-upper" class="header__nav__list"></ul>
+		</div> -->
+		</div>
+		<div id="content" class="page">
+			<strong class="page__title"><span id="page-title">-</span><span id="page-size" class="page__size"></span></strong>
+			<div class="page__viewer">
+				<iframe id="page-viewer" width="360" height="732" frameborder="0" src=""></iframe>
+				<button id="button-resize" type="button" title="더블클릭시 기본사이즈로 돌아갑니다">창크기 조절</button>
+				<div id="dummy-dimmed" class="dimmed"></div>
+			</div>
+			<div class="page__info">
+				<ul class="page__info__list">
+					<li class="page__info__item">
+						<strong class="title">URL:</strong>
+						<span class="desc"><a id="page-url" href="#" target="_blank"></a></span>
+					</li>
+					<li class="page__info__item qrcode">
+						<strong class="title">QR코드:</strong>
+						<span id="page-qrcode" class="desc"></span>
+					</li>
+					<li class="page__info__item">
+						<strong class="title">설명:</strong>
+						<span class="desc" id="page-desc">-</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+	<script src="http://markup.sitegood.co.kr/path/js/qrcode.min.js"></script>
+	<script src="http://markup.sitegood.co.kr/path/js/listing_index.js"></script>
+</body>
+
+</html>

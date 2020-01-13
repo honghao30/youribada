@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* 글로벌 변수 설정 */
+$main-linkcolor: #666;
+
+
+
+@mixin ellipse-one($wid:100%)
+    {
+        width:$wid;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    }
+.text-ellips {
+	@include ellipse-one(80%);
+}
+@mixin multiline( $line-clanp, $wid,$ht ) {
+    line-clamp: $line-clanp;
+    width:$wid;
+    height:$ht;
+  }
+
+  
+@mixin btn-basic ($padding,$color,$bgcolor) {
+    padding:$padding;
+    color:$color;
+    background:$bgcolor;
+  }
+  
+  
+  @mixin clearfix {
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+  
+  
+  
+  @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+              border-radius: $radius;
+    }
+
+    
+@mixin prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+      @if not index($known-prefixes, $prefix) {
+        @warn "Unknown prefix #{$prefix}.";
+      }
+      -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+  }
+  

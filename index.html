@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 컨벤션</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/asidebar.jquery.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>           
+              
+	</head>
+
+<body>
+<div id="wrapper">
+	
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+       		<div style="padding:30px;text-align:center;">
+				<img src="images/sass.gif" alt="">
+			</div>
+
+			<div style="font-size:20px;text-align:center;">
+				<strong style="font-size:25px;">제작자</strong><br>
+				홍성호, 윤혜림, 송아선, 김우성, 박현민, 류주현
+			</div>
+
+			<div class="text" style="margin-top:20px;">
+				ITG Markup Convention에 따른 기본 셋팅이 되어 있는 폴더입니다.<br>
+				내부 작업자 및 외부 작업자 모두 새로운 프로젝트를 시작할 때 이 파일을 다운로드 하여 사용해주시기 바랍니다.
+				<a href="basic_set.zip" style="font-weight:700;text-decoration:underline;">basic_set 다운로드</a>
+			</div>
+
+	</div>
+
+</div>
+</body>
+</html>

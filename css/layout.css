@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+a:hover{text-decoration: none;}
+li {list-style: none;}
+#wrapper {width:100%;}
+
+#nav {width:250px;top:40px;position: absolute; box-shadow: 7px 0 60px rgba(0,0,0,0.05); background:#fff;border-right:1px #ccc solid;}
+#head {position:fixed;left:0;top:0;text-align: center;padding:5px 0;border-bottom:1px solid #ddd;width:100%;color:#fff;font-size:20px; z-index:5000;box-shadow: 1px 0px 4px 4px rgba(23, 23, 23, 0.19); background-image: linear-gradient(135deg,#fdab1b 0,#d9534f 100%);}
+#head a:link,
+#head a:visited,
+#head a:active {color:#fff;}
+#content { width:100%; position:relative; margin:0 auto; max-width:1240px;padding-top:90px;}
+
+.btn_mobile {display:none;}
+
+
+
+
+@media only screen and (max-width:768px) {
+	 #head h1 {margin:15px 0;font-size:1.3rem;}
+	 #nav {width:320px;top:28px;}
+    .btn_mobile {}
+    .btn_mobile {display:block;position: absolute; left:10px;top:5px;height:40px;background-color: transparent; background-image: none; border: 1px solid transparent; border-radius: 3px;}
+    .btn_mobile .icon-bar { background-color: rgba(255,255,255,0.9);height: 4px; width: 25px;display:block;margin:4px 0;}
+    .btn_mobile .sr-only  { background-color: rgba(255,255,255,0.9);height: 4px; width: 25px;display:block;margin:4px 0;}
+
+
+    .aside {min-width: 320px;position: absolute;top: 0;left: -330px;background-color: #fafafa;
+        border-right: 1px solid #333; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        z-index: 2000; width: 0px; min-width: 0px;  overflow: hidden; transition: 0.35s width ease, 0.35s min-width ease;z-index:5001; }
+     
+      
+      .aside .aside-header .close {
+        float: right;
+        cursor: pointer;
+      }
+      
+      .aside.in {min-width: 320px;left:0;
+      }
+      
+      .aside-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000;
+        transition: 0.2s opacity ease;
+        opacity: 0;
+        display: none;
+      }
+      
+      .aside-backdrop.in {
+        display: block;
+        opacity: 0.5;
+      }
+
+}
+
+
+  
+#head a:link,
+#head a:visited,
+#head a:active {color:#fff;}
+#content { width:100%; position:relative; margin:0 auto; max-width:1240px;}
+
+.dscBox{border:1px solid #dcdcdc;border-radius: 6px;padding: 20px;font-size: 16px;line-height: 160%;background: #f4f4f487;}
+
+table.table_style {border-collapse:collapse;margin-top:10px;}
+table.table_style th,
+table.table_style td {border:1px solid #ccc;padding:5px 10px;}
+table.table_style th {background-color:#f8f8f8;}
+table.table_style thead th {background-color:#e0e0e0;}
+table.table_style caption {margin-bottom:5px;}
+
+
+.treeset {}
+.treeset li {background:url(../images/ico_tree.gif) 0 0 no-repeat; padding-left:20px;}
+.treeset li.last {background:url(images/ico_treelast.gif) 0 0 no-repeat;}
+.treeset li .folder {display:inline-block; background:url(../images/ico_folder.gif) 0 50% no-repeat; padding-left:18px; height:22px; line-height:22px;}
+.treeset li .paper {display:inline-block; background:url(../images/ico_paper.gif) 0 50% no-repeat; padding-left:18px; height:22px; line-height:22px;}
+.treeset ul {background:url(../images/ico_treeline.gif) 0 100% no-repeat;}
+
+
+
+/* fieldset : 폼 그룹핑이 아닌 그리드 설명용으로 사용됨 */
+fieldset.guide {border:1px solid #333;margin:20px 0;padding:10px;font-size:12px;line-height:20px;letter-spacing:0;}
+fieldset.guide fieldset.guide {margin:5px;}
+fieldset.guide fieldset {margin:5px 0 0;}
+fieldset.guide legend {position:static !important;left:0 !important;top:0 !important;width:auto !important;height:auto !important;padding:0 4px !important;visibility:visible !important;font-size:12px !important;line-height:20px !important;text-indent:0 !important;font-weight:bold;}
+
+
+
+.menu-lnb{ padding:0px; width:100%}
+.menu-lnb>li>a{position:relative;display:block;width:100%;min-height:32px;font-size:16px;color:#fff;font-weight:bold;  padding:10px 15px;text-align:left;line-height:1.3;box-sizing:border-box;-webkit-box-sizing:border-box;  border-bottom: 1px #ffffff70 solid;}
+.menu-lnb>li.lnb1>a{background:#736b6b;}
+.menu-lnb>li.lnb2>a{background:#9a3038}
+.menu-lnb>li.lnb3>a{background:#4174b6}
+.menu-lnb>li>a:hover{color:#042040;}
+.menu-lnb__sub {padding:6px 20px 6px 20px;background:#f1f4f769;}
+.menu-lnb__sub li {width:100%;margin-top:1px}
+.menu-lnb__sub li:first-child{margin:0}
+.menu-lnb__sub__item.is_lnb_opened a{font-weight:700;color:#3f8fc8}
+.menu-lnb__sub__item.is_lnb_opened a:after{width:5px;height:10px;margin:5px 0 0 8px;background-position:-264px -49px;content:''}
+.menu-lnb__sub li a{display:block;position:relative;padding:5px 14px;font-size:14px;color:#495057}
+.menu-lnb__sub lia:before{position:absolute;top:14px;left:0;width:2px;height:2px;background:#003964;content:''}
+.menu-lnb__sub li a:hover,.menu-lnb__sub__item a:focus{color:#3f8fc8;}
+.menu-lnb__sub li a:hover:after{width:5px;height:10px;margin:5px 0 0 8px;background-position:-264px -49px;content:''}
+
+
+
+@media only screen and (max-width:768px) {
+	.menu-lnb__sub{padding:3px 10px 3px 10px;}
+    .mobile-menu {display: none;}
+    .mobile-menu.is_open {display:block;position: absolute;top:80px;left:0;z-index: 1000;background: #fff;}
+    .menu-lnb {z-index: 1000;background: #fff;}
+}
+
+.cont  { position:relative; padding:10px; }
+.cont h2 {font-size:30px;font-weight:700; background:url(../images/h2.gif) no-repeat; padding-left:10px}
+.cont .text {border:1px solid #dcdcdc;border-radius:6px;padding:20px;font-size:16px;line-height:160%; background:#f4f4f487}
+ h2 {font-size:30px;font-weight:700; background:url(../images/h2.gif) no-repeat; padding-left:10px}
+.text{border:1px solid #dcdcdc;border-radius:6px;padding:20px;font-size:16px;line-height:160%; background:#f4f4f487}
+
+.table {width:100%;border-collapse:collapse;margin-top:10px;}
+.table-list th {background-color:#f8f8f8;text-align:center;height:50px;vertical-align:middle;font-weight:500;font-size:16px;}
+.table-list td {text-align:center;height:50px;vertical-align:middle;font-size:16px;}
+
+@media only screen and (max-width:768px) {
+    #content {padding-top:60px;}
+	.cont h2{margin:10px 0;font-size:2.0rem;}
+	.cont .h3,.cont h3{font-size:1.7rem;}
+	.cont .text{padding:10px;font-size:1.3rem;}
+    .cont img {width:100%;}
+	.cont a{word-break:break-all;}
+
+	.table-list th{font-size:1.3rem;}
+	.table-list td{font-size:1.3rem;}
+}

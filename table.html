@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>  
+		<script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/layout.css">
+
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+            <h2>table</h2>
+            <p class="text">
+				테이블은 기본적으로 table 클래스를 사용하며 리스트형과 본문형,상단고정형,반응형웹에서 구현할수 있는 몇가지 보편적인 방법론을 제시한다.
+            </p>
+             <h2>접근성 부분</h2>
+            <p class="text">
+				접근성을 위해 모든 테이블은 caption 에 테이블의 요약정보를 제공한다.<br><br>
+
+
+            </p>
+				<pre class="brush:xml;">
+					&lt;caption&gt;번호,이름,주소로 구성된 주소록 표&lt;/caption&gt;
+				</pre>
+             <h2>클래스명 규칙</h2>
+            <p class="text">
+				table의 클래스명은 부트스트랩 기반의 유형을 차용한다.<br>
+				모든 테이블은 테이블의 공통요소를 .table 클래스에 정의한다.
+            </p>
+		<pre class="brush:xml;">
+				.table {width:100%;border-spacing: 0;border-collapse: collapse;}
+
+		</pre>
+             <h2>클래스명 규칙 - 리스트형</h2>
+		<pre class="brush:xml;">
+
+				.table-list thead th {text-align:center;border:1px solid #ccc;height:50px;}
+				.table-list tbody td {text-align:center;border:1px solid #ccc;height:50px;}
+		</pre>
+		<p class="text">
+			기본 디자인보다 높이가 줄어든 형태를 구현할 경우 .shot-table 을 추가하고 css에 정의한다.
+		</p>
+             <h2>클래스명 규칙 - 세로형</h2>
+         <p class="text">
+			 thead영역이 없는 표 형태
+		</p>
+		<pre class="brush:xml;">
+
+				.table-body-only tbody th {text-align:center;border:1px solid #ccc;height:50px;}
+				.table-body-only tbody td {text-align:center;border:1px solid #ccc;height:50px;}
+		</pre>
+		<p class="text">
+			기본 디자인보다 높이가 줄어든 형태를 구현할 경우 .shot-table 을 추가하고 css에 정의한다.<br>
+			그외 디자인적인 표현을 위해서 마우스 호버효과 .hover 줄무늬 .table-striped 를 추가한다.
+		</p>
+         <h2>가변형 테이블</h2>
+         <p class="text">
+			 테이블은 기본적으로 100%가변형으로 마크업하며 폭이 고정되어야 할 필요성이 있는 경우는 table-layout:fixed; 를 추가한다.
+		</p>
+         <h2>반응형의 구현</h2>
+         <p class="text">
+
+			 td,th 등 모든 요소를 block 화 시켜 라인으로 풀어주는 등 여러 기법이 존재하지만 보편적으로 사용되는 기법을 차용하며 이하 방법론은 참조한다.<br><br>
+			예제1)<br>
+			 <a href="https://codepen.io/jaehee/pen/aWmdNV" target="_blank">코드핀에서 보기</a><br>
+			 예제2)<br>
+			 <a href="https://mcatcher.github.io/project/rwtable/rwtable.html"  target="_blank">예제보기</a>
+		</p>
+	</div>
+</div>
+</body>
+</html>

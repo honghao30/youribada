@@ -1,0 +1,217 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/layout.css">
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>
+        <script type="text/javascript">
+            //<![CDATA[
+                window.onload=function(){
+                    $("#keyword").keyup(function() {
+                        var k = $(this).val();
+                        $(".table-list > tbody > tr").hide();
+                        var temp = $(".table-list > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                        $(temp).parent().show();
+                    })
+                }
+            //]]>
+        </script>
+        <style>
+            .css-namesarch {border:2px solid #ccc;padding:15px;text-align:center;}
+        </style>
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+	<body>
+		<div id="nav">
+			<div id="head">
+				<h1><a href="index.html">ITG Markup Team Convention(v1.0)</a></h1>
+				<button type="button" class="btn_mobile" onclick="$('.aside').asidebar('open')">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		</div>
+		<div  id="content" class="cont">
+				<p class="text">
+					js파일은 이하 내용 및 https://codepen.io/  게시된 내용을 참조하시기 바랍니다<br>
+					itg common.js 파일을 사용할 경우 동일한 효과가 구현됩니다.
+				</p>
+
+						<h2 id="nav-sect">네비게이션</h2>
+							<p class="text">
+								TYPE 1
+							</p>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao30" data-slug-hash="BaywErG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GNB_1">
+							<span>See the Pen <a href="https://codepen.io/honghao30/pen/BaywErG">
+							GNB_1</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+							<p class="text">
+								TYPE 2
+							</p>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao30" data-slug-hash="VwYrpEr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GNB_2">
+							<span>See the Pen <a href="https://codepen.io/honghao30/pen/VwYrpEr">
+							GNB_2</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+							<p class="text">
+								TYPE 3
+							</p>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao30" data-slug-hash="gObvGJq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GNB_3">
+								<span>See the Pen <a href="https://codepen.io/honghao30/pen/gObvGJq">
+							GNB_3</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+						<h2 id="dropdown-sect">토글/드랍다운</h2>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="honghao30" data-slug-hash="WNbXoGN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="nav">
+								<span>See the Pen <a href="https://codepen.io/honghao30/pen/WNbXoGN"> nav</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+						<h2 id="tab-sect">탭</h2>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="css,result" data-user="honghao30" data-slug-hash="WNbZWNg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tab menu">
+								<span>See the Pen <a href="https://codepen.io/honghao30/pen/WNbZWNg">Tab menu</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+						<h2 id="slide-sect">슬라이드</h2>
+							<p class="text">
+								MAIN SLIDER
+							</p>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao40" data-slug-hash="vYERKvw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="slider 1">
+								<span>See the Pen <a href="https://codepen.io/honghao40/pen/vYERKvw">
+								slider 1</a> by hsh@itgood.co.kr (<a href="https://codepen.io/honghao40">@honghao40</a>)
+								on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+							<p class="text">
+								BANNER
+							</p>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao40" data-slug-hash="LYEdZKq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="family site slide">
+								<span>See the Pen <a href="https://codepen.io/honghao40/pen/LYEdZKq">
+								family site slide</a> by hsh@itgood.co.kr (<a href="https://codepen.io/honghao40">@honghao40</a>)
+								on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+						<h2 id="family-sect">패밀리사이트</h2>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao40" data-slug-hash="QWwmEOy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Relate-site">
+							<span>See the Pen <a href="https://codepen.io/honghao40/pen/QWwmEOy">
+							Relate-site</a> by hsh@itgood.co.kr (<a href="https://codepen.io/honghao40">@honghao40</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+						<h2 id="modal-sect">모달</h2>
+							<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="honghao30" data-slug-hash="PowRzBY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="모달">
+							<span>See the Pen <a href="https://codepen.io/honghao30/pen/PowRzBY">
+							모달</a> by honghao30 (<a href="https://codepen.io/honghao30">@honghao30</a>)
+							on <a href="https://codepen.io">CodePen</a>.</span>
+							</p>
+							<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+
+		</div>
+
+	</body>
+</html>

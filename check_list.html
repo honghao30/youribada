@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>        
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>		
+              	
+        <link rel="stylesheet" href="css/layout.css">        
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">        
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">        
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+        
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+ 
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+            
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script> 
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+				 <h2>필수 체크사항</h2>
+				<p class="text">
+					모든 퍼블리싱 산출물은 완벽함을 추구해야 하나 프로젝트 일정의 영향을 받게 되지만 이하 순서대로 필수 체크를 해야 한다.<br>
+					1) 개발이후 수정시 개발자의 일정에 영향을 주는 항목들은 완성도를 높혀야 한다.<br>
+					2) 개발진행중 수정반영할 경우 개발자의 일정에 영향을 받지 않는 항목들은 일정상 후순위로 처리할수 있다.<br>
+					   예) css로 수정하는 부분들,기능구현에 영향주지 않는 js수정
+				</p>
+
+				<h2>퍼블리싱 작업시 필수 체크해야 하는 항목들</h2>
+				<h3>포커스</h3>
+				<p class="text">모든 요소는 키보드 탭으로 이동이 되어야 하며 열리고 닫히는 모달팝업,팝업창,레이어의 경우 닫히면 버튼위치로 포커스가 리턴해야 한다<br>
+				포커스는 열린 모달,레이어내부로 이동이 되어야 하며 모달,레이어안쪽에서만 작동해야 한다.
+				</p>
+
+				<h3>타이틀</h3>
+				<p class="text">예제1</p>
+				<pre class="brush:xml;">
+				<title>인사말 | 회사소개 | 아이티굿</title>
+				</pre>
+				<p class="text">예제2</p>
+				<pre class="brush:xml;">
+				<title>인사말 < 회사소개 < 아이티굿</title>
+				</pre>       
+
+				<h3>테이블 caption</h3>
+				<p class="text">예제1</p>
+				<pre class="brush:xml;">
+					<table>
+						<caption>번호,부서,이름으로 구성된 조직연락처 도표</caption>
+						<thead>
+							<th scope="col">번호</th>
+							<th scope="col">부서</th>
+							<th scope="col">이름</th>
+						</thead>
+
+					</table>
+				</pre>
+				<p class="text">예제2</p>
+				<pre class="brush:xml;">
+						<table>
+							<caption>번호,부서,이름으로 구성된 공지사항 게시판의 2019년 회식 시간 안내표 상세글</caption>
+							<thead>
+								<th scope="col">번호</th>
+								<th scope="col">부서</th>
+								<th scope="col">이름</th>
+							</thead>
+					
+						</table>
+
+				</pre>      
+				<p class="text">경우에 따라 게시판 제목에는 strong 태그를 쓸수 있다.</p>       
+
+
+				<h3>폼요소</h3>
+				<p class="text">input,radio,checkbox 에는 label 혹은 title을 제공해야 한다. </p>
+				<p class="text">예제1</p>    
+				<pre class="brush:xml;">
+						<table>
+				   <tr>
+					   <th>전화번호</th>
+					   <td>
+						   <input type="text" title="전화번호 앞자리 입력">
+						   <input type="text" title="전화번호 가운데 자리">
+						   <input type="text" title="전화번호 마지막 자리">
+					
+						</td>
+				   </tr>
+					</table>
+				</pre>
+		<p class="text">예제2</p>    
+		<pre class="brush:xml;">
+				<table>
+		   <tr>
+			   <th>성별</th>
+			   <td>
+				   <input type="radio" id="m"> <label for="m">남</label>
+				   <input type="radio" id="w"> <label for="w">여</label>
+			
+				</td>
+		   </tr>
+			</table>
+		</pre>   
+		<p class="text">예제2</p>    
+		<pre class="brush:xml;">
+				<table>
+		   <tr>
+			   <th>경력</th>
+			   <td>
+					<input type="text" title="경력입력 1행"><br>
+					<input type="text" title="경력입력 2행"><br>
+					<input type="text" title="경력입력 3행"><br>
+					<input type="text" title="경력입력 4행">
+			
+				</td>
+		   </tr>
+			</table>
+		</pre>  
+		<p class="text">경우에 따라 게시판 제목에는 strong 태그를 쓸수 있다.</p>      
+
+		<h3>대체텍스트</h3>
+		<p class="text">모든 의미있는 이미지에는 대체텍스트를 입력해야 한다. </p>
+		<p class="text">예제1</p>    
+		<pre class="brush:xml;">
+				<img src="이미지경로" alt="1번에서 체크하면 2번으로 넘어가고 3번에서 최종으로 결정합니다." >
+		</pre>
+			<p class="text">예제2</p>    
+			<pre class="brush:xml;">
+					<img src="이미지경로" alt="업무프로세스 이하 내용 참조" >
+					<div style="overflow:hidden;position:absolute;border:0;width:1px;height:1px;clip:rect(1px,1px,1px,1px)">
+						<ul>
+							<li>1번</li>
+							<li>2번</li>
+							<li>3번</li>
+							<li>4번</li>
+							<li>5번</li>
+						</ul>
+					</div>
+			</pre>   
+	</div>
+</div>
+</body>
+</html>

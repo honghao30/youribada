@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>ITG 퍼블리싱팀</title>
+	        <script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+        <h2>디렉토리 구성</h2>
+        <div class="dscBox type01">
+            <h3>■ html_forlder(임의명칭)</h3>
+             <ul class="treeset clfix">
+                <li><strong class="folder">lib</strong>
+                    <ul class="treeset clfix">
+                        <li><strong class="folder pointBl">jqeury</strong> : jquery,ui등</li>
+                        <li><strong class="folder pointBl">js plugin</strong> : 플러그인 css/js </li>
+                    </ul>
+                </li>
+				<li><strong class="folder">src</strong>
+                    <ul class="treeset clfix">
+                        <li><strong class="folder pointBl">js</strong> : 마크업 js
+							<ul class="treeset clfix">
+								<li><strong class="paper pointGn">gnb.js</strong> : </li>
+								<li><strong class="paper pointGn">common.js</strong> :  </li>
+							</ul>							
+						</li>
+                        <li><strong class="folder pointBl">css</strong> : css 
+							<ul class="treeset clfix">
+								<li><strong class="paper pointGn">reset.css</strong> : 기본 reset 및 폰트 정의</li>
+								<li><strong class="paper pointGn">itg.css</strong> :  전역에 영향을 미치고 공통적으로 정의가 필요한 부분</li>
+								<li><strong class="paper pointGn">layout.css</strong> : 모든 레이아웃 css</li>
+								<li><strong class="paper pointGn">sub.css</strong> : 컨텐츠관련 css</li>
+							</ul>						
+						</li>
+						<li><strong class="folder pointBl">img</strong> : 이미지파일 
+							<ul class="treeset clfix">
+								<li><strong class="folder pointGn">com</strong> : 공통이미지  </li>
+								<li><strong class="folder pointGn">sub</strong> : 서브 페이지 이미지 파일</li>
+								<li><strong class="folder pointGn">temp</strong> : 썸네일등 임시 이미지 </li>
+							</ul>						
+						</li>
+                    </ul>
+				</li>
+				<li><strong class="folder">html</strong> html 파일들</li>			
+				 <li><strong class="paper pointGn">index.html</strong> : html working list</li>
+            </ul>
+          
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

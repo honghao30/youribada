@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>         
+		<script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/layout.css">
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+
+
+	<div  id="content" class="cont">
+            <h2>WAI-ARIA</h2>
+            <p class="text">
+				W3C에 의해 제정된 RIA(Rich Internet Applications)의 웹 접근성에 대한 표준 기술 규격을 의미함.
+            </p>
+
+            <p class="text">
+                RIA(Rich Internet Applications)란?<br>
+                정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션<br><br>
+
+                RIA(Rich Internet Applications)는 화려하고 편리한 웹 애플리케이션이지만 스크린리더와 같은 보조기술을 사용하는 장애인들이 접근하기에 취약하다.<br><br>
+
+                자바스크립트, AJAX등을 활용하여 의미를 가지지 않는 요소(&lt;div&gt;,&lt;span>&gt;로 특정 컴포넌트를 구현할 때 스크린리더 등 보조기기에서 해당 컴포넌트의 기능을 명확하게 파학하기 어려움.
+                주식 시세나 RSS Feed 등 시간에 따라 정보가 자동으로 업데이트 되는 경우 스크린리더 등 보조기기에서 업데이트 된 정보를 파악하기 어려움<br><br>
+            </p>
+            <p class="text">
+				프로젝트 일정,투입공수등을 감안해서 꼭 필요한 경우에만 사용한다.
+            </p>
+
+
+             <h2>사용예제</h2>
+            <p class="text">
+				a태그에 링크 대신 버튼으로 사용되는 경우 role="button"
+            </p>
+		<pre class="brush:xml;">
+           <a href="#" role="button">모달창</a>
+
+		</pre>
+        <p class="text">
+            컴포넌트를 숨긴 상태라면 (탭,슬라이드등 컨텐츠)
+        </p>
+		<pre class="brush:xml;">
+
+            aria-hidden="true" (true 숨겨진/false 보여진)
+		</pre>
+		<p class="text">
+			컴포넌트가 펼쳐진 상태라면 (아코디언 메뉴)
+		</p>
+
+		<pre class="brush:xml;">
+
+            aria-expanede="true" (true 펼쳐진/false 닫혀진)
+		</pre>
+		<p class="text">
+			인풋 옆에 부연 설명에는.
+		</p>
+		<pre class="brush:xml;">
+            <input type="password" aria-describedby="desc">
+            <p id="desc">비밀번호는 영어+숫자+특수문자를 합쳐 12자리 이상이여야합니다. </p>
+            //aria-describedby값과 해당 부연설명 태그의 id가 일치해야한다.
+        </pre>
+
+        <h2>유의사항</h2>
+		<p class="text">
+            W3C에서는 HTML5 섹션 관련 요소와 WAI-ARIA 규칙을 함께 사용할 경우 해당 기능이 무효화 되거나 충돌이 발생할 수 있으므로 중복해서 사용하지 않도록 주의를 당부하고 있다.
+            <pre class="brush:xml;">
+                ex) <header role="banner"></header></span></li>(X)<br><br>
+            </pre>
+
+            원래의 HTML 요소의 의미를 변경하면 안된다.<br>
+            <pre class="brush:xml;">
+                ex) <h1 role="button"></h1>(X)<br>
+            </pre>
+
+            모든 RIA 컨텐츠는 키보드를 사용하여 접근할 수 있어야 한다.<br>
+            모든 브라우저와 보조기기가 WAI-ARIA를 지원하지 않기 때문에 지원하는 브라우저와 기기 정보를 확인하고 적용해야한다.<br><br>
+            참고사이트<br>
+            W3C - WAI-ARIA :<a href="https://www.w3.org/TR/wai-aria-1.1" target="_blank">https://www.w3.org/TR/wai-aria-1.1</a> <br>
+            MDN - ARIA 접근성 : <a href="https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA" target="_blank">https://developer.mozilla.org/ko/docs/Web/Accessibility/ARIA</a><br>
+		</p>
+
+	</div>
+</div>
+</body>
+</html>
