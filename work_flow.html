@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>        
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>		
+              	
+        <link rel="stylesheet" href="css/layout.css">        
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">        
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">        
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+        
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+ 
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+            
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script> 
+		
+
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+
+		<h2>디자인 점검사항</h2>
+        <div class="">
+            <table class="table table_style">
+            <colgroup>
+            <col style="width:150px">
+            <col style="width:auto">
+            <col style="width:80px">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>이미지</th>
+                    <td>차트, 다이어그램에서 색상 이외의 방법(무늬, 모양, 라벨 등)으로 항목의 구분이 가능한가?</td>
+                    <td>1-3-1</td>
+                </tr>
+                <tr>
+                    <th>텍스트</th>
+                    <td>글자와 배경색의 명도대비가 4.5:1을 만족하는가? (18px 이상 또는 굵은 14px 이상은 3:1)<br> (마우스나 키보드의 초점을 받았을 때 명도가 변하는 콘텐츠, 사용할 수 없는 버튼이나 입력서식 등의 콘텐츠는 예외)</td>
+                    <td>1-3-3</td>
+                </tr>
+                <tr>
+                    <th>메뉴, 탭</th>
+                    <td>메뉴, 탭에서 현재 활성화된 항목이 색상 이외의 방법(명암, 굵기, 크기 등)으로 구분이 가능한가?</td>
+                    <td>1-3-1</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">링크, 버튼</th>
+                    <td>마우스 오버로 보여지는 레이어 메뉴가 섬세한 마우스 움직임을 요구하지 않는가? (가로형 메뉴)</td>
+                    <td>1-3-1</td>
+                </tr>
+                <tr>
+                    <td>링크, 버튼의 클릭이 용이하도록 충분한 크기로 제공하는가? (최소 10×10 px)</td>
+                    <td>2-1-2</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        
+		<h2>개발이후 점검사항</h2>        
+        <table  class="table table_style">
+            <colgroup>
+            <col style="width:150px">
+            <col style="width:auto">
+            <col style="width:80px">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>웹브라우저 제목</th>
+                    <td>웹브라우저의 제목으로 페이지 고유의 제목이 표시되는가?</td>
+                    <td>2-4-2/td>
+                </tr>
+
+                <tr>
+                    <th>건너뛰기 링크</th>
+                    <td>키보드로 페이지에 접근하였을 때 반복되는 내용을 건너뛸 수 있는 링크를 사용할 수 있는가?</td>
+                    <td>2-4-1</td>
+                </tr>
+
+                <tr>
+                    <th rowspan="5">초점의 이동</th>
+                    <td>키보드만으로 페이지의 모든 내용에 접근이 가능한가?</td>
+                    <td>2-1-1/td>
+                </tr>
+                <tr>
+                    <td>키보드만으로 셀렉트박스와 라디오버튼, 체크박스의 값을 정상적으로 선택할 수 있는가?</td>
+                    <td>2-1-1</td>
+                </tr>
+                <tr>
+                    <td>점선, 색상반전 등으로 제공되는 키보드 초점이 사라지거나 의도하지 않은 위치로 이동되는 경우는 없는가?</td>
+                    <td>2-1-2</td>
+                </tr>
+                <tr>
+                    <td>키보드의 초점이 논리적인 순서로 이동하는가?<br>(좌→우, 상→하, 아이디→비밀번호→로그인버튼, 탭1→내용1→탭2→내용2)</td>
+                    <td>2-1-2</td>
+                </tr>
+                <tr>
+                    <td>내부에 스크롤바가 있는 내용에 키보드로 초점을 이동할 수 있고 위, 아래 방향키로 스크롤하여 내용을 확인할 수 있는가?</td>
+                    <td>2-1-1</td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">사용자 요구에 따른 실행</th>
+                    <td>입력요소에 값을 선택, 입력하거나 변경했을 때 자동적으로 초점이 이동하거나 팝업이 뜨거나 페이지 이동이 되지는 않는가?</td>
+                    <td>3-2</td>
+                </tr>
+                <tr>
+                    <td>팝업이 열리는 기능의 링크 또는 버튼에 마우스오버 했을 때 새 창이 열림을 안내하는 툴팁(tooltip=말풍선)이 나오는가?</td>
+                    <td>3-2</td>
+                </tr>
+
+                <tr>
+                    <th>라벨 텍스트가 있는 입력폼</th>
+                    <td>입력폼과 대응하는 라벨 텍스트를 클릭했을때 해당 입력폼에 초점이 이동하는가?</td>
+                    <td>3-4-1</td>
+                </tr>
+
+                <tr>
+                    <th>라벨 텍스트가 없는 입력폼</th>
+                    <td>입력폼에 마우스오버 했을 때 해당 입력폼을 설명해주는 툴팁(tooltip=말풍선)이 나오는가? (title 속성)</td>
+                    <td>3-4-1</td>
+                </tr>
+                <tr>
+                    <th>이미지</th>
+                    <td>책표지 이미지, 배너 이미지 등 관리도구로 입력되는 alt 값이 정상적으로 지정되었는가?</td>
+                    <td>1-1</td>
+                </tr>                
+            </tbody>
+            </table>
+
+            <h2>CMS등록 컨텐츠 점검사항</h2>     
+            <div class="g-tbl-type1">
+                <table   class="table table_style">
+                <colgroup>
+                <col style="width:150px">
+                <col style="width:auto">
+                <col style="width:80px">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>이미지 배너</th>
+                        <td>cms로 이미지배너 삽입시 이미지의 모든 텍스트를 대체텍스트 항목에 입력하였는가?</td>
+                        <td>1-1</td>
+                    </tr>
+                    <tr>
+                        <th>HTML 텍스트</th>
+                        <td>cms에 html 코드 입력시 태그의 열고 닫음을 정확히 하여 입력하였는가?</td>
+                        <td>4-1</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+</div>
+
+</div>
+</body>
+</html>

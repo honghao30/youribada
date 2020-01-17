@@ -1,61 +1,14 @@
 @charset "UTF-8";
+/*-------------------------------------------------------------------
+    파일정의 : Settings
+    작성날짜 : 2020.01 홍성호
+    참고사항 : 이 파일은 설정값만 정의한다.    
+-------------------------------------------------------------------*/
 /* 글로벌 변수 설정 */
+/* 여백,간격 */
+/* 컬러 */
 /* 글로벌 변수 설정 */
 .text-ellips { width: 80%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-/* 공통요소 */
-.multiline-ellips { line-clamp: 3; width: 80%; height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-.box { border-radius: 10px; }
-
-/* 버튼 */
-.btn { padding: 8px 18px; color: #666; background: #fff; display: inline-block; font-size: 16px; text-align: center; vertical-align: middle; border: 1px solid #ccc; }
-
-.mini-btn-blue { padding: 3px 5px; color: #fff; background: #095084; font-size: 13px; }
-
-.mini-btn-orange { padding: 3px 5px; color: #fff; background: #d57504; font-size: 13px; }
-
-.small-btn-blue { padding: 5px 13px; color: #fff; background: #095084; }
-
-.small-btn-orange { padding: 5px 13px; color: #fff; background: #d57504; }
-
-.btn-blue { padding: 8px 18px; color: #fff; background: #095084; }
-
-.btn-orange { padding: 8px 18px; color: #fff; background: #d57504; }
-
-.larger-btn-blue { padding: 15px 25px; color: #fff; background: #095084; }
-
-.larger-btn-orange { padding: 15px 25px; color: #fff; background: #d57504; }
-
-/* 테이블 */
-.table { width: 100%; border-spacing: 0; border-collapse: collapse; }
-
-.table thead th { height: 45px; text-align: center; vertical-align: middle; }
-
-.table tbody td { text-align: center; vertical-align: middle; }
-
-.table-list { border-top: 2px solid #2b2b2b; }
-
-.table-list thead th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
-
-.table-list tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
-
-.table-body-only { border-top: 2px solid #2b2b2b; }
-
-.table-body-only tbody th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
-
-.table-body-only tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
-
-/* 폼 */
-.form-wrap { display: inline-block; }
-
-.input-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
-
-.input-wrap .input-text { width: 100%; height: 100%; text-indent: 10px; }
-
-.select-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
-
-.select-wrap .input-select { width: 100%; height: 100%; text-indent: 10px; background: url(); }
 
 /* 페이징1 */
 .paging { margin-top: 40px; text-align: center; }
@@ -83,7 +36,7 @@
   .paging > .prev_all:after { width: 20px; }
   .paging > .next_all:after { width: 20px; } }
 
-@media screen and (max-width: 767px) { .paging { margin-top: 20px; font-size: 0; text-align: center; }
+@media screen and (max-width: 768px) { .paging { margin-top: 20px; font-size: 0; text-align: center; }
   .paging > .page { width: 26px; height: 26px; margin-left: 4px; font-size: 1.6rem; line-height: 24px; }
   .paging > .btn:after { width: 8px; height: 9px; background: url(../img/common/sp_ico_res.png) no-repeat 0 0; background-size: 150px auto; }
   .paging > .prev_all:after { width: 10px; background-position: -52px -42px; }
@@ -125,7 +78,6 @@
   .paginate .paginate_input { height: 28px; }
   .paginate .btn_page_go { height: 28px; font-size: 1.7rem; line-height: 28px; } }
 
-/* 리스트 */
 /* 게시판 상단 검색 */
 .board_top { padding: 20px 20px; width: 100%; margin: 0 auto 40px; background: #f4f4f4; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; border: 1px solid #e0dfdc; box-sizing: border-box; }
 
@@ -476,3 +428,61 @@
 @media screen and (max-width: 480px) { .tbl_calendar td { height: 66px; }
   .tbl_calendar .btn_wedding_rent > br { display: block; }
   .tbl_calendar .btn_wedding_rent { height: 36px; line-height: 16px; } }
+
+/* 공통요소 */
+.multiline-ellips { line-clamp: 3; width: 80%; height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.box { border-radius: 10px; }
+
+/* 버튼 */
+.btn { padding: 8px 18px; color: #666; background: #fff; display: inline-block; font-size: 16px; text-align: center; vertical-align: middle; border: 1px solid #ccc; }
+
+.mini-btn-blue { padding: 3px 5px; color: #fff; background: #095084; font-size: 13px; }
+
+.mini-btn-orange { padding: 3px 5px; color: #fff; background: #d57504; font-size: 13px; }
+
+.small-btn-blue { padding: 5px 13px; color: #fff; background: #095084; }
+
+.small-btn-orange { padding: 5px 13px; color: #fff; background: #d57504; }
+
+.btn-blue { padding: 8px 18px; color: #fff; background: #095084; }
+
+.btn-orange { padding: 8px 18px; color: #fff; background: #d57504; }
+
+.larger-btn-blue { padding: 15px 25px; color: #fff; background: #095084; }
+
+.larger-btn-orange { padding: 15px 25px; color: #fff; background: #d57504; }
+
+/* 테이블 */
+.table { width: 100%; border-spacing: 0; border-collapse: collapse; }
+
+.table thead th { height: 45px; text-align: center; vertical-align: middle; }
+
+.table tbody td { text-align: center; vertical-align: middle; }
+
+.table-list { border-top: 2px solid #2b2b2b; }
+
+.table-list thead th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+
+.table-list tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+
+.table-list tr:hover { background-color: #333333; }
+
+.table-list tr:hover th, .table-list tr:hover td { background-color: #333; }
+
+.table-body-only { border-top: 2px solid #2b2b2b; }
+
+.table-body-only tbody th { background: #d8deea; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+
+.table-body-only tbody td { padding: 10px 5px; border: 1px solid #cbcbcb; font-weight: 500; color: #000; }
+
+/* 폼 */
+.form-wrap { display: inline-block; }
+
+.input-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
+
+.input-wrap .input-text { width: 100%; height: 100%; text-indent: 10px; }
+
+.select-wrap { display: inline-block; width: 45%; height: 40px; border: 1px solid #ccc; }
+
+.select-wrap .input-select { width: 100%; height: 100%; text-indent: 10px; background: url(); }

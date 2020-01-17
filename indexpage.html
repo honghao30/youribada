@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>working-list</title>
+<style>
+* { margin: 0; padding: 0;}
+body { font-family:Arial,Sans-serif;min-width: 1400px;font-size:12px;}
+#header { position: relative;z-index: 10;background: #0089b3;}
+#header:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+#header h1 {
+	float:left;
+	padding:15px 20px;
+	font: bold 2em/100% "Times New Roman", Arial,Sans-serif;
+	color: #fff;
+}
+
+#wrap {padding:0 10px;}
+#wrap h3 { display: inline-block; margin-right: 50px; font:bold 16pt/130% "맑은 고딕","Malgun gothic","Segoe UI",AppleGothic,Arial,Sans-serif;color:#c3122f;}
+#wrap section > h3, footer h3 {padding-left:10px; border-left:10px solid #c3122f;  }
+#wrap h4 { position: relative; margin:0 0 5px 0;font:bold 11pt/130% "맑은 고딕","Malgun gothic","Segoe UI",AppleGothic,Arial,Sans-serif;color:#347bfc;}
+#wrap h4 .progress { display: inline-block; position: absolute; right: 0;bottom: -3px; color: #c3122f;}
+#wrap h4.h4_first {margin-top:20px;}
+#wrap .wid {display: inline-block;width:150px}
+
+.total { float: right; color: #666; font-size: 13px;}
+p.total span { font-weight: bold; color: #fff; font-size: 14px;}
+.btn-guide {display: inline-block; margin-left: 50px;}
+
+.btn-guide a {
+	padding: 5px 20px;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	color: #6e6e6e;
+	box-shadow: inset 0 0 0 0.125em #7b9ede;
+	background-color: transparent;
+	transition: color 0.2s ease-out, box-shadow 0.2s ease-out, background-color 0.2s ease-out, font-size 0.2s;
+}
+.btn-guide a:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	border-bottom: 1px solid #95acdc;
+	border-right:1px solid #95acdc;
+}
+.btn-guide a:hover {
+	color: #7f7f7f;
+	font-weight: bold;
+	background-color: #e2e2e2;
+	box-shadow: inset 0 0 0 0.125em transparent;
+}
+.btn-guide a:hover:after {
+	border-color: #d0cfcf;
+}
+.btn-guide a:active {
+	transform: translate(2px, 2px);
+}
+.btn-guide a:active:after {
+	transform: translate(-2px, -2px);
+}
+
+table {width:100%;border-spacing:0;border-collapse:collapse;border:1px solid #ddd; color:#555;}
+caption {padding:0 0 5px 0;text-align:right;}
+thead {background-color:#f9f9f9;}
+thead th {/* background-color:#343434; */ /* padding: 7px 10px; */ /* color: #fff; */}
+th,td {/* padding:3px 4px; *//* border-top:1px solid #ddd; *//* border-right:1px solid #ddd; */}
+td a {color:#125fae;text-decoration:none;}
+.dowork td a:hover {color:#444;text-decoration:underline;}
+tbody tr.line { border-top: 2px solid #666;}
+.dowork tbody tr:hover td{background:#eee; font-weight: bold;}
+tbody .odd td {background:#fafafa;}
+.tac {text-align:center;}
+
+.guide-wrap { margin-top: 20px;}
+
+/* guide-tab */
+.guide-tap ul { *zomm:1; border-bottom: 1px solid #000;}
+.guide-tap ul:after { content: ""; display: block; overflow: hidden; clear: both;}
+.guide-tap ul li { float: left; position: relative; height: 31px; }
+.guide-tap ul li a { display: block; padding: 0 12px; background-color: #f5f5f5; color: #7a7a7a; border:solid #c6c9ca; border-width: 1px 1px 0 0; text-align: center; line-height:30px; cursor: pointer;}
+.guide-tap ul li.active a { position: relative;border:1px solid #000;border-bottom: 1px solid #fff; margin-left:-1px;background-color: #fff; color: #000; font-weight: bold;}
+.guide-tap ul li:first-child a { border-left: 1px solid #c6c9ca;}
+.guide-tap ul li.active:first-child a { border-left: 1px solid #000; margin-left: 0;}
+
+.guide-contents { margin-top: 50px;}
+.guide-type { margin-bottom: 40px;}
+.guide_tit { margin-bottom: 10px; color: #fff; padding: 4px 15px 8px; background: #3d3d3d; border-left: 7px solid #ff2b40; }
+.sub-tit { margin-bottom: 15px; color: #152e45; font-size: 14px;}
+.sub-tit span { padding: 5px 15px 5px 5px; border-top: 3px solid #347BFC; font-weight: bold; }
+.guide_tb {width:100%}
+.guide_tb thead{background:#f9f9f9}
+.guide_tb thead th {background: #eaf2f5; color: #6286A8;font-weight: bold;}
+.guide_tb th{padding:10px 20px 7px; text-align:center}
+.guide_tb th+th{/* border-right:none */}
+.guide_tb tbody td:first-child {}
+.guide_tb td{padding:10px 20px 7px; text-align:left}
+.guide_tb td.bd{border-right-width:1px;background-color:#f7fcfc}
+.guide_tb em{ font-weight:bold;font-size:18px}
+.description {position:relative; background: #eeefef; border:3px solid #c3c4c5; margin:0 0 2em 0; padding:1em; overflow:auto; }
+.description ul { padding-left: 20px; }
+.description ul li { list-style-type: disc; line-height: 20px; font-size: 11px; color: #333;}
+
+hr.line { border-bottom: 2px solid #565553; margin-bottom: 30px;}
+#contents { margin: 0 10px 10px;}
+.tal {text-align: left !important; }
+.state-wrap {
+	overflow: hidden;
+	padding: 20px 10px 20px 0;
+	background-color: rgba(255,255,255,.3);
+	margin: 5px 0;
+}
+.state-group strong { display: inline-block;border-left:5px solid #3d3d3d; padding-left: 5px;}
+.state-group {float: left;}
+.state {font-size: .95em;text-align: center;}
+.state-group .state + .state {margin-left: 10px;}
+.state span {padding: 1px 2px 3px 2px; display: inline-block;width: 18px;height: 18px; font-size: 12px;color: #fff;}
+.state .undecided {border-radius:20px;background-color: #9b9a4b;}
+.state .edit {border-radius:20px;background-color: #82cf54;}
+.state .delete {border-radius:20px;background-color: #a10411;}
+.state .complete {border-radius:20px;background-color: #1f4d87;}
+.total {float: right;font-size: 15px;color: #fff;}
+.total span {font-size: 13px;}
+.per {background:#525252;display: inline-block;padding: 2px 10px 4px;box-shadow: 1px 1px #fff, 3px 3px #464444; margin-right: 20px;}
+.status { background-color: #5f6061; display: inline-block;padding: 2px 10px 4px; box-shadow: 1px 1px #fff, 3px 3px #4c4c4c;}
+.quest {background: #f9f1d0;}
+.comp {background: #f2f2f2;}
+table {width: 100%;table-layout: fixed;border-collapse:collapse;}
+.working-list thead th {background-color: #333;font-size: 12px;border:1px solid #ebebeb;padding: 5px;color: #fff;}
+.working-list tbody tr:hover { background-color: #ddfaf8 !important;}
+.working-list tbody td {text-align: center;border: 1px solid #cacaca;padding: 5px 5px 5px 10px;line-height: 1.5;font-size: 12px; color: #333;}
+.working-list tbody tr .depth { color: #5a5a5a;}
+.working-list tbody tr.del td { background: #fff !important;text-decoration: line-through;}
+.working-list tbody .linetitle td {font-weight: bold;text-align: left; padding: 0; border:0;}
+.working-list tbody .linetitle:hover { background-color: transparent !important;}
+.working-list tbody .linetitle:first-child td .sub-tit { margin-top: 3px;}
+.working-list tbody .linetitle td .sub-tit { margin:5px 0 0;background-color: #7a7a7a;padding: 5px 5px 5px 15px;color: #fff; border-bottom: 1px solid #878787;border-top: 1px solid #ccc;
+
+}
+.working-list select { height: 24px; padding-bottom: 2px;line-height: 24px; border: 1px solid #ccc; font-size: 12px;}
+hr { margin: 20px 0;border:0;border-bottom: solid 1px #ddd;}
+footer { *zoom:1;}
+footer:after {display:block;content:"";clear:both;}
+footer .author {float:right; }
+footer h3 {float:left; color: #c3122f; }
+footer dl { overflow: hidden; padding:3px 10px 0 30px; margin-left: 50px; color: #444; }
+dt {float:left;font-weight:bold;color:#888;}
+dd { margin-left: 45px;}
+.img_swipe {
+	font-size: 0;
+	line-height: 0;
+	background:url(http://cfile28.uf.tistory.com/image/25340F4958A4ED7B04E913) no-repeat;
+	display: inline-block;
+	width: 6px;
+	height: 10px;
+	margin-left: 5px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+.bounce_ani {
+	-webkit-animation:horizontalBounce 5s linear infinite both;
+	animation:horizontalBounce 5s linear infinite both;
+}
+@-webkit-keyframes horizontalBounce {
+	0%, 10%, 30%, 50%, 70%, 90%, 100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body>
+<header>
+    <div id="header">
+        <h1>IA (Imformation Architeture)</h1>
+    </div>
+</header>
+<section id="contents">
+    <div class="state-wrap">
+    <div class="state-group">
+        <strong>진행상태</strong> : &nbsp;
+        <span class="state"><span class="undecided">미</span></span> 미정,
+        <span class="state"><span class="delete">삭</span></span> 삭제,
+        <span class="state"><span class="edit">중</span></span> 진행 및 수정 중,
+        <span class="state"><span class="complete">완</span></span> 완료
+    </div>
+    <p class="total"><span class="per">종합 진척률 : <span class="result"></span></span> <span class="comp"></span></p>
+    </div>
+    <table border="0" class="working-list">
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:auto;" />
+            <col style="width:30%;" />
+            <col style="width:15%;" />
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+            <col style="width:7%;" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Depth</th>
+            <th>파일위치</th>
+            <th>
+                <select name="select" id="">
+                    <option value="">담당자</option>
+                </select>
+            </th>
+            <th>
+                <select name="select">
+                     <option value="">date</option>
+                </select>
+            </th>
+            <th>검수 상태</th>
+            <th>퍼블 상태</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr class="linetitle">
+                <td>
+                <div class="sub-tit">서브 타이틀</div>
+                </td>
+            </tr>
+            <tr>
+                <td>*** > *** > 조회</td>
+                <td>/index.html</td>
+                <td>박현민</td>
+                <td>2020-02-12</td>
+                <td>검수요청</td>
+                <td><span class="state"><span class="complete"></span></span></td>
+            </tr>
+            <tr>
+                <td>*** > *** > 퇴직</td>
+                <td>/info/sub.html</td>
+                <td>박현민</td>
+                <td>2020-02-13</td>
+                <td>검수완료</td>
+                <td><span class="state"><span class="complete"></span></span></td>
+            </tr>
+            <tr class="del">
+                <td>*** > *** > 등록</td>
+                <td>/html/temp04.html</td>
+                <td>박현민</td>
+                <td>2020-02-15</td>
+                <td>검수완료</td>
+                <td><span class="state"><span class="delete"></span></span></td>
+            </tr>
+            <tr class="linetitle">
+                 <td><div class="sub-tit">서브 타이틀</div></td>
+            </tr>
+            <tr>
+                <td>코이카 > 게시판 > 상세</td>
+                <td>/html/temp01.html</td>
+                <td>박현민</td>
+                <td>2020-02-12</td>
+                <td>검수요청</td>
+                <td><span class="state"><span class="edit"></span></span>
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</section>
+<hr />
+<footer>
+    <div class="author">
+            <h3>담당 퍼블리셔</h3>
+            <dl>
+                <dt>이름</dt>
+                <dd><strong>박현민</strong></dd>
+                <!-- <dd><strong>박현민</strong></dd> -->
+            </dl>
+    </div>
+</footer>
+<script src="http://markup.sitegood.co.kr/webapps/itg_guide/js/listpage.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script>
+        $(function () {
+        // 번호 자동생성, 링크 자동생성
+        var $workTbody = $('.working-list tbody'),
+        itemlist = $workTbody.find('tr:not(".linetitle")'),
+        del = $workTbody.find('.del'),
+        $tds = $workTbody.find('td'),
+        arrayItem = $.makeArray(itemlist),
+        $lineTitle = $workTbody.find('.linetitle td'),
+        i = 0;
+
+        // 테이블내의 서브타이틀 영역의 colspan 정의
+        var totalcolspan = $('table thead th').length;
+        $lineTitle.attr('colspan', totalcolspan);
+
+        // 진척률 생성
+        var $complete = itemlist.find('td:last-child'), // 행마다 마지막 td
+        groupTotal = $complete.length - del.length,
+        delCnt = del.find('.complete').length,
+        comTotal = $complete.find('.complete').length - delCnt;
+
+        var groupProgress = comTotal / groupTotal * 100;
+
+        $('.total').html(
+        '<span class="per">종합 진척률 : ' +
+        ~~groupProgress +
+        '%</span>' +
+        '<span class="status">' +
+        comTotal +
+        '/' +
+        groupTotal +
+        ' (완료 / 총 본수)</span>');
+
+
+        for (; i < arrayItem.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+            var item = arrayItem[i]; // 각각 tr 참조
+            $(item).prepend("<td></td>"); // 첫번째 td 생성(number 영역)
+
+            // 파일 디렉토리 영역의 링크 생성
+            var $cols = $(item).children('td');
+            var $col01 = $cols.eq(1),
+            $col02 = $cols.eq(2),
+            $col03 = $cols.eq(3),
+            $col04 = $cols.eq(4);
+
+            var url = $cols.eq(2);
+            if ($(item).is('.del')) {
+            $col02.html('<span class="url">' + url.html() + '</span>');
+            } else {
+            $col02.html('<a href="' + url.html() + '" target="_blank" class="url">' + '<b style="color:#437cbc;">' + url.html() + '</b></a>');
+            }
+
+            var depthStr = $col01.text(),
+            depthEm = depthStr.substr(depthStr.lastIndexOf('>') + 1);
+
+            $col01.html(depthStr.replace(depthEm, '<b style="color:#4b4b4b;">' + depthEm + '</b>'));
+
+            $col01.addClass('tal depth');
+            $col02.addClass('tal');
+            $col03.addClass('publ');
+            $col04.addClass('date');
+
+        }
+
+        // 검수요청,완료 여부에 따른 클래스 부여 및 상태란의 텍스트 생성
+        window.CP.exitedLoop(0);itemlist.each(function () {
+            var $this = $(this),
+            tdStr = $this.find('td').eq(1).text(),
+            newStr = tdStr.substr(tdStr.lastIndexOf('>') + 1),
+            $tds = $this.find('td');
+
+            var state = $this.find('td:last-child');
+            state.find('.undecided').text('미');
+            state.find('.delete').text('삭');
+            state.find('.edit').text('중');
+            state.find('.complete').text('완');
+
+            var $inq = $this.find('td').eq(5),
+            inqText = $inq.text();
+
+            if (inqText.indexOf('검수요청') > -1) {
+            $inq.addClass('quest');
+            } else if (inqText.indexOf('검수완료') > -1) {
+            $this.addClass('comp');
+            }
+
+        });
+
+        var $ths = $('.working-list thead th');
+        $ths.eq(0).append(' (' + groupTotal + ')');
+        $ths.eq(6).append(' (' + comTotal + ')');
+
+        });
+
+
+        (function ($) {
+
+        function update() {
+
+            var text, tr, select, visibleTr;
+
+            visibleTr = $('tbody tr:visible');
+            tr = $('tbody tr:not(".linetitle")');
+            select = $('select');
+            text = [];
+
+            // 셀렉트 값이 변경될 때마다 배열 text 에 참조
+            select.each(function () {
+            text.push($.trim($(this).find('option:selected').text()));
+            });
+
+            // jQuery.inArray : 배열 내의 값을 찾아서 인덱스를 반환합니다.(요소가 없을 경우 -1을 반환)
+            // 담당자 전체, 전체인 경우에 모든 table row 를 보여줌
+            if ($.inArray('담당자', text) > -1 && $.inArray('date', text) > -1) {
+            tr.show();
+            }
+            // 담당자 문자열이 아닌 이름을 선택하고 date 전체인 경우
+            else if ($.inArray('담당자', text) == -1 && $.inArray('date', text) > -1) {
+                tr.each(function () {
+                var $this = $(this);
+                if (text[0] == $this.find('.publ').text()) {
+                    $this.show();
+                } else {
+                    $this.hide();
+                }
+                });
+            }
+            // 담당자이고 전체가 아닌 날짜를 선택한 경우
+            else if ($.inArray('담당자', text) > -1 && $.inArray('date', text) == -1) {
+                tr.each(function () {
+                    var $this = $(this);
+                    if (text[1] == $this.find('.date').text()) {
+                    $this.show();
+                    } else {
+                    $this.hide();
+                    }
+                });
+                } else
+                if ($.inArray('담당자', text) == -1 && $.inArray('date', text) == -1) {
+                tr.each(function () {
+                    var $this = $(this);
+                    if (text[0] == $this.find('.publ').text() && text[1] == $this.find('.date').text()) {
+                    $this.show();
+                    } else {
+                    $this.hide();
+                    }
+                });
+
+                }
+
+        }
+
+        $(document).on('change', 'select', update);
+
+        // 날짜 컬럼을 셀렉트 박스에 차례대로 생성
+        function sortDate(idx, el) {
+            var worklist = $('.working-list'),
+            dateBox = $('thead th').eq(idx),
+            dateData = [],
+            dateList = worklist.find(el + ':visible');
+
+            dateList.each(function () {
+
+            var $this = $(this);
+
+            if (!!$.trim($(this).text())) {
+                // 배열길이가 0 이면 날짜 컬럼 텍스트의 처음 문자열을 배열에 추가
+                if (dateData.length == 0) {
+                dateData.push($.trim($this.text()));
+                return;
+                }
+                // 배열에 해당 날짜 문자열이 없다면 dateDate 배열에 추가
+                if ($.inArray($.trim($this.text()), dateData) == -1) {
+                dateData.push($.trim($this.text()));
+                }
+
+            }
+
+            });
+
+            var dateSort = dateData.sort(compareForSort);
+
+            function compareForSort(first, second) {
+            if (first == second) {
+                return 0;
+            }
+            if (first < second) {
+                return -1;
+            } else {
+                return 1;
+            }
+            }
+
+            // 배열에 저장된 날짜 모음을 셀렉트박스에 추가
+            for (var i = 0, max = dateSort.length; i < max; i++) {if (window.CP.shouldStopExecution(1)) break;
+            dateBox.find('select').append('<option>' + dateSort[i] + '</option>');
+            }window.CP.exitedLoop(1);
+
+        }
+
+        // number 컬럼에 넘버 증가 및 서브타이틀의 총 갯수 정의
+        function countLine() {
+            var count = 0,
+            linetitle = $('.linetitle'),
+            titleLength = linetitle.length,
+            title,
+            tr = $('tbody tr'),
+            length = tr.length;
+
+            linetitle.each(function (index) {
+            $(this).data('idx', index);
+            });
+
+            tr.each(function (idx) {
+            var $this = $(this);
+
+
+            if ($this.hasClass('linetitle')) {
+                // 최초 linetitle 은 count 가 증가하기 전이므로 - 1 하여 요소를 선택하지 않는다.
+                title = linetitle[$this.data('idx') - 1];
+
+                // count 를 증가시킨후 linetitle 을 검색하도록 한다.
+                if (!!title) {
+                $(title).find('td .sub-tit').append(' (' + count + ')');
+                // linetitle 이 있다면 count 를 0 으로 초기화
+                count = 0;
+                }
+            } else {
+                $this.find('td:first-child').append(count + 1);
+                // del 클래스가 있으면 변수 count 를 증가시키지 않고 아니면 증가시킨다.
+                count = $this.hasClass('del') ? count : count + 1;
+            }
+
+            // each 문이 모두 돌았을 때 즉, 마지막 .linetitle 의 count 를 참조
+            if (idx == length - 1) {
+                title = linetitle[titleLength - 1];
+                if (!!title) {
+                $(title).find('td .sub-tit').append(' (' + count + ')');
+                }
+            }
+
+            });
+
+        }
+
+        function sortCount() {
+            var count = 0,
+            tr = $('tbody tr:not(".del")');
+
+            tr.each(function () {
+            var $this = $(this);
+            if (!$this.hasClass('linetitle') && $this.is(':visible')) {
+                count = count + 1;
+            }
+            });
+
+            return count;
+
+        }
+
+        $(function () {
+            countLine();
+            sortDate(3, '.publ');
+            sortDate(4, '.date');
+
+            var $ribbon = $('#header .ribbon');
+            $ribbon.on('click', function () {
+            var $this = $(this),
+            cloneEl = $this.clone(true);
+
+            $this.before(cloneEl);
+            $('.' + $this.attr('class') + ':last').remove();
+            });
+
+        });
+
+        })(jQuery);
+    </script>
+</body>
+</html>

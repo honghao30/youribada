@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/*-------------------------------------------------------------------
+    파일정의 : Settings
+    작성날짜 : 2020.01 홍성호
+    참고사항 : 이 파일은 설정값만 정의한다.    
+-------------------------------------------------------------------*/
+
+
+/* 글로벌 변수 설정 */
+$main-linkcolor: #666;
+$main-linkcolor-hover:#008cba;
+
+$primary-color: #008cba;
+
+
+/* 여백,간격 */
+$width-default: 1200px;
+$gutter-default: 20px;
+ 
+/* 컬러 */
+$color-basic: #333;
+$color-primary: #0089b3;
+$color-primary-dark: #006d8e;
+$color-primary-light: #2496ee;
+$color-secondary: #54873c;
+$color-success: #47a104;
+$color-warning: #e9b500;
+$color-danger: #d45704;
+$color-error: #ff0000;
+$color-info: #949494;
+ 
+
+
+//미디어 쿼리 설정
+$media-tablet: 1024px;
+$media-mobiedefault: 768px;
+
+//폰트 사이즈
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
+
+$known-prefixes: webkit, moz, ms, o;

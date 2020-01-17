@@ -125,8 +125,11 @@
             <h2>HTML 규칙</h2>
             <p class="text">
                 모두 들여쓰기
+
+
             </p>
             <pre class="brush:xml;">
+
                 <table>
                     <thead>
                       <tr>
@@ -142,20 +145,206 @@
                     </tbody>
                   </table>
             </pre>
-
+            <h2>속성 선언순서</h2>
+            <div class="g-tbl-type1">
+                <table class="table table_style">
+                    <caption>HTML 속성선언순서</caption>
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col>
+                        <col style="width:20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>속성</th>
+                            <th>속성 값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. 기능</td>
+                            <td>
+                                <p>href, src, type</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2. 이름</td>
+                            <td>
+                                <p>name, id</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3. 정보</td>
+                            <td>
+                                <p>value, title, alt</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4. 옵션</td>
+                            <td>
+                                <p>target, tabindex</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5. 꾸미기</td>
+                            <td>
+                                <p>class</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6. 역할</td>
+                            <td>
+                                <p>role</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7. 속성</td>
+                            <td>
+                                <p>aria-controls, aria-describedby, aria-labelledby, aria-popup, aria-modal 등</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8. 상태</td>
+                            <td>
+                                <p>checked, disabled, selected, required, aria-selected, aria-current, aria-hidden 등</p>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pre class="brush:xml;">
+                <a href="#none" title="새창열기" target="" class="">인쇄하기</a>
+                <iframe src="about:blank" title="빈프레임"></iframe>
+                <img src="img.gif" alt="대체텍스트" />
+                <input type="text" name="" id="" value="" title="" class="" style="" disabled />
+            </pre>
             <h2>CSS 작성규칙</h2>
             <p class="text">
-                속성 이름순 정렬<br>
-                속성: 값; 형식<br>
-                콜론 뒤 공백 1칸<br>
                 마지막 속성값 뒤에도 세미콜론<br>
+                CSS 코드 작성시 들여쓰기는 허용하지 않는다.<br>
+                공통으로 사용되는 속성의 선택자간의 줄 바꿈은 허용하며 이 외의 줄바꿈은 허용하지 않는다.<br>
                 compact 방식을 사용한다.
             </p>
             <pre class="brush:xml;">
                 ul { font-family: Georgia; color: #333333; }
                 ul li { display: inline-block; }
+
+
+                .class-name,
+                .class-name .child-class {background:url(../img/img.gif) no-repeat;}                
             </pre>
 
+            <h2>속성 선언순서</h2>
+            <div class="g-tbl-type1">
+                <table class="table table_style">
+                    <caption>CSS 속성선언순서</caption>
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>속성</th>
+                            <th>속성 값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">1. 표시</td>
+                            <td>display</td>
+                            <td>none, block, inline, inline-block, inline-table, list-item, table, table-caption, table-cell, table-column, table-column-group, table-footer-group, table-header-group, table-row, table-row-group</td>
+                        </tr>
+                        <tr>
+                            <td>visibility</td>
+                            <td>visible, hidden, collapse</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">2. 위치</td>
+                            <td>position</td>
+                            <td>absolute, fixed, relative, static</td>
+                        </tr>
+                        <tr>
+                            <td>top, right, bottom, left</td>
+                            <td>length(px), %</td>
+                        </tr>
+                        <tr>
+                            <td>z-index</td>
+                            <td>number</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">3. 넘침/흐름</td>
+                            <td>overflow</td>
+                            <td>visible, hidden, scroll, auto</td>
+                        </tr>
+                        <tr>
+                            <td>float</td>
+                            <td>left, right, none</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">4. 크기/간격</td>
+                            <td>width, max-width, min-width</td>
+                            <td>auto, length(px), %</td>
+                        </tr>
+                        <tr>
+                            <td>height, max-height, min-height</td>
+                            <td>auto, length(px), %</td>
+                        </tr>
+                        <tr>
+                            <td>margin</td>
+                            <td>auto, length(px, em), %</td>
+                        </tr>
+                        <tr>
+                            <td>padding</td>
+                            <td>auto, length(px, em), %</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">5. 박스모양</td>
+                            <td>border</td>
+                            <td>border-width, border-style, border-color</td>
+                        </tr>
+                        <tr>
+                            <td>background</td>
+                            <td>background-color, background-image, background-repeat, background-attachment, background-position</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">6. 폰트/정렬</td>
+                            <td>font</td>
+                            <td>font-style, font-variant, font-weigth, font-size/line-height, font-family</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>hex_number, hex_number</td>
+                        </tr>
+                        <tr>
+                            <td>text-align</td>
+                            <td>left, right, center, justify</td>
+                        </tr>
+                        <tr>
+                            <td>vertical-align</td>
+                            <td>top, middle, bottom, baseline</td>
+                        </tr>
+                        <tr>
+                            <td>7. 기타</td>
+                            <td></td>
+                            <td>언급되지 않은 속성들은 후순위로 적용한다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pre class="brush:xml;">
+
+            </pre>            
 	</div>
 </div>
 </body>
