@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
 /* 글로벌 변수 설정 */
-$main-linkcolor: #666;
-
-
-
 @mixin ellipse-one($wid:100%)
     {
         width:$wid;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
@@ -42,7 +38,9 @@ $main-linkcolor: #666;
           -ms-border-radius: $radius;
               border-radius: $radius;
     }
-
+  @mixin border($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+  }
     
 @mixin prefix($property, $value, $prefixes) {
     @each $prefix in $prefixes {
@@ -54,3 +52,39 @@ $main-linkcolor: #666;
     #{$property}: $value;
   }
   
+  @mixin tbl-common {
+    width:100%;
+    border-spacing: 0;
+    border-collapse: collapse;    
+  }
+
+  @mixin basic-th ($ftweight,$color,$bgcolor) {
+    font-weight:$ftweight;
+    color:$color;
+    background:$bgcolor;
+  }
+  @mixin basic-td ($ftweight,$color,$ft-size) {
+    font-weight:$ftweight;
+    color:$color;
+    font-size:$ft-size;
+  }
+  @mixin body-tblbasic-th ($ftweight,$color,$bgcolor) {
+    font-weight:$ftweight;
+    color:$color;
+    background:$bgcolor;
+  }
+  @mixin body-tblbasic-td ($ftweight,$color,$ft-size) {
+    font-weight:$ftweight;
+    color:$color;
+    font-size:$ft-size;
+  }
+  
+
+  @mixin bgimage($name,$position:0 0,$repeat: no-repeat) {
+    $url:"../img/com/#{$name}.png";
+    background: url($url);   
+    position: $position;
+    repeat: $repeat;     
+  }
+
+

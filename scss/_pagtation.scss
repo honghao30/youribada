@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-
-
 /* 페이징1 */
 .paging{margin-top:40px;text-align:center;}
 .paging>.page{display:inline-block;width:36px;height:36px;border:1px solid #cdcdcd;font-size:15px;color:#4d4d4d;line-height:34px;text-align:center;vertical-align:middle;}
-.paging>.page:hover,.paging>.page:focus,.paging>.page.on{background:#18a2dc;border-color:#18a2dc;font-weight:normal;color:#fff;}
+.paging>.page:hover,
+.paging>.page:focus,
+.paging>.page.on{background:#18a2dc;border-color:#18a2dc;font-weight:normal;color:#fff;}
 .paging>.page:first-child{margin-left:0;}
 .paging>.btn{position:relative;}
 .paging>.btn:after{display:block;position:absolute;top:50%;left:50%;width: 14px;height: 16px;background: url(../img/common/sp_ico.png) no-repeat 0 0;-ms-transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);content:"";}
