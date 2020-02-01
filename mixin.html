@@ -6,23 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-    <title>ITG 퍼블리싱팀</title>       
-		<script src="js/jquery.1.11.0.min.js"></script>        
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>
         <!-- 합쳐지고 최소화된 최신 CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <!-- 부가적인 테마 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
         <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>		
-              	
-        <link rel="stylesheet" href="css/layout.css">        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/layout.css">
         <!-- 1. core style sheet : 필수 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
         <!-- 2. theme style sheet : 택1 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
         <!-- 3. core javascript : 필수 -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
-        
+
         <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
@@ -30,7 +30,7 @@
         <!-- xml, xhtml, xslt, html, xhtml -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
 <!-- xml, xhtml, xslt, html, xhtml -->
- 
+
         <!-- SyntaxHighlighter 초기화 -->
         <script type="text/javascript">
             /* 5. set config : option */
@@ -71,10 +71,25 @@
                 /* [default:true]   double click으로 code 전체를 선택 */
                 SyntaxHighlighter.defaults['quick-code'] = true;
 
-            
+
             /* 7. 초기화 : 필수 */
             SyntaxHighlighter.all();
-        </script>     
+        </script>
+        <script type="text/javascript">
+            //<![CDATA[
+                window.onload=function(){
+                    $("#keyword").keyup(function() {
+                        var k = $(this).val();
+                        $(".table-list > tbody > tr").hide();
+                        var temp = $(".table-list > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                        $(temp).parent().show();
+                    })
+                }
+            //]]>
+        </script>
+        <style>
+            .css-namesarch {border:2px solid #ccc;padding:15px;text-align:center;}
+        </style>
 		<script src="js/asidebar.jquery.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
@@ -101,68 +116,40 @@
 	<div id="nav">
 
 	</div>
-	<div  id="content" class="cont">
-            <h2>form</h2>
-            <p class="text">
-				모든 폼 요소는 접근성 인증마크 취득과 무관하게 접근성 기준을 준수한다.<br>
-				라디오,체크박스외에 label과 title 중 한가지만 사용한다.
-            </p>
-             <h2>form 요소 구성</h2>
-				<pre class="brush:xml;">
-					<fieldset>
-						<legend>Title</legend>
-						<label for="man">남자</label>
-						<input id="man" type="radio">
-						<label for="woman">여자</label>
-						<input id="woman" type="radio">
+    <div  id="content" class="cont">
+        <div class="css-namesarch">
+            mixin : <input type="text" id="keyword" style="width:50%;height:50px;font-size:16px;" />
+        </div>
 
-						<select title="선택하세요">
+        <table class="table table-list">
+            <colgroup>
+                <col width="30%" />
+                <col width="70%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">이름</th>
+                    <th scope="col">용도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@mixin ellipse-one($wid:100%)</td>
+                    <td>한줄 말줄임</td>
+                </tr>
+                <tr>
+                    <td>@mixin multiline( $line-clanp, $wid,$ht )</td>
+                    <td>여러줄 말줄임</td>
+                </tr> 
+                <tr>
+                    <td>@mixin ft-option ($ft-size,$ft-wt,$color,$mg)</td>
+                    <td>폰트옵션</td>
+                </tr>                                               
+            </tbody>
+        </table>
 
-						</select>
+    </div>
 
-					</fieldset>
-				</pre>
-             <h2>클래스명 규칙</h2>
-            <p class="text">
-				 반응형웹의 제어를 위해서 div or span 을 사용하고 그안에 form 요소를 작성한다.<br>
-				 기본적으로 inline-block 으로 설정한다.
-            </p>
-			<pre class="brush:xml;">
-					<div class="form-wrap">
-						<form>
-
-
-						</form>
-					</div>
-
-			</pre>
-			<pre class="brush:xml;">
-					<div class="input-wrap">
-						<input type="text" class="input_text" title="" >
-					</div>
-
-			</pre>      
-			<pre class="brush:xml;">
-					<div class="select-wrap" class="input-select">
-						<select title="선택하세요">
-
-						</select>
-					</div>
-
-			</pre>    
-            <p class="text">
-				 단일 폼 요소가 block으로 되어야 할 경우 .form-block 을 추가한다.
-            </p>	
-			<pre class="brush:xml;">
-				<div class="checkbox">				  
-						<input type="checkbox" id="agree" value="">
-						<label for="agree">
-							동의합니다.
-					    </label>
-				</div>
-
-			</pre> 			
-	</div>
 </div>
 </body>
 </html>

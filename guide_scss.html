@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/asidebar.jquery.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+
+            <h2>목적</h2>
+            <p class="text">Sass 코딩컨벤션은 마크업 코딩컨벤션을 상속하며 코드 스타일링등의 기본 작성 규칙들은 마크업 코딩 컨벤션을 따른다.<br>
+                이 문서는 Sass만의 문법들에 대한 규칙을 정의하는것이 목적이다.              
+            </p>
+            <p class="text">Sass 컴파일은 vs code를 사용하는 방법과 gulp + browsersync 를 사용하는 방법 두가지를 병행한다.
+            </p>
+            <h2>vs code </h2>
+            <p class="text">
+                확장 플러그인<br>
+                Sass<br>
+                sass Lint<br>
+                Live Sass Compiler<br><br>
+                css-format-one-line
+
+            </p>
+            <pre class="brush:xml;">
+                {
+                    "liveSassCompile.settings.formats": [
+                        // This is Default.
+                        // {
+                        //     "format": "expanded",
+                        //     "extensionName": ".css",
+                        //     "savePath": "~/../css/"
+                        // },
+                        // Or you can compress your css
+                        {
+                            "format": "compact",
+                            "extensionName": ".css",
+                            "savePath": "~/../css/"
+                        }
+                    ],
+                    "liveSassCompile.settings.generateMap": false,
+                    "liveSassCompile.settings.includeItems":[ "scss/*.scss" ],
+                    "liveSassCompile.settings.autoprefix": [
+                        "> 1%",
+                        "last 2 versions"
+                    ]
+                }
+            </pre>
+            <h2>Gulp + Sass + browsersync </h2>
+	</div>
+</div>
+</body>
+</html>
