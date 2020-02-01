@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "../basic_set/src/css/reset.css"
 
 a:hover{text-decoration: none;}
 li {list-style: none;}
@@ -120,12 +121,13 @@ fieldset.guide legend {position:static !important;left:0 !important;top:0 !impor
 .cont  { position:relative; padding:10px; }
 .cont h2 {font-size:30px;font-weight:700; background:url(../images/h2.gif) no-repeat; padding-left:10px}
 .cont .text {border:1px solid #dcdcdc;border-radius:6px;padding:20px;font-size:16px;line-height:160%; background:#f4f4f487}
- h2 {font-size:30px;font-weight:700; background:url(../images/h2.gif) no-repeat; padding-left:10px}
+.cont h2 {font-size:30px;font-weight:700; background:url(../images/h2.gif) no-repeat; padding-left:10px}
 .text{border:1px solid #dcdcdc;border-radius:6px;padding:20px;font-size:16px;line-height:160%; background:#f4f4f487}
 
 .table {width:100%;border-collapse:collapse;margin-top:10px;}
 .table-list th {background-color:#f8f8f8;text-align:center;height:50px;vertical-align:middle;font-weight:500;font-size:16px;}
 .table-list td {text-align:center;height:50px;vertical-align:middle;font-size:16px;}
+.cont2  { position:relative; padding:10px; }
 
 @media only screen and (max-width:768px) {
     #content {padding-top:60px;}
@@ -139,4 +141,4 @@ fieldset.guide legend {position:static !important;left:0 !important;top:0 !impor
 	.table-list td{font-size:1.3rem;}
 }
 
-.typograp-wrap {max-width:900px;}
+.typograp-wrap {max-width:900px;line-height: 145%;}

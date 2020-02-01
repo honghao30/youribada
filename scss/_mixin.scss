@@ -8,6 +8,15 @@
 .text-ellips {
 	@include ellipse-one(80%);
 }
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+
 @mixin multiline( $line-clanp, $wid,$ht ) {
     line-clamp: $line-clanp;
     width:$wid;
@@ -18,7 +27,7 @@
 @mixin btn-basic ($padding,$color,$bgcolor) {
     padding:$padding;
     color:$color;
-    background:$bgcolor;
+    background:$bgcolor;    
   }
   
   
@@ -41,7 +50,8 @@
   @mixin border($direction, $width, $style, $color) {
     border-#{$direction}: $width $style $color;
   }
-    
+ 
+
 @mixin prefix($property, $value, $prefixes) {
     @each $prefix in $prefixes {
       @if not index($known-prefixes, $prefix) {
@@ -52,6 +62,16 @@
     #{$property}: $value;
   }
   
+  @mixin size ($bwd,$bht) {
+    width:$bwd;
+    height:$bht;        
+  }
+  @mixin ft-option ($ft-size,$ft-wt,$color,$mg) {
+    font-size:$ft-size;
+    font-weight: $ft-wt;
+    color:$color;
+    margin:$mg;
+  }
   @mixin tbl-common {
     width:100%;
     border-spacing: 0;
@@ -78,13 +98,39 @@
     color:$color;
     font-size:$ft-size;
   }
-  
-
-  @mixin bgimage($name,$position:0 0,$repeat: no-repeat) {
+    @mixin bgimage($name,$position:0 0,$repeat: no-repeat) {
     $url:"../img/com/#{$name}.png";
     background: url($url);   
     position: $position;
     repeat: $repeat;     
   }
-
-
+  @mixin be-margin ($margin) {
+    margin:$margin;
+  }
+  @mixin list-ul-li ($margin,$color,$ft-size,$padding-left) {
+    margin:$margin;
+    color:$color;
+    font-size:$ft-size;
+    padding-left:$padding-left;
+  }
+  @mixin list-li-before ($po-left,$po-top,$wd,$ht,$brd-radius) {
+    left:$po-left;
+    top:$po-top;
+    width:$wd;
+    height:$ht;
+    border-radius:$brd-radius;
+  }
+  @mixin page-common ($pg-wd,$pg-ht,$page-border,$ft-size,$ft-color,$line-ht) {
+    width:$pg-wd;
+    height:$pg-ht;
+    border: $page-border;
+    font-size:$ft-size;
+    color:$ft-color;
+    line-height: $line-ht;    
+  }
+  @mixin be-active ($bg-color,$ft-color,$page-border-active,$ft-wt) {
+    background: $bg-color;
+    color:$ft-color;
+    border: $page-border-active;    
+    font-weight:$ft-wt;  
+  }

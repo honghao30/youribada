@@ -33,20 +33,18 @@ address,em{font-style:normal}
 a{color:inherit;text-decoration:none}
 a:active,a:focus,a:hover{text-decoration:none}
 button{border:0;background:0 0;cursor:pointer}
-table{margin:0;padding:0;border:0;border-spacing:0}
+table{margin:0;padding:0;border:0;border-spacing:0;border-collapse: collapse;}
 input,select,textarea,button{vertical-align:top}
-input,select,textarea{border:0;background:0;-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none}
+input,select,textarea{border:0;background:0;-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;appearance:none;-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none}
 select::-ms-expand{display:none}
-select {-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;appearance:none;}
-textarea{resize:none;box-shadow:none;-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none}
+textarea{resize:none;box-shadow:none;-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;}
 embed,iframe,img,object,video{max-width:100%}
 input[type=search]::-ms-clear,input[type=search]::-ms-reveal,input[type=text]::-ms-clear,input[type=text]::-ms-reveal{display:none;width:0;height:0}
 input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none}
 input[type='text'],input[type='password'],input[type='submit'],input[type='search']{-webkit-appearance:none;border-radius:0;background-color:transparent}
 button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file']{-webkit-appearance:button;border-radius:0}
 .ir-text,legend,.blind{overflow:hidden;position:absolute;border:0;width:1px;height:1px;clip:rect(1px,1px,1px,1px)}
-*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
-
+*,*:before,*:after{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 
 @media screen and (max-width:1239px){
   html{font-size:10px;font-size:0.625rem;}

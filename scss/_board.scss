@@ -1,19 +1,17 @@
 @charset "UTF-8";
 
-
-
 /* 게시판 상단 검색 */
-.board_top{padding:20px 20px;width:100%;margin:0 auto 40px;background:#f4f4f4;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;border:1px solid #e0dfdc;box-sizing:border-box;}
+.board_top {padding:20px 20px;width:100%;margin:0 auto 40px;background:#f4f4f4;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;border:1px solid #e0dfdc;box-sizing:border-box;}
 .board_top .top_info{display:none;float:left;margin:0 30px;font-size:17px;font-weight:500;line-height:35px;}
 .board_top .inner{display:block;width:100%;text-align:center;font-size:0;}
 .board_top select{position:relative;width:12%;height:40px;margin-right:8px;padding-left:22px;background:url('../img/sub/select_arrow.png') no-repeat;background-position:90%;background-color:#fff;cursor:pointer;}
-.board_top input[type=text], .board_top input[type=password]{width:45%;height:40px;padding:0 22px;background:#fff;box-sizing:border-box;}
+.board_top input[type=text], 
+.board_top input[type=password] {width:45%;height:40px;padding:0 22px;background:#fff;box-sizing:border-box;}
 .board_top .search{padding:0 25px;height:40px;margin-left:8px;color:#fff;background:#4460b0;font-size:16px;font-weight:500;}
 
 @media screen and (max-width:767px) {
 
 }
-
 
 /* 유형별 게시판 */
 .board-list {border-top:2px solid #1d262d;width:100%;margin-top:20px;clear: both;}
