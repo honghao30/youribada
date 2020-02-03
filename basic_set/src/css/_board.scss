@@ -1,59 +1,39 @@
 @charset "UTF-8";
 
 /* 게시판 상단 검색 */
-.board_top {
-        @include boardtop (#f4f4f4,$page-border,20px 20px);    
-                width:100%;margin:0 auto 40px;text-align:center;
-                select {
-                        position:relative;margin-right:8px;padding-left:22px;
-                        @include size (12%,40px);
-                        @include bgimage(select_arrow,$position:90% 0,$repeat: no-repeat)
-                        background-color:$fm-bgcolor;}                
-                input[type=text], 
-                input[type=password] {
-                    @include size (45%,40px);
-                    padding:0 22px;
-                    background-color:$fm-bgcolor;}
-                .search {
-                    @include ft-option (16px,500,#fff,0 0 0 8px);
-                    padding:0 25px;height:40px;background:#4460b0;}                
-            }
-// .board_top .top_info {display:none;float:left;margin:0 30px;font-size:17px;font-weight:500;line-height:35px;}
-// .board_top .inner{display:block;width:100%;text-align:center;font-size:0;}
+.board_top {padding:20px 20px;width:100%;margin:0 auto 40px;background:#f4f4f4;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;border:1px solid #e0dfdc;box-sizing:border-box;}
+.board_top .top_info{display:none;float:left;margin:0 30px;font-size:17px;font-weight:500;line-height:35px;}
+.board_top .inner{display:block;width:100%;text-align:center;font-size:0;}
+.board_top select{position:relative;width:12%;height:40px;margin-right:8px;padding-left:22px;background:url('../img/sub/select_arrow.png') no-repeat;background-position:90%;background-color:#fff;cursor:pointer;}
+.board_top input[type=text], 
+.board_top input[type=password] {width:45%;height:40px;padding:0 22px;background:#fff;box-sizing:border-box;}
+.board_top .search{padding:0 25px;height:40px;margin-left:8px;color:#fff;background:#4460b0;font-size:16px;font-weight:500;}
 
+@media screen and (max-width:767px) {
 
+}
 
 /* 유형별 게시판 */
-.board-list {
-            @include border(top, 2px, solid, $boardthcolor);           
-            width:100%;margin-top:20px;clear: both;
-            thead tr th {
-                        vertical-align:middle;text-align:center;font-weight:700;
-                        @include boardth (#fff,60px,16px,#222);
-                        border-bottom:1px solid $boardthcolor;
-            .rightline {border-right:1px solid $boardthcolor;}
-            }
-
-            tbody tr td {vertical-align:middle;text-align:center;border-bottom:1px solid #e1e1e1;padding:15px 0;font-size:16px;color:#222;
-                    .num {width:8%;}
-                    .data {width:11%;}
-                    .hit {width:11%;}
-                    .subject {text-align:left;width: auto;}
-                    .name {width:11%;}
-                    .open {width:11%;}
-                    .answer {width:11%;}
-                    .category {width:11%;}
-                    .org{width:30%;}
-                    .type{width:30%;}               
-            }
-            tbody tr td.org a{text-decoration:underline !important}
-            tbody tr:hover td {background:#f7f8fe;}
-            tbody tr.notice td {background:#f7f8fe;}            
-
-            }
-
+.board-list {border-top:2px solid #1d262d;width:100%;margin-top:20px;clear: both;}
+.board-list thead tr th {vertical-align:middle;text-align:center;border-bottom:1px solid #1d262d;height:60px;font-size:16px;color:#222;font-weight:700;}
+.board-list thead tr th.rightline{border-right:1px solid #1d262d;}
+.board-list tbody tr td.num {width:8%;}
+.board-list tbody tr td.data {width:11%;}
+.board-list tbody tr td.hit {width:11%;}
+.board-list tbody tr td.subject {text-align:left;width: auto;}
+.board-list tbody tr td {vertical-align:middle;text-align:center;border-bottom:1px solid #e1e1e1;padding:15px 0;font-size:16px;color:#222;}
+.board-list tbody tr:hover td {background:#f7f8fe;}
+.board-list tbody tr.notice td {background:#f7f8fe;}
+.board-list tbody tr td.name {width:11%;}
+.board-list tbody tr td.open {width:11%;}
+.board-list tbody tr td.answer {width:11%;}
+.board-list tbody tr td.category {width:11%;}
+.board-list tbody tr td.org{width:30%;}
+.board-list tbody tr td.org a{text-decoration:underline !important}
+.board-list tbody tr td.type{width:30%;}
 
 @media screen and (max-width: 767px) {
+
   .board-list {border-top:2px solid #1d262d;width:100%;margin-top:10px;table-layout: fixed;border-bottom:1px solid #e1e1e1;}
   .board-list thead tr {display:none;}
   .board-list tbody tr td {float: left;vertical-align:middle;display: block;text-align:center;border-top:1px solid #e1e1e1;border-bottom:0;padding:15px 0;font-size:16px;color:#222;}
@@ -139,7 +119,7 @@
 .prev-next-wrap {border-top:1px solid #ddd; margin:40px 0;}
 .prev-next-wrap li {border-bottom: 1px solid #ddd; display: table; width: 100%; }
 .prev-next-wrap li strong { padding:15px 0; text-align: center; background: #eee; display: table-cell; width:17%;}
-.prev-next-wrap li strong:before {content: ''; display: inline-block; width: 7px; height: 7px; border-top:1px solid #666; border-right: 1px solid #666; margin-right: 15px; position: relative; top:-4px; transform: rotate(135deg);}
+.prev-next-wrap li strong:before {content: ''; display: inline-block; width: 7px; height: 7px; border-top:1px solid #666; border-right: 1px solid #666; margin-right: 15px; position: relative; top:-4px; -webkit-transform: rotate(135deg); transform: rotate(135deg);}
 .prev-next-wrap li a {color:#666; display: table-cell; width: 83%; padding:15px 3%;}
 .prev-next-wrap li a:hover {text-decoration: underline; color:#000;}
 
@@ -151,7 +131,7 @@
 /*갤러리 타입 */
 .board_box {width:100%;margin:0 auto 20px;}
 .gallery_type{overflow:hidden;width:100%;padding-top:15px;border-bottom:1px solid #adadad;}
-.gallery_type > li{float:left;width:24.1%;margin-right:1.2%;margin-bottom:25px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 1%;border: 2px solid #e0dfdc;}
+.gallery_type > li{float:left;width:24.1%;margin-right:1.2%;margin-bottom:25px;box-sizing: border-box;padding: 1%;border: 2px solid #e0dfdc;}
 .gallery_type > li:hover {border:2px solid #4460b0;}
 .gallery_type > li.last{margin-right:0;}
 .gallery_type > li .thumb{position:relative;margin-bottom:12px;border:1px solid #d6d6d6;text-align:center;}
@@ -170,7 +150,7 @@
 .gallery_type > li .webz{padding:0 10px;text-align:center;font-size:11px;line-height:1.5em;}
 .gallery_type > li .webz p{word-break:break-all;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .gallery_type > li .webz > a{display:inline-block;}
-.gallery_type > li .thumb .thumb_play{position:absolute;top:50%;left:50%;width:72px;height:72px;transform:translate(-50%,-50%)}
+.gallery_type > li .thumb .thumb_play{position:absolute;top:50%;left:50%;width:72px;height:72px;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 
 @media screen and (max-width: 767px) {
 	.gallery_type > li{float:left;width:48.8%;margin:0 0.6% !important;margin-bottom:20px !important;}
@@ -189,7 +169,7 @@
 .photo_list_wrap .thumb{overflow:hidden;float:left;position:relative;width:162px;height:108px;text-align:center;}
 .photo_list_wrap .thumb:before{position:absolute;top:0;right:0;left:0;bottom:0;z-index:1;border:1px solid #a9a9a9;content:''}
 .photo_list_wrap .thumb:after{display:inline-block;height:100%;vertical-align:middle;content:''}
-.photo_list_wrap .thumb img{width:100%;max-height:100%;vertical-align:middle;transition:.2s;}
+.photo_list_wrap .thumb img{width:100%;max-height:100%;vertical-align:middle;-webkit-transition:.2s;transition:.2s;}
 .photo_list_wrap .thumb:hover img,.photo_item .thumb:focus img{transform:scale(1.1);-webkit-transform:scale(1.1)}
 .photo_list_wrap .cont{overflow:hidden;position:relative;height:110px;padding:0 30px;box-sizing:border-box;-webkit-box-sizing:border-box;white-space:nowrap;}
 .photo_list_wrap .cont:after{display:inline-block;height:100%;vertical-align:middle;content:''}
@@ -221,15 +201,15 @@
 }
 
 /*달력 */
-.calendar_wrap{display:inline-block;width:100%;vertical-align:top;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.calendar_wrap{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box}
 .calendar{margin-top:18px;text-align:center}
 .calendar_head{display:inline-block;position:relative;margin-bottom:18px;padding:0 66px;box-sizing:border-box}
 .calendar_head .date{display:block;margin:0 auto;font-size:30px;font-weight:500;color:#3b3a3a;text-align:center;letter-spacing:-1.5px}
-.calendar_head .btn_month_wrap{position:absolute;top:50%;width:30px;height:30px;border:1px solid #d7d7d7;-ms-transform:translateY(-50%);-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.calendar_head .btn_month_wrap{position:absolute;top:50%;width:30px;height:30px;border:1px solid #d7d7d7;-webkit-transform:translateY(-50%);transform:translateY(-50%);box-sizing:border-box}
 .calendar_head .btn_prev_wrap{left:0}
 .calendar_head .btn_next_wrap{right:0}
 .calendar_head .btn_month_wrap .btn_month{width:100%;height:100%}
-.calendar_head .btn_month_wrap .btn_month:before{position:absolute;top:50%;left:50%;width:8px;height:12px;-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);content:""}
+.calendar_head .btn_month_wrap .btn_month:before{position:absolute;top:50%;left:50%;width:8px;height:12px;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);content:""}
 .calendar_head .btn_month_wrap .prev_month:before{background-position:-231px 0}
 .calendar_head .btn_month_wrap .next_month:before{background-position:-241px 0}
 .tbl_calendar{overflow:hidden;width:100%;margin:0 auto;border:0;border-collapse:separate;table-layout:fixed}
@@ -238,7 +218,7 @@
 .tbl_calendar tr th:last-of-type,.tbl_calendar tr td:last-of-type{border-right:1px solid #dfdfdf;}
 .tbl_calendar tr:last-of-type td{border-bottom:1px solid #dfdfdf}
 .tbl_calendar th{height:40px;background:#353535;border-right-color:#484848;border-bottom-color:#fff;font-size:16px;font-weight:500;color:#fff}
-.tbl_calendar td{height:84px;padding:0 8px 8px;background:#f6f6f6;color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.tbl_calendar td{height:84px;padding:0 8px 8px;background:#f6f6f6;color:#000;box-sizing:border-box}
 .tbl_calendar td.sat,.tbl_calendar td.sun{background:#fff}
 /* .tbl_calendar tr td:first-child{border-left:1px solid #d1d1d1} */
 .tbl_calendar th span{display:inline-block;overflow:hidden;width:100%;height:100%;vertical-align:top}
@@ -246,7 +226,7 @@
 .tbl_calendar .sat .day{color:#2b6ac8}
 .tbl_calendar .sun .day{color:#d13e10}
 .tbl_calendar .btn_wedding_rent>br{display:none}
-.tbl_calendar .btn_wedding_rent{display:block;width:100%;height:34px;border:2px solid #6f98be;line-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.tbl_calendar .btn_wedding_rent{display:block;width:100%;height:34px;border:2px solid #6f98be;line-height:30px;box-sizing:border-box}
 .tbl_calendar .btn_wedding_rent.disable{background:#ececec;border-color:transparent}
 .tbl_calendar .btn_wedding_rent.is_canceled{background:#ff4343;border-color:transparent;color:#fff}
 .tbl_calendar .is_selected .btn_wedding_rent{background:#4d87bd;border-color:#4d87bd;color:#fff}

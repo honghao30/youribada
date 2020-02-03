@@ -38,59 +38,64 @@
           >.prev_all:after{width:$pgwd;}
           >.next_all:after{width:$pgwd;}          
          }
-         @include breakpoint(mobiedefault) {
-          @include be-margin(20px);  
-         }
-         >.page {
-          @include page-common (26px,26px,$page-border,1.6rem,#4d4d4d,24px)
-          margin-left:4px;
-         }
-         >.btn:after{
-          @include size(8px,9px);
-          @include bgimage (sp_ico_res,$position:0 0,$repeat: no-repeat);
-          background-size: 150px auto;
+         @include breakpoint(mobiedefault) {           
+            @include be-margin(20px);            
+          >.page {
+            @include page-common (26px,26px,$page-border,1.6rem,#4d4d4d,24px)
+            margin-left:4px;
           }
-         >.prev_all:after{width:10px;background-position:-52px -42px;}
-         >.prev:after{background-position:-62px -42px;}
-         >.next_all:after{width:10px;background-position:-58px -52px;}
-         >.next:after{background-position:-50px -52px;}         
+          >.btn:after{
+            @include size(8px,9px);
+            @include bgimage (sp_ico_res,$position:0 0,$repeat: no-repeat);
+            background-size: 150px auto;
+            }
+          >.prev_all:after{width:10px;background-position:-52px -42px;}
+          >.prev:after{background-position:-62px -42px;}
+          >.next_all:after{width:10px;background-position:-58px -52px;}
+          >.next:after{background-position:-50px -52px;}    
+          }     
       }
 
 
 /* 페이징2 */
 .paginate{
   @include be-margin(25px);  
-  text-align:center;}
- 
-.paginate a{
-            display:inline-block;
-            @include page-common (36px,36px,$page-border,16px,#666,36px);  
-            margin:0 2px;vertical-align: middle;}
-.paginate a span{
+  text-align:center;
+  a   {
+      display:inline-block;
+      @include page-common (36px,36px,$page-border,16px,#666,36px);  
+      margin:0 2px;vertical-align: middle;
+      span {
             @include size (36px,36px);
-            vertical-align:middle;}
-.paginate .sp_start{background-position:-22px -306px;}
-.paginate .sp_finish{background-position:-136px -306px;}
-.paginate .sp_prev{background-position:-60px -306px;}
-.paginate .sp_next{background-position:-98px -306px;}
-.paginate .paginate_input_wrap{display:inline-block;
+            vertical-align:middle;}  
+      } 
+    .sp_start{background-position:-22px -306px;}
+    .sp_finish{background-position:-136px -306px;}
+    .sp_prev{background-position:-60px -306px;}
+    .sp_next{background-position:-98px -306px;}
+    .paginate_input_wrap{display:inline-block;
             @include ft-option (18px,700,#575757,0 6px 0 14px);  
             vertical-align: middle;}
-.paginate .paginate_input{display:inline-block;
+    .paginate_input{display:inline-block;
           @include ft-option (18px,700,#575757,0 6px 0 0);  
           border: $border-default;text-align:center;}          
-.paginate .total_num{margin-right:14px;}
-.paginate .btn_page_go {width:57px;height:36px;background:#3980b2;font-weight:500;color:#fff;line-height:36px;}
-
-@media screen and (max-width:767px) {
-  .paginate{margin-top:13px;}
-  .paginate a{width:28px;height:28px;border:1px solid #ccc;vertical-align: middle;}
-  .paginate a span{width:28px;height:28px;vertical-align:middle;}
-  .paginate .sp_start{background-position:-120px -256px;}
-  .paginate .sp_prev{background-position:-87px -275px;}
-  .paginate .sp_next{background-position:-87px -305px;}
-  .paginate .sp_finish{background-position:-150px -256px;}
-  .paginate .paginate_input_wrap{margin:0;font-size:1.7rem;vertical-align: middle;}
-  .paginate .paginate_input{height:28px;}
-  .paginate .btn_page_go{height:28px;font-size:1.7rem;line-height:28px;}
-}
+    .total_num{margin-right:14px;}
+    .btn_page_go {
+            @include ft-option (15px,500,#fff,0);
+            @include size (57px,36px);
+            background:#3980b2;line-height:36px;
+          }   
+    @include breakpoint(mobiedefault) {             
+        @include be-margin(13px);  
+       a{width:28px;height:28px;border:1px solid #ccc;vertical-align: middle;
+       span {width:28px;height:28px;vertical-align:middle;}
+       }
+        .sp_start{background-position:-120px -256px;}
+        .sp_prev{background-position:-87px -275px;}
+        .sp_next{background-position:-87px -305px;}
+        .sp_finish{background-position:-150px -256px;}
+        .paginate_input_wrap{margin:0;font-size:1.7rem;vertical-align: middle;}
+        .paginate_input{height:28px;}
+        .btn_page_go{height:28px;font-size:1.7rem;line-height:28px;}
+      }                 
+   } 

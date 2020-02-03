@@ -150,3 +150,15 @@
     border: $page-border-active;    
     font-weight:$ft-wt;  
   }
+
+  @mixin boardtop ($bg-color,$page-border,$padding) {
+    background: $bg-color;    
+    border: $page-border;    
+    padding:$padding;
+  }  
+  @mixin boardth ($bg-color,$ht,$ftsz,$color) {
+    background: $bg-color;    
+    height: $ht;    
+    font-size:$ftsz;
+    color:$color;
+  }
