@@ -39,7 +39,23 @@
       }
     }
   
-  
+    @mixin breakpoint($point) {
+      @if $point == notebook {
+        @media (max-width: 1230px) { @content; }
+      }
+      @else if $point == media-tablet {
+        @media (max-width: 1024px) { @content; }
+      }
+      @else if $point == mobiedefault {
+        @media (max-width: 768px)  { @content; }
+      }
+      @else if $point == mobiesmall {
+        @media (max-width: 468px)  { @content; }
+      }      
+      @else if $point == mobieold {
+        @media (max-width: 320px)  { @content; }
+      }         
+    }
   
   @mixin border-radius($radius) {
       -webkit-border-radius: $radius;
