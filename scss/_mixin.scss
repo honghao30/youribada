@@ -162,3 +162,9 @@
     font-size:$ftsz;
     color:$color;
   }
+@mixin boardtd ($board-tdline,$tdpd,$ft-size,$color) { 
+  border-bottom: $board-tdline;
+  padding:$tdpd;
+  font-size:$ft-size;
+  color:$color;  
+}
