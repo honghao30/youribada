@@ -12,35 +12,7 @@
     }
 
 
-/* 버튼 */
-.btn { 
-    @include btn-basic (8px 18px,#666,#fff);
-    display: inline-block;text-align: center;vertical-align: middle;border:1px solid #ccc;}
-.mini-btn-blue {
-  @include btn-basic (3px 5px,#fff,#095084);font-size: 13px;
-}
-.mini-btn-orange {
-  @include btn-basic (3px 5px,#fff,#d57504);font-size: 13px;
-}
-.small-btn-blue {
-  @include btn-basic (5px 13px,#fff,#095084);
-}
-.small-btn-orange {
-  @include btn-basic (5px 13px,#fff,#d57504);
-}
-.btn-blue {
-  @include btn-basic (8px 18px,#fff,#095084);
-}
-.btn-orange {
-  @include btn-basic (8px 18px,#fff,#d57504);
-}
 
-.larger-btn-blue {
-  @include btn-basic (15px 25px,#fff,#095084);
-}
-.larger-btn-orange {
-  @include btn-basic (15px 25px,#fff,#d57504);
-}
 
 /* 제목 스타일 */
 .pagetit-h1 {font-size:$font-size-h1;color:$color-primary-light;font-weight: 700;}

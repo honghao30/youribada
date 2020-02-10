@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* 버튼 */
+.btn {
+    display: inline-block;
+    @include btn-basic (8px 18px,$btn-default-color,$btn-default-bgcolor);
+    text-align: center;vertical-align: middle;border:1px solid $btn-border-default;
+}
+
+.mini-btn-blue {
+  @include btn-basic (3px 5px,#fff,#095084);font-size: 13px;
+}
+.mini-btn-orange {
+  @include btn-basic (3px 5px,#fff,#d57504);font-size: 13px;
+}
+.small-btn-blue {
+  @include btn-basic (5px 13px,#fff,#095084);
+}
+.small-btn-orange {
+  @include btn-basic (5px 13px,#fff,#d57504);
+}
+.btn-blue {
+  @include btn-basic (8px 18px,#fff,#095084);
+}
+.btn-orange {
+  @include btn-basic (8px 18px,#fff,#d57504);
+}
+
+.larger-btn-blue {
+  @include btn-basic (15px 25px,#fff,#095084);
+}
+.larger-btn-orange {
+  @include btn-basic (15px 25px,#fff,#d57504);
+}

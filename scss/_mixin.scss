@@ -24,10 +24,10 @@
   }
 
   
-@mixin btn-basic ($padding,$color,$bgcolor) {
+@mixin btn-basic ($padding,$btn-default-color,$btn-default-bgcolor) {
     padding:$padding;
-    color:$color;
-    background:$bgcolor;    
+    color:$btn-default-color;
+    background:$btn-default-bgcolor;
   }
   
   

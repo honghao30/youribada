@@ -5,8 +5,6 @@
     작성날짜 : 2020.01 홍성호
     참고사항 : 이 파일은 설정값만 정의한다.    
 -------------------------------------------------------------------*/
-
-
 // 글로벌 변수 설정 
 $main-linkcolor: #666;
 $main-linkcolor-hover:#008cba;
@@ -67,6 +65,11 @@ $pgwd : 20px;
 
 $boardthcolor : #1d262d;
 
+//버튼
+$btn-border-default: #ccc;
+$btn-default-color:#666;
+$btn-default-bgcolor:#fff;
+
 //table 
 $table-cell-padding: 10px 5px;
 $tbl-hover-color:#333;
@@ -76,7 +79,7 @@ $trhover : #f7f8fe;
 $tbl-hover-color: #fff;
 $tbl-ft-color:#666;
 
-//boarder 
+//board 
 $default-bordertop: 2px solid $border-color;
 $bordertop-light: 1px solid $border-color;
 
