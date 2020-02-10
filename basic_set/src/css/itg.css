@@ -148,24 +148,24 @@ padding: 10px 5px;
 
 .table-list thead tr th {
 font-weight: 700;
-color: #000;
+color: #666;
 background: #d8deea;
 border: 1px solid #ccc;
 }
 
 .table-list tbody tr td {
 font-weight: 700;
-color: #000;
+color: #666;
 font-size: 16px;
 border: 1px solid #ccc;
 }
 
 .table-list tr:hover {
-background-color: #333;
+background-color: #fff;
 }
 
 .table-list tr:hover th, .table-list tr:hover td {
-background-color: #333;
+background-color: #fff;
 }
 
 .table-body-only {
@@ -174,14 +174,14 @@ border-top: 2px solid #2b2b2b;
 
 .table-body-only tbody th {
 font-weight: 700;
-color: #000;
+color: #666;
 background: #d8deea;
 border: 1px solid #ccc;
 }
 
 .table-body-only tbody td {
 font-weight: 700;
-color: #000;
+color: #666;
 font-size: #d8deea;
 border: 1px solid #ccc;
 }
@@ -200,6 +200,7 @@ display: inline-block;
 display: inline-block;
 width: 45%;
 height: 40px;
+line-height: 40px;
 border: 1px solid #ccc;
 }
 
@@ -207,6 +208,7 @@ border: 1px solid #ccc;
 display: inline-block;
 width: 45%;
 height: 40px;
+line-height: 40px;
 border: 1px solid #ccc;
 }
 
@@ -1002,7 +1004,7 @@ border-bottom: 1px solid #1d262d;
 
 .photo_list_wrap .photo_item {
 height: 158px;
-border-top: 1px solid #dfdfdf;
+border-top: 1px solid #1d262d;
 }
 
 .photo_list_wrap .photo_item:first-child {
@@ -1014,8 +1016,6 @@ display: block;
 width: 100%;
 height: 100%;
 padding: 24px 0;
-box-sizing: border-box;
--webkit-box-sizing: border-box;
 }
 
 .photo_list_wrap .thumb {
@@ -1063,8 +1063,6 @@ overflow: hidden;
 position: relative;
 height: 110px;
 padding: 0 30px;
-box-sizing: border-box;
--webkit-box-sizing: border-box;
 white-space: nowrap;
 }
 
@@ -1230,7 +1228,6 @@ background-position: 0 -49px;
 display: inline-block;
 width: 100%;
 vertical-align: top;
-box-sizing: border-box;
 }
 
 .calendar {
@@ -1243,7 +1240,6 @@ display: inline-block;
 position: relative;
 margin-bottom: 18px;
 padding: 0 66px;
-box-sizing: border-box;
 }
 
 .calendar_head .date {
@@ -1303,7 +1299,6 @@ background-position: -241px 0;
 overflow: hidden;
 width: 100%;
 margin: 0 auto;
-border: 0;
 border-collapse: separate;
 table-layout: fixed;
 }
@@ -1311,7 +1306,7 @@ table-layout: fixed;
 .tbl_calendar th, .tbl_calendar td {
 position: relative;
 width: 14%;
- /* border:1px solid #d1d1d1; */
+border: 1px solid #d1d1d1;
 border-left: none;
 border-top: none;
 font-weight: 500;
@@ -1347,13 +1342,12 @@ height: 84px;
 padding: 0 8px 8px;
 background: #f6f6f6;
 color: #000;
-box-sizing: border-box;
 }
 
 .tbl_calendar td.sat, .tbl_calendar td.sun {
 background: #fff;
 }
-/* .tbl_calendar tr td:first-child{border-left:1px solid #d1d1d1} */
+
 .tbl_calendar th span {
 display: inline-block;
 overflow: hidden;
@@ -1419,7 +1413,7 @@ color: #4d87bd;
 margin-top: 58px;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 768px) {
 .wedding_hall_rent2 .step_navigation {
 padding-right: 76px;
 padding-left: 38px;
@@ -1496,16 +1490,16 @@ letter-spacing: -1.5px;
 }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 468px) {
 .tbl_calendar td {
 height: 66px;
 }
 
-.tbl_calendar .btn_wedding_rent > br {
+.tbl_calendar td .btn_wedding_rent > br {
 display: block;
 }
 
-.tbl_calendar .btn_wedding_rent {
+.tbl_calendar td .btn_wedding_rent {
 height: 36px;
 line-height: 16px;
 }

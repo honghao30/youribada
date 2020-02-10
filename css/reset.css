@@ -44,7 +44,7 @@ input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none}
 input[type='text'],input[type='password'],input[type='submit'],input[type='search']{-webkit-appearance:none;border-radius:0;background-color:transparent}
 button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file']{-webkit-appearance:button;border-radius:0}
 .ir-text,legend,.blind{overflow:hidden;position:absolute;border:0;width:1px;height:1px;clip:rect(1px,1px,1px,1px)}
-*,*:before,*:after{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+*,*:before,*:after{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
 
 @media screen and (max-width:1239px){
   html{font-size:10px;font-size:0.625rem;}
@@ -57,7 +57,7 @@ button,input[type='button'],input[type='submit'],input[type='reset'],input[type=
 }
 
 @media screen and (max-width:767px) {
-  html{font-size:10px;font-size:0.625rem;-webkit-text-size-adjust: none;}
+  html{font-size:0.625rem;}
   body,html{height:100%}
   body,button,input,select,table,textarea{font-size:1.6rem}
 }

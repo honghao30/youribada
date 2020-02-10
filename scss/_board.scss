@@ -203,15 +203,16 @@
 .photo_list_wrap {
     @include border(top, 2px, solid, $boardthcolor);
     @include border(bottom, 1px, solid, $boardthcolor);
-        .photo_item {height:158px;border-top:1px solid #dfdfdf;}
+        .photo_item {height:158px;@include border(top, 1px, solid, $boardthcolor);}
         .photo_item:first-child{border:0}
-        .photo_item>a{display:block;width:100%;height:100%;padding:24px 0;box-sizing:border-box;-webkit-box-sizing:border-box;}
+        .photo_item>a{display:block;width:100%;height:100%;padding:24px 0;}
         .thumb{overflow:hidden;float:left;position:relative;width:162px;height:108px;text-align:center;}
         .thumb:before{position:absolute;top:0;right:0;left:0;bottom:0;z-index:1;border:1px solid #a9a9a9;content:''}
         .thumb:after{display:inline-block;height:100%;vertical-align:middle;content:''}
         .thumb img{width:100%;max-height:100%;vertical-align:middle;transition:.2s;}
-        .thumb:hover img,.photo_item .thumb:focus img{transform:scale(1.1);-webkit-transform:scale(1.1)}
-        .cont{overflow:hidden;position:relative;height:110px;padding:0 30px;box-sizing:border-box;-webkit-box-sizing:border-box;white-space:nowrap;}
+        .thumb:hover img,
+        .photo_item .thumb:focus img{transform:scale(1.1);-webkit-transform:scale(1.1)}
+        .cont{overflow:hidden;position:relative;height:110px;padding:0 30px;white-space:nowrap;}
         .cont:after{display:inline-block;height:100%;vertical-align:middle;content:''}
         .bx{display:inline-block;vertical-align:middle}
         .title{display:inline-block;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;-webkit-line-clamp:1;max-height:25px;font-size:21px;font-weight:700;color:#4f4f4f;line-height:1.3;white-space:normal;text-overflow:ellipsis;box-sizing:border-box;-webkit-box-sizing:border-box;}
@@ -221,7 +222,7 @@
         .info_inner span{display:inline-block;position:relative;padding-right:36px;font-size:16px;font-weight:400;line-height:16px;}
         .info_inner span:after{position:absolute;top:0;right:0;width:1px;height:16px;margin-right:18px;background:#dcdcdc;content:''}
         .info_inner span:last-child:after{display:none}
-        .no_cont{height:auto;margin:48px 0 40px;padding:50px 0;border:1px solid #dbdbdb}
+        .no_cont{height:auto;margin:48px 0 40px;padding:50px 0;border:1px solid #dbdbdb;}
         .no_cont .txt{font-size:22px;color:#4f4f4f;text-align:center}
         .no_cont .txt:before{display:block;width:141px;height:141px;margin:0 auto 22px;background-position:0 -91px;content:''}
         .photo_item>a:hover,
@@ -241,59 +242,80 @@
         }
     }
 
-/*달력 */
-.calendar_wrap{display:inline-block;width:100%;vertical-align:top;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.calendar{margin-top:18px;text-align:center}
-.calendar_head{display:inline-block;position:relative;margin-bottom:18px;padding:0 66px;box-sizing:border-box}
-.calendar_head .date{display:block;margin:0 auto;font-size:30px;font-weight:500;color:#3b3a3a;text-align:center;letter-spacing:-1.5px}
-.calendar_head .btn_month_wrap{position:absolute;top:50%;width:30px;height:30px;border:1px solid #d7d7d7;-ms-transform:translateY(-50%);-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.calendar_head .btn_prev_wrap{left:0}
-.calendar_head .btn_next_wrap{right:0}
-.calendar_head .btn_month_wrap .btn_month{width:100%;height:100%}
-.calendar_head .btn_month_wrap .btn_month:before{position:absolute;top:50%;left:50%;width:8px;height:12px;-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);content:""}
-.calendar_head .btn_month_wrap .prev_month:before{background-position:-231px 0}
-.calendar_head .btn_month_wrap .next_month:before{background-position:-241px 0}
-.tbl_calendar{overflow:hidden;width:100%;margin:0 auto;border:0;border-collapse:separate;table-layout:fixed}
-.tbl_calendar th,.tbl_calendar td{position:relative;width:14%;/* border:1px solid #d1d1d1; */border-left:none;border-top:none;font-weight:500;text-align:center;line-height:40px;vertical-align:top}
-.tbl_calendar tr th:first-of-type,.tbl_calendar tr td:first-of-type{border-left:1px solid #dfdfdf;}
-.tbl_calendar tr th:last-of-type,.tbl_calendar tr td:last-of-type{border-right:1px solid #dfdfdf;}
-.tbl_calendar tr:last-of-type td{border-bottom:1px solid #dfdfdf}
-.tbl_calendar th{height:40px;background:#353535;border-right-color:#484848;border-bottom-color:#fff;font-size:16px;font-weight:500;color:#fff}
-.tbl_calendar td{height:84px;padding:0 8px 8px;background:#f6f6f6;color:#000;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.tbl_calendar td.sat,.tbl_calendar td.sun{background:#fff}
-/* .tbl_calendar tr td:first-child{border-left:1px solid #d1d1d1} */
-.tbl_calendar th span{display:inline-block;overflow:hidden;width:100%;height:100%;vertical-align:top}
-.tbl_calendar td .day{font-weight:500}
-.tbl_calendar .sat .day{color:#2b6ac8}
-.tbl_calendar .sun .day{color:#d13e10}
-.tbl_calendar .btn_wedding_rent>br{display:none}
-.tbl_calendar .btn_wedding_rent{display:block;width:100%;height:34px;border:2px solid #6f98be;line-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.tbl_calendar .btn_wedding_rent.disable{background:#ececec;border-color:transparent}
-.tbl_calendar .btn_wedding_rent.is_canceled{background:#ff4343;border-color:transparent;color:#fff}
-.tbl_calendar .is_selected .btn_wedding_rent{background:#4d87bd;border-color:#4d87bd;color:#fff}
-.wedding_calendar_area .reservation_date{margin-top:34px;font-size:20px;color:#505253}
-.wedding_calendar_area .selected_date{font-weight:500;color:#4d87bd}
-.wedding_hall_rent2+.step_navigation_pc{margin-top:58px}
 
-@media screen and (max-width:767px){
+
+/*달력 */
+.calendar_wrap{display:inline-block;width:100%;vertical-align:top;}
+.calendar{margin-top:18px;text-align:center;}
+.calendar_head {display:inline-block;position:relative;margin-bottom:18px;padding:0 66px;
+    .date{display:block;margin:0 auto;font-size:30px;font-weight:500;color:#3b3a3a;text-align:center;letter-spacing:-1.5px}
+    .btn_month_wrap{position:absolute;top:50%;width:30px;height:30px;border:1px solid #d7d7d7;-ms-transform:translateY(-50%);-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+    .btn_prev_wrap{left:0}
+    .btn_next_wrap{right:0}
+    .btn_month_wrap .btn_month{width:100%;height:100%}
+    .btn_month_wrap .btn_month:before{position:absolute;top:50%;left:50%;width:8px;height:12px;-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);content:""}
+    .btn_month_wrap .prev_month:before{background-position:-231px 0}
+    .btn_month_wrap .next_month:before{background-position:-241px 0}
+}
+
+.tbl_calendar{overflow:hidden;width:100%;margin:0 auto;border-collapse:separate;table-layout:fixed;
+    th,
+    td{position:relative;width:14%;border:1px solid #d1d1d1; border-left:none;border-top:none;font-weight:500;text-align:center;line-height:40px;vertical-align:top}
+    tr th:first-of-type,
+    tr td:first-of-type{border-left:1px solid #dfdfdf;}
+    tr th:last-of-type,
+    tr td:last-of-type{border-right:1px solid #dfdfdf;}
+    tr:last-of-type td{border-bottom:1px solid #dfdfdf}
+    th {height:40px;background:#353535;border-right-color:#484848;border-bottom-color:#fff;font-size:16px;font-weight:500;color:#fff}
+    td {height:84px;padding:0 8px 8px;background:#f6f6f6;color:#000;}
+
+    td.sat,
+    td.sun{background:#fff;}
+    th span{display:inline-block;overflow:hidden;width:100%;height:100%;vertical-align:top}
+    td .day{font-weight:500}
+   
+    .sat .day{color:#2b6ac8}
+    .sun .day{color:#d13e10}
+    .btn_wedding_rent>br{display:none}
+    .btn_wedding_rent{display:block;width:100%;height:34px;border:2px solid #6f98be;line-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+    .btn_wedding_rent.disable{background:#ececec;border-color:transparent}
+    .btn_wedding_rent.is_canceled{background:#ff4343;border-color:transparent;color:#fff}
+    .is_selected .btn_wedding_rent{background:#4d87bd;border-color:#4d87bd;color:#fff}
+        
+}
+
+.wedding_calendar_area {
+    .reservation_date{margin-top:34px;font-size:20px;color:#505253}
+    .selected_date{font-weight:500;color:#4d87bd}
+}
+.wedding_hall_rent2+.step_navigation_pc{margin-top:58px}
+@include breakpoint(mobiedefault) {
     .wedding_hall_rent2 .step_navigation{padding-right:76px;padding-left:38px}
     .wedding_hall_rent2 .step_navigation .step_item:nth-child(1){left:0}
     .wedding_calendar_area{padding:23px 0 15px}
-    .calendar_head{padding:0 41px}
-    .calendar_head .date{font-size:2rem}
-    .calendar_head .btn_month_wrap{width:21px;height:18px}
-    .calendar_head .btn_month_wrap .btn_month:before{width:4px;height:7px}
-    .calendar_head .btn_month_wrap .prev_month:before{background-position:-95px -14px}
-    .calendar_head .btn_month_wrap .next_month:before{background-position:-101px -14px}
-    .tbl_calendar th, .tbl_calendar td{line-height:22px}
-    .tbl_calendar th{height:22px;font-size:1.5rem}
-    .tbl_calendar td{height:56px;padding:0 2px 3px}
-    .tbl_calendar td .day{font-size:1.5rem}
+    .calendar_head{padding:0 41px;
+        .date{font-size:2rem}
+        .btn_month_wrap{width:21px;height:18px}
+        .btn_month_wrap .btn_month:before{width:4px;height:7px}
+        .btn_month_wrap .prev_month:before{background-position:-95px -14px}
+        .btn_month_wrap .next_month:before{background-position:-101px -14px}
+    }
+
+    .tbl_calendar  {
+        th,
+        td {line-height:22px;}
+        th{height:22px;font-size:1.5rem;}
+        td{height:56px;padding:0 2px 3px}
+        td .day{font-size:1.5rem}
+    }    
+
     .tbl_calendar .btn_wedding_rent{position:absolute;bottom:3px;left:5%;width:90%;height:22px;border-width:1px;font-size:1.3rem;line-height:20px;letter-spacing:-1.5px}
     .wedding_calendar_area .reservation_date{margin-top:15px;font-size:1.7rem;letter-spacing:-1.5px}
+
 }
-@media screen and (max-width:480px){
-    .tbl_calendar td{height:66px}
-    .tbl_calendar .btn_wedding_rent>br{display:block}
-    .tbl_calendar .btn_wedding_rent{height:36px;line-height:16px}
-}
+@include breakpoint(mobiesmall) {
+    .tbl_calendar td{height:66px;
+        .btn_wedding_rent>br{display:block}
+        .btn_wedding_rent{height:36px;line-height:16px}    
+    }
+} 

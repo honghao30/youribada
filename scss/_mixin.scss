@@ -39,23 +39,23 @@
       }
     }
   
-    @mixin breakpoint($point) {
-      @if $point == notebook {
-        @media (max-width: 1230px) { @content; }
-      }
-      @else if $point == media-tablet {
-        @media (max-width: 1024px) { @content; }
-      }
-      @else if $point == mobiedefault {
-        @media (max-width: 768px)  { @content; }
-      }
-      @else if $point == mobiesmall {
-        @media (max-width: 468px)  { @content; }
-      }      
-      @else if $point == mobieold {
-        @media (max-width: 320px)  { @content; }
-      }         
+  @mixin breakpoint($point) {
+    @if $point == notebook {
+      @media (max-width: 1230px) { @content; }
     }
+    @else if $point == media-tablet {
+      @media (max-width: 1024px) { @content; }
+    }
+    @else if $point == mobiedefault {
+      @media (max-width: 768px)  { @content; }
+    }
+    @else if $point == mobiesmall {
+      @media (max-width: 468px)  { @content; }
+    }      
+    @else if $point == mobieold {
+      @media (max-width: 320px)  { @content; }
+    }         
+  }
   
   @mixin border-radius($radius) {
       -webkit-border-radius: $radius;
@@ -94,24 +94,24 @@
     border-collapse: collapse;    
   }
 
-  @mixin basic-th ($ftweight,$color,$bgcolor) {
+  @mixin basic-th ($ftweight,$tbl-ft-color,$bgcolor) {
     font-weight:$ftweight;
-    color:$color;
+    color:$tbl-ft-color;
     background:$bgcolor;
   }
-  @mixin basic-td ($ftweight,$color,$ft-size) {
+  @mixin basic-td ($ftweight,$tbl-ft-color,$ft-size) {
     font-weight:$ftweight;
-    color:$color;
+    color:$tbl-ft-color;
     font-size:$ft-size;
   }
-  @mixin body-tblbasic-th ($ftweight,$color,$bgcolor) {
+  @mixin body-tblbasic-th ($ftweight,$tbl-ft-color,$bgcolor) {
     font-weight:$ftweight;
-    color:$color;
+    color:$tbl-ft-color;
     background:$bgcolor;
   }
-  @mixin body-tblbasic-td ($ftweight,$color,$ft-size) {
+  @mixin body-tblbasic-td ($ftweight,$tbl-ft-color,$ft-size) {
     font-weight:$ftweight;
-    color:$color;
+    color:$tbl-ft-color;
     font-size:$ft-size;
   }
     @mixin bgimage($name,$position:0 0,$repeat: no-repeat) {
