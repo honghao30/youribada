@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="js/jquery.1.11.0.min.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="css/layout.css">
+        <!-- 1. core style sheet : 필수 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">
+        <!-- 2. theme style sheet : 택1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">
+        <!-- 3. core javascript : 필수 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+
+        <!-- 4. highlight 지원 언어 javascript : 지원할 언어만큼 선택 -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <!-- xml, xhtml, xslt, html, xhtml -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<!-- xml, xhtml, xslt, html, xhtml -->
+
+        <!-- SyntaxHighlighter 초기화 -->
+        <script type="text/javascript">
+            /* 5. set config : option */
+            // option 지정
+                        /* 5. set config : option */
+                /* [default:false]  blogger.com을 이용한다면 true */
+                SyntaxHighlighter.config.bloggerMode = false;
+                /* [default:Object] http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/strings.html */
+                SyntaxHighlighter.config.strings = Object;
+                /* [default:false]  소스이 <br />를 무시한다. */
+                SyntaxHighlighter.config.stripBrs = false;
+                /* [default:'pre']  <pre> tag대신 다른 tag를 지정함 */
+                SyntaxHighlighter.config.tagName = 'pre';
+            /* 6. set defaults : option */
+            /* 6. set defaults : option */
+                /* [default:true]   URL 링크 여부 지정 */
+                SyntaxHighlighter.defaults['auto-links'] = true;
+                /* [default:'']     css class를 지정해서 style을 바꾼다 */
+                SyntaxHighlighter.defaults['class-name'] = '';
+                /* [default:false]  code 접기 기능 : bug 있음 */
+                SyntaxHighlighter.defaults['collapse'] = false;
+                /* [default:1]      시작 라인 번호 지정 */
+                SyntaxHighlighter.defaults['first-line'] = 1;
+                /* [default:true]   라인 번호 숨김 여부 지정 */
+                SyntaxHighlighter.defaults['gutter'] = true;
+                /* [default:null]   특정 라인을 강조함. array[3, 7] 또는 하나의 숫자만 사용할수 있음 */
+                SyntaxHighlighter.defaults['highlight'] = null;
+                /* [default:false]  HTML과 같이 사용될경우 HTML을 highlight할지를 결정함. shBrushXml.js가 필요함 */
+                SyntaxHighlighter.defaults['html-script'] = false;
+                /* [default:true]   탭을 smart하게 조정함 */
+                SyntaxHighlighter.defaults['smart-tabs'] = true;
+                /* [default:4]      탭 사이즈 변경 */
+                SyntaxHighlighter.defaults['tab-size'] = 4;
+                /* [default:true]   툴바 표시 지정 */
+                SyntaxHighlighter.defaults['toolbar'] = true;
+                /* [default:false]  라인번호 앞에 0을 채움 */
+                SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+                /* [default:true]   double click으로 code 전체를 선택 */
+                SyntaxHighlighter.defaults['quick-code'] = true;
+
+
+            /* 7. 초기화 : 필수 */
+            SyntaxHighlighter.all();
+        </script>
+        <script type="text/javascript">
+            //<![CDATA[
+                window.onload=function(){
+                    $("#keyword").keyup(function() {
+                        var k = $(this).val();
+                        $(".table-list > tbody > tr").hide();
+                        var temp = $(".table-list > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                        $(temp).parent().show();
+                    })
+                }
+            //]]>
+        </script>
+        <style>
+            .css-namesarch {border:2px solid #ccc;padding:15px;text-align:center;}
+        </style>
+		<script src="js/asidebar.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>   
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+    <div  id="content" class="cont">
+        <div class="text">
+            이 문서의 내용은 작업자 및 디자인팀과의 공유를 위한 목적이기에 실제 _variables과 다를수 있습니다.
+        </div>
+        <pre class="brush:xml;">
+            @charset "UTF-8";
+
+            /*-------------------------------------------------------------------
+                파일정의 : Settings
+                작성날짜 : 2020.01 홍성호
+                참고사항 : 이 파일은 설정값만 정의한다.    
+            -------------------------------------------------------------------*/
+            // 글로벌 변수 설정 
+            $main-linkcolor: #666;
+            $main-linkcolor-hover:#008cba;
+            $main-linkcolor-active:#008cba;
+            
+            $default-color: #666;
+            $point-color: #ff0000;
+            $primary-color: #008cba;
+            
+            
+            
+            // 여백,간격 
+            $width-default: 1200px;
+            $gutter-default: 20px;
+            $bx-padding:30px;
+            
+            //폼
+            $fm-height: 40px;
+            $fm-bgcolor :#fff;
+            $fm-border :#ccc;
+             
+            // 컬러 
+            $color-basic: #333;
+            $color-primary: #0089b3;
+            $color-primary-dark: #006d8e;
+            $color-primary-light: #2496ee;
+            $color-secondary: #54873c;
+            $color-success: #47a104;
+            $color-warning: #e9b500;
+            $color-danger: #d45704;
+            $color-error: #ff0000;
+            $color-info: #949494;
+             
+            $border-color:#000;
+            
+            
+            //폰트 사이즈
+            $font-size-base:          16px;
+            $font-size-large:         ceil(($font-size-base * 1.25)); 
+            $font-size-small:         ceil(($font-size-base * 0.85)); 
+            
+            $font-size-h1:            floor(($font-size-base * 2.8)); 
+            $font-size-h2:            floor(($font-size-base * 2.3)); 
+            $font-size-h3:            ceil(($font-size-base * 2)); 
+            $font-size-h4:            ceil(($font-size-base * 1.75)); 
+            $font-size-h5:            $font-size-base;
+            $font-size-h6:            ceil(($font-size-base * 0.85)); 
+            
+            
+            $default-line-height: 20px;
+            
+            //border
+            $border-default: 1px solid #ccc;
+            $page-border: 1px solid #ccc;
+            $page-border-active: 1px solid #ccc;
+            
+            $pgwd : 20px;
+            
+            $boardthcolor : #1d262d;
+            
+            //버튼
+            $btn-border-default: #ccc;
+            $btn-default-color:#666;
+            $btn-default-bgcolor:#fff;
+            
+            //table 
+            $table-cell-padding: 10px 5px;
+            $tbl-hover-color:#333;
+            $board-thline : 1px solid #e1e1e1;
+            $board-tdline : 1px solid #e1e1e1;
+            $trhover : #f7f8fe;
+            $tbl-hover-color: #fff;
+            $tbl-ft-color:#666;
+            
+            //board 
+            $default-bordertop: 2px solid $border-color;
+            $bordertop-light: 1px solid $border-color;
+            
+            
+            $known-prefixes: webkit, moz, ms, o;
+        </pre>        
+
+    </div>
+
+</div>
+</body>
+</html>
