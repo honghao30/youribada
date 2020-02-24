@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+    <title>ITG 퍼블리싱팀</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="js/asidebar.jquery.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".navigation li").click(function(){
+                    $(".navigation li").addClass("active").not(this).removeClass("active");
+                });
+
+                //토글
+                $(".btn_mobile").click(function(){
+                $(this).toggleClass("is_open");
+                $(".mobile-menu").toggleClass("is_open");
+                });
+            });
+        </script>        		
+		  <script type='text/javascript'>
+			   $.get('header.html',function(response){ 
+				$('#nav').html(response); 
+			   });
+		  </script>
+	</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+
+	</div>
+	<div  id="content" class="cont">
+
+            <h2>작성규칙</h2>
+            <p class="text">최대 3뎁스 중첩까지 사용하는 것을 권장한다 ( 셀렉터의 갯수가 아닌 scss 코드상의 중첩 )<br>
+                3뎁스가 넘어갈 경우는 하위연결자를 활용하거나 별도의 모듈로 뽑아내는 것을 고려한다.<br>
+                미디어 쿼리의 중괄호는 중첩수에 포함하지 않는다.
+                 
+            </p>
+            <pre class="brush:xml;">
+                .foo { 
+                    .bar { 
+                        .baz { } 
+                        .baz .qux { } 
+                        } 
+                    } 
+                .foo { 
+                    .bar { 
+                        .baz { } 
+                        .qux { } 
+                        } 
+                    }
+
+                
+            </pre>
+            <h2>들여쓰기 및 선언 순서 </h2>
+            <p class="text">
+                중첩 마다 들여 쓰기 한다.<br>
+하위 선택자가 시작될 때 빈 줄을 추가한다.<br>
+extend / include 를 상단에 모아쓰고 그 뒤에 빈 줄을 추가한다.<br>
+재선언이 필요한 경우 include를 필요한 위치에 추가 할 수 있다.<br>                
+            </p>         
+            <pre class="brush:xml;">
+                    .foo { //@extend, @include는 상단에 모아쓰고 그 뒤 빈 줄을 추가한다. 
+                        @extend %a; @extend %b; 
+                        @include abc(n); //속성 별 개행. 
+                        display: block; 
+                        overflow: hidden; 
+                        position: relative; 
+                        z-index: 10; 
+                        width: 100px; 
+                        margin: 0; 
+                        padding: 0; 
+                        border: 1px solid red; 
+                        background: red; 
+                        font-weight: bold; 
+                        letter-spacing: -1px; 
+                        text-decoration: underline; 
+                        //상황에 따라 하단에 위치할수도 있음. 
+                        @include bcd(n); //하위 선택자가 시작될 때 빈 줄 추가. 
+                        .bar { ... } 
+                    }
+
+            </pre>
+
+            <div class="text">
+                scss 파일이 css로 변환되는 과정에서 설정에 따라 공백과 여백을 없앨 수 있다. 때문에 scss 파일에서는 css 파일과 달리 가독성에 중점을 두고 속성마다 개행 한다.<br>
+                ui 별로 파일을 나누면 한 파일의 길이를 줄일 수 있다.<br>
+               
+                @extend 와 @include 를 사용한 바로 다음 라인은 @extend, @include 가 그룹화된 느낌과 다음 라인에 오는 속성의 가독성을 위해 빈 줄을 추가한다.<br>
+                
+                하위 선택자가 시작될 때 빈 줄을 추가하면 하위 선택자의 가독성이 높아진다.<br>
+                
+                속성 선언 순서를 컨벤션 따르면 다음 작업자가 속성을 쉽게 찾을 수 있다.
+                                
+            </div>
+            <h2>지역변수(로컬변수)와 전역변수(글로벌 변수)</h2>
+            <div class="brush:xml;">
+              지역변수 : 블록 내에서 선언 된 변수 (범위 : 블록 내에서만)<br>
+              전역변수 : 블록 밖에서 선언 된 변수 (범위 : 전체)<br><br>
+                
+              전역변수 _variables 안에 g로 시작해 정의한다.<br>
+              $g-font: 
+              지역변수 는 각 UI 상단에 정의한다.<br>
+
+
+            </div>
+	</div>
+</div>
+</body>
+</html>
